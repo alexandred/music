@@ -54,7 +54,7 @@ end
 {
   company_name: 'Catarse',
   host: 'floating-sierra-3183.herokuapp.com',
-  base_url: "http://floating-sierra-3183.herokuapp.com/",
+  base_url: "http://floating-sierra-3183.herokuapp.com",
   email_contact: 'contato@catarse.me',
   email_payments: 'financeiro@catarse.me',
   email_projects: 'projetos@catarse.me',

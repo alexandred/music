@@ -41,11 +41,29 @@ sass:
 							padding: 0px
 							margin: 0px
 							color: #79808B
+						.review
+							margin: 10px
 						margin: 10px 10px 10px 10px
 						padding: 5px 5px 10px 5px
 						background: #dddddd
 						border: 0 none
 						border-radius: 5px
+					.reward
+						border-bottom: 1px dotted
+						margin-bottom: 15px
+						margin-top: 10px
+						padding-bottom: 10px
+						position: relative
+						h2
+							font-size: 20px
+							font-weight: bold
+							margin: 15px 10px 15px 10px
+							display: inline
+						.remove_nested_fields
+							float: right
+							margin-right: 10px
+							margin-top: 10px
+
 				.template
 					text-align: left
 					display: inline-block
@@ -178,7 +196,7 @@ sass:
 #page_content
   .container
   	.bootstrap-form
-	    = form_for @project, html: { id: 'project_form' } do |f|
+	    = nested_form_for @project, html: { id: 'project_form' } do |f|
 	        ul#progressbar
 	          li.first Basics
 	          li.second Rewards
@@ -214,10 +232,28 @@ sass:
 							  .hint= "#{t('formtastic.hints.project.goal')} #{t('.important_html')}"
 						  .block
 							  = f.label :online_days, t('formtastic.labels.project.expires_at')
-							  = f.text_field :online_days, id: 'days-input', pattern: '[0-9]'
+							  = f.text_field :online_days, id: 'days-input'
 							  .hint= "#{t('formtastic.hints.project.online_days')} #{t('.online_days_important')}"
-					.inputs.second style="display:none;"
-						  h2 none
+					.inputs.second style="display:none"
+						  .bootstrap-twitter
+							  = f.fields_for :rewards do |rewards|
+							  	.reward
+							  		h2 Reward
+							  		= link_to "javascript:void(0)", class: 'btn btn-danger remove_nested_fields', data: {"association" => "rewards" } do
+								  			i.icon-trash.icon-white
+								  	.block
+								  		= rewards.label :minimum_value, t('activerecord.attributes.reward.minimum_value')
+								  	 	= rewards.text_field :minimum_value
+								  	 	.hint= "#{t('formtastic.hints.reward.minimum_value')}"
+								  	.block
+								  	 	= rewards.label :description, t('activerecord.attributes.reward.description')
+								  	 	= rewards.text_field :description
+								  	 	.hint= "#{t('formtastic.hints.reward.description')}"
+								  	.block
+								  	 	= rewards.label :days_to_delivery, t('activerecord.attributes.reward.days_to_delivery')
+								  	 	= rewards.text_field :days_to_delivery
+								  	 	.hint= "#{t('formtastic.hints.reward.days_to_delivery')}"
+							  = f.link_to_add "Add reward", :rewards, class: 'btn btn-success'
 					.inputs.third style="display:none;"
 						  .block
 						      = f.label :video_url, t('formtastic.labels.project.video')
@@ -227,6 +263,25 @@ sass:
 						      = f.label :about, t('formtastic.labels.project.about')
 						      = f.text_area :about
 							  .hint= "#{t('formtastic.hints.project.about')} #{t('.about_important')}"
+					.inputs.fourth style="display:none;"
+						  .block
+						      = f.label :govid, t('formtastic.labels.project.identification')
+						      = f.file_field :govid, as: :file
+						      = f.hidden_field :govid_cache
+							  .hint= "#{t('formtastic.hints.project.identification')}".html_safe
+						  .block
+						      = f.label :paypal, t('formtastic.labels.project.paypal')
+						      = f.text_field :paypal
+							  .hint= "#{t('formtastic.hints.project.paypal')}"
+					.inputs.fifth style="display:none;"
+						  .block
+						  	  .review
+						  	  	= "#{t('formtastic.hints.project.review')}"
+						  	  = f.label :accepted_terms, t('accept_terms_html', link: link_to(t('terms'), t('footer.links.terms_link'), target: :_blank)), class: 'inline'
+						  	  = f.check_box :accepted_terms, style: "float: none; display: inline; ,margin: 5px"
+			                  .bootstrap-twitter
+			                    .send
+						  	      = f.button t('.submit'), id: 'project_submit', class: 'btn btn-success btn_send', style: "margin: 5px"
 					.template
 						.project-box[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
 						  meta[itemprop="dateCreated"]
@@ -271,6 +326,24 @@ javascript:
 				$('#h3').text('Tell it with a video. It doesn’t have to be fancy, it just has to be you.')
 				$('.inputs.third, #h2, #h3').fadeIn(400);
 				index = 3;
+			}
+		});
+		$("li.fourth").click(function(){
+			if(index !=4) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text('Account settings header.');
+				$('#h3').text('Account settings subheader')
+				$('.inputs.fourth, #h2, #h3').fadeIn(400);
+				index = 4;
+			}
+		});
+		$("li.fifth").click(function(){
+			if(index !=5) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text('Review header.');
+				$('#h3').text('Review subheader')
+				$('.inputs.fifth, #h2, #h3').fadeIn(400);
+				index = 5;
 			}
 		});
 
@@ -320,5 +393,8 @@ javascript:
 		            ev.preventDefault();
 		        }
 		    }
+		});
+		$( ".deletebutton" ).on( "click", function(){
+			alert('test');
 		});	
 	});

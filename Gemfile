@@ -61,6 +61,7 @@ gem 'catarse_mailchimp', git: 'git://github.com/catarse/catarse_mailchimp', ref:
 gem 'formtastic',   '~> 2.2.1'
 gem "auto_html",    '= 1.4.2'
 gem 'kaminari'
+gem "nested_form"
 
 # Uploads
 gem 'carrierwave', '~> 0.8.0'

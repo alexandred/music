@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
 
   mount_uploader :uploaded_image, ProjectUploader
   mount_uploader :video_thumbnail, ProjectUploader
+  mount_uploader :govid, GovidUploader
 
   delegate :display_status, :display_progress, :display_image, :display_expires_at,
     :display_pledged, :display_goal, :remaining_days, :display_video_embed_url, :progress_bar, :successful_flag,
@@ -22,7 +23,9 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :channels
 
   has_one :project_total
-  accepts_nested_attributes_for :rewards
+  accepts_nested_attributes_for :rewards,
+    :allow_destroy => true,
+    :reject_if     => :all_blank
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 
@@ -81,13 +84,13 @@ class Project < ActiveRecord::Base
   }
 
   attr_accessor :accepted_terms
-
+  
   validates_acceptance_of :accepted_terms, on: :create
 
-  validates :video_url, presence: true, if: ->(p) { p.state_name == 'online' }
-  validates_presence_of :name, :user, :category, :about, :headline, :goal, :permalink
+  validates :video_url, presence: true
+  validates_presence_of :name, :user, :category, :about, :headline, :goal, :permalink, :govid, :paypal
   validates_length_of :headline, maximum: 140
-  validates_numericality_of :online_days, less_than_or_equal_to: 60
+  validates_numericality_of :online_days, less_than_or_equal_to: 60, greater_than: 0
   validates_uniqueness_of :permalink, allow_blank: true, allow_nil: true, case_sensitive: false
   validates_format_of :permalink, with: /^(\w|-)*$/, allow_blank: true, allow_nil: true
   validates_format_of :video_url, with: /https?:\/\/(www\.)?vimeo.com\/(\d+)/, message: I18n.t('project.video_regex_validation'), allow_blank: true

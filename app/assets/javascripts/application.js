@@ -20,4 +20,5 @@
 //= require ./app/app.js
 //= require_tree ./lib
 //= require_tree ./app
+//= require jquery_nested_form
 

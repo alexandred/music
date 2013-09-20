@@ -100,6 +100,7 @@ en:
       recents: "Recent"
       submit: "Submit"
       discover: "Explore"
+      terms_link: "http://termsandconditions.com"
     texts:
       copyleft: "Made with love."
   main:
@@ -286,6 +287,9 @@ en:
         name: "Make this short and sweet. Leave the description to the subtitle and about sections."
         uploaded_image: "Upload a 512x400 image(.jpg)."
         video_url: "Enter the URL to your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. Vimeo has a clean interface and no advertisements and this will reflect upon the quality of your project."
+        identification: "Please upload a copy of a government issued ID. Our team requires this in order to verify your identity and prevent fraud. All information on this identification should match the information you have provided us when signing up and during the submission of your project. This image will only be visible to the Catarse team and will not be publicly accessible."
+        paypal: "All payments on Catarse are currently handled by Paypal. Please provide us with a valid, verified email to which we can send your payment when your campaign is funded. We reserve the right to delay payment until a verified Paypal address is added to the project."
+        review: "Some text here for reviewing project submission"
       reward:
         description: "Describe the reward in a way that attracts people into backing the project."
         maximum_backers: "If the reward is limited, tell us the maximum amount of backers."
@@ -312,6 +316,8 @@ en:
         online_days: 'How Many Campaign Days?'
         video_url: "Video *"
         uploaded_image: "Thumbnail *"
+        identification: "Identification"
+        paypal: "Paypal address"
       reward:
         maximum_backers: "Maximum backers (optional)"
         days_to_delivery: "Days to delivery"
