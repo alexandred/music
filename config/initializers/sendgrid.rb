@@ -1,7 +1,7 @@
 begin
   if Rails.env.production?
     ActionMailer::Base.smtp_settings = {
-    address: 'smtp.google.com',
+    address: 'smtp.gmail.com',
     port: '587',
     authentication: :plain,
     user_name: 'catarsemusci@gmail.com',#Configuration[:sendgrid_user_name],
