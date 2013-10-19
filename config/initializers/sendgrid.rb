@@ -5,7 +5,7 @@ begin
     port: '587',
     authentication: :plain,
     user_name: 'catarsemusci@gmail.com',#Configuration[:sendgrid_user_name],
-    password: 'catarsemusic1234'#Configuration[:sendgrid],
+    password: 'catarsemusic1234',#Configuration[:sendgrid],
     domain: 'gmail.com'
     }
     ActionMailer::Base.delivery_method = :smtp
