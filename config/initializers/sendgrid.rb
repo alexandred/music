@@ -4,7 +4,7 @@ begin
     address: 'smtp.gmail.com',
     port: '587',
     authentication: :plain,
-    user_name: 'catarsemusci@gmail.com',#Configuration[:sendgrid_user_name],
+    user_name: 'catarsemusic@gmail.com',#Configuration[:sendgrid_user_name],
     password: 'catarsemusic1234',#Configuration[:sendgrid],
     domain: 'gmail.com'
     }
