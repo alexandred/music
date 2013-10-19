@@ -31,7 +31,7 @@ GIT
     cancan (2.0.0.alpha)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     RedCloth (4.2.9)
     actionmailer (3.2.13)

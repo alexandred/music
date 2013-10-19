@@ -14,7 +14,7 @@ Catarse::Application.routes.draw do
 
   check_user_admin = lambda { |request| request.env["warden"].authenticate? and request.env['warden'].user.admin }
 
-  filter :locale, exclude: /\/auth\//
+  #filter :locale, exclude: /\/auth\//
 
   # Mountable engines
   constraints check_user_admin do

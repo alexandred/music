@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso
 
-  before_filter :set_locale
+  #before_filter :set_locale
   before_filter :force_http
 
   # TODO: Change this way to get the opendata
