@@ -3,6 +3,7 @@ en:
     confirm_dialog: 'You are sure?'
     projects:
       index:
+        menu: "Projects"
         by_state: 'By state'
         between_created_at: 'Created at between'
         submit: 'Filter'
@@ -15,6 +16,7 @@ en:
         order_created_at: 'Submission date'
     financials:
       index:
+        menu: "Financials"
         submit: 'Filter'
         by_state: 'By state'
         by_progress: By progress %
@@ -104,4 +106,6 @@ en:
 
   channels:
     adm:
+        index:
+            menu: "Channels"
       <<: *admin
