@@ -106,6 +106,4 @@ en:
 
   channels:
     adm:
-        index:
-            menu: "Channels"
       <<: *admin
