@@ -1,4 +1,4 @@
-header.header
+header.header style="position:fixed;"
   .centered
     h1
       = link_to "#{Configuration[:company_name]}", root_url(host: Configuration[:base_domain] || request.domain), :class => 'logo', :title => Configuration[:company_name]
