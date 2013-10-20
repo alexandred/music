@@ -1,4 +1,4 @@
-header.header style="position:fixed; z-index:100;"
+header.header style="position:fixed; z-index:100; top:0px;"
   .centered
     h1
       = link_to "#{Configuration[:company_name]}", root_url(host: Configuration[:base_domain] || request.domain), :class => 'logo', :title => Configuration[:company_name]
@@ -25,7 +25,7 @@ header.header style="position:fixed; z-index:100;"
 
         - if current_user
           li.header-nav-li.user
-            = link_to '#', class: 'my_profile_link' do
+            = link_to 'javascript:void(0)', class: 'my_profile_link' do
               = image_tag(current_user.display_image, :size => "40x40", :class => 'profile-picture')
             ul.dropdown.user
               li= link_to t('layouts.header.profile'), current_user
