@@ -1,9 +1,39 @@
+sass:
+	.border
+	  font-size: .9em
+	  width: 175px
+	  min-height: 30px
+	  background: white
+	  border: 1px solid #dddddd
+	  border-bottom: 0
+	  position: fixed
+	  bottom: 0px
+	  right: 0
+	  left: 0
+	  z-index: 400
+	  border-top-right-radius: 4px
+	  border-top-left-radius: 4px
+	  border-bottom-right-radius: 0px
+	  border-bottom-left-radius: 0px
+		top: 50%
+	  left: 50%
+	  margin-top: -50px
+	  margin-left: -100px
+javascript:
+	$(function() {
+	    $('.countdown').countdown({
+	        date: "June 7, 2087 15:03:25"
+	    });
+	  });
 = render 'devise/shared/header'
 .row
   .large-7.large-centered.columns
     .login-box.animated.fadeIn
-      h2.text-center Sorry, we couldn't find this address :(
+      h2.text-center Something big is coming your way...
       hr
       .large-14.columns.large-centered
-        p You may have mistyped the address or the page may have moved.
-        p If you are the application owner check the logs for more information.
+        p.text-center Check this space on 1st January 2014 to discover amazing new talent.
+.countdown style="width:500px; margin:auto"
+.border
+	h2.text-center
+		= link_to "Beta", new_user_session_path
