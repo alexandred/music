@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :redirect_user_back_after_login, unless: :devise_controller?
+  before_filter :checkcountdown
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from ActionController::RoutingError, with: :render_404
@@ -123,6 +124,12 @@ class ApplicationController < ActionController::Base
   def redirect_user_back_after_login
     if request.env['REQUEST_URI'].present? && !request.xhr?
       session[:return_to] = request.env['REQUEST_URI']
+    end
+  end
+
+  def checkcountdown
+    unless params['controller'] == "devise/sessions" and params['action'] == "new"
+      render template: 'static/countdown', layout: 'layouts/catarse_bootstrap' if !current_user
     end
   end
 
