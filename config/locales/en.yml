@@ -285,7 +285,7 @@ en:
         headline: "Summarise your project in 140 characters. This is the first thing a potential backer will read about your project so make sure to draw them in."
         name: "Make this short and sweet. Leave the description to the subtitle and about sections."
         uploaded_image: "Upload a 512x400 image(.jpg)."
-        video_url: "Enter the URL to your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. Vimeo has a clean and no advertisements and this will reflect upon the quality of your project."
+        video_url: "Enter the URL to your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. Vimeo has a clean interface and no advertisements and this will reflect upon the quality of your project."
       reward:
         description: "Describe the reward in a way that attracts people into backing the project."
         maximum_backers: "If the reward is limited, tell us the maximum amount of backers."
@@ -420,11 +420,11 @@ en:
         no_credits: "You don't have enough credits to back this project."
         success: "Your back was successfully made."
       new:
-        cannot_back: "It's not possible to back this project right now. Please, try again later."
+        cannot_back: "It is not possible to back this project right now. Please try again later."
         header:
           subtitle: "You're just a few steps away from making a difference and becoming a part of this project."
           title: "Back this project"
-        no_reward: "Thanks. I just want to help the project."
+        no_reward: "I just want to help the project."
         submit: "Review and proceed to checkout"
         title: "Back %{name}"
       create:
@@ -448,24 +448,24 @@ en:
         choose_payment_subtitle: "Select below a payment method"
         choose_credit_card: "PayPal"
         choose_boleto: "Payments from Brazil"
-        you_are_about_html: "You are about to become part of the group that does everything to make %{link} happen."
+        you_are_about_html: "You are about to back %{link}."
         pay_with: "Pay With"
     create:
-      success: "Your project was successfully created! We'll soon contact you. Thanks a lot!"
+      success: "Your project was successfully created! We will contact you soon. Thank you for choosing Catarse!"
     form:
-      permalink_hint: 'Simplify the URL of your project. Think that your sponsor need to remember the address to share your project.'
+      permalink_hint: 'Keep this short and sweet so backers will be able to remember and spread it.'
       add_reward: "Add reward"
-      important_html: "Please notice that Catarse will charge 13% if your project is successful. Add this values to your budget in order to execute your project with no surprises."
+      important_html: "Please note that Catarse will charge 13% if your project is successful. Please take this into consideration when creating your budget."
       project_warning:
-        content_html: "Want to have your project selected? Don't forget to read %{link}."
+        content_html: "Don't forget to read %{link} if you want us to recommend your project."
         help_link: "our guide"
-      rewards_description: "We believe that the best way to inspire people to back a project is offering excellent – and creative! – rewards. Everybody loves limited editions, unique things and joyful experiences (parties, candies, balloon travelling!). Spend some time devising creative rewards and people will be interested."
+      rewards_description: "Create attractive rewards that will encourage people to back your project."
       rewards_title: Rewards
       submit: "Submit project"
     index_header:
       subtitle: "Fund projects collaboratively and become part of something bigger. Promote a collective catharsis! You're the missing part in this story."
       subtitle_html: "Fund projects collaboratively and become part of something bigger.<br/>Promote a collective catharsis! You're the missing part in this story."
-      title: "Make the projects you believe in happen"
+      title: "Fund the projects that you want to happen"
     recommended_header:
       suggest_for_you: "suggested for you"
       highlight_project: "featured project"
@@ -510,44 +510,44 @@ en:
       backed: backed
       reached: reached
     project_backers:
-      empty: "Nobody backed this project so far. How about being the first one?"
+      empty: "Nobody has backed this project so far. Why not be the first?"
       confirmed: "Confirmed"
       pending: "Pending"
     project_header:
       subtitle_html: "A project by %{link}"
-      without_city: "A project in %{category_name}, by %{author}"
+      without_city: "A project in %{category_name} by %{author}"
       with_city: "A project in %{category_name}, in %{city}, by %{author}"
     project_updates:
-      empty: "This project didn't have updates yet. But wait and see =D"
+      empty: "This project doesn't have any updates yet."
       submit: "Send update"
       comment: "Update text"
       exclusive: "Visible for backers only"
       title: "Title of the update"
       destroy: "Remove update"
       destroy_confirmation: "Do you want to remove the update?"
-      warning: 'Remembering that every new post goes directly to the email of his supporters. Therefore, review your text well before sending it.'
+      warning: 'Make sure to review the update before submitting as each backer will receive an email with the update content.'
     rewards:
-      reward_title: "For %{minimum} or more"
+      reward_title: "Back %{minimum} or more"
       reward_deliver_time: "Estimated delivery: %{prevision}"
       backs_to_confirm:
-        one:  "1 backer in time to confirm."
-        other: "%{count} backers in time to confirm."
+        one:  "1 back awaiting confirmation."
+        other: "%{count} backs awaiting confirmation."
       title: "Back and receive..."
     send_mail:
-      success: "Your project was successfully sent! We'll soon contact you. Thanks a lot!"
+      success: "Your project was successfully submitted! We will contact you soon. Thank you for choosing Catarse."
     show:
       rejected: "This project does not fit our <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>selection criteria.</a>"
-      waiting: "This project is waiting for approval and soon we'll know if it will go online on Catarse ;)"
-      waiting_owner: "To edit the project info, click on 'Edit project' tab. The rewards you can edit on reward column."
+      waiting: "This project is awaiting approval and you will be notified of it going live."
+      waiting_owner: "To edit the project details, click on the 'Edit project' tab. Rewards are editable in the rewards column."
       about_title: "About this project"
-      no_rewards_warning_title: 'Create here your rewards'
-      no_rewards_warning: "Don't go nuts! Think about how you're going to deliver them and include those costs in your budget. People are putting their trust in you, don't kid around with that!"
+      no_rewards_warning_title: 'Create your rewards here'
+      no_rewards_warning: "Make sure you have organised all delivery methods before committing to providing your rewards."
       reports:
-        no_backs: "This project don't have any back yet."
+        no_backs: "This project doesn't have any backs yet."
         link_reports: 'Download report of '
         all_backers: 'all backers'
-        all_backers_without_reward: "all backers that don't select any reward"
-        link_reward: 'Download the report of backers that selected the reward'
+        all_backers_without_reward: "all backers that didn't select a reward"
+        link_reward: 'Download report of backers that selected a reward'
       menu:
         about: About
         backers: Backers
@@ -564,21 +564,21 @@ en:
         take_a_look: "Check out the project"
         title: "Be part of it and share this project"
     new:
-      legend_html: "After filling in the form below, you will receive a project page in Draft mode. In this draft you will add the rewards for your backers. You may also share the page with your friends to collect feedback and sharpen your project even more.<br><br>The information filled in below is not definitive, but remember that the more consistent you are in your project submission, the faster it will go on air.<br><br><b>Very Important:</b> <i>Catharsis is cured platform, which means that our board will evaluate the focus, the feasibility and consistency of your project during the Draft. If we understand that your project does not comply with our <a href='https://docs.google.com/a/catarse.me/document/d/1wLDS2lphQ6monovg9rEaTIDcxBD3FRZV9dfGKmajyj8/edit' target='_blank' >selection criteria</a>, it may be refused by the team of curators.</i>"
-      permalink_important: 'Try not to use underline, hyphen etc.'
-      permalink_hint: 'Go simple. Your backers should be able to remember the URL to your project ;)'
-      name_important: "Do not exceed  50 characters"
-      online_days_important: "60 days is the maximum"
-      about_important: "Don't make it too long! Indicate links so people can know more about your work"
-      important_html: 'Keep in mind the 13% fee charged by Catarse in case you reach your financial goal. Just divide your final budget by 0.87 to find the discounted amount.'
+      legend_html: "After filling in the form below, you will be redirect to the project draft page. You will be able to add rewards to your project and share it with your team or your friends for feedback.<br><br>The information you will provide now is not final and can be changed at any time.<br><br><b>Note:</b> <i>The feasability of your project will be assessed by our team, please make sure it meets the <a href='https://docs.google.com/a/catarse.me/document/d/1wLDS2lphQ6monovg9rEaTIDcxBD3FRZV9dfGKmajyj8/edit' target='_blank' >selection criteria</a>, or else you tun the risk of your project being refused.</i>"
+      permalink_important: 'Please use only letters and numbers'
+      permalink_hint: 'This is the main link to your project, it should be easily remembered.'
+      name_important: "Maximum 50 characters"
+      online_days_important: "Maximum campaign length of 60 days"
+      about_important: "Remember to add links related to your project that you want the public to see. HTML formatted text can be inputted here"
+      important_html: 'Catarse charges 13% on succesful funding'
       send_project: "I want to submit my project."
-      video_important: "The video must be hosted by Vimeo. Paste here the URL!"
-      more_links_important: "It's very important to use social medias to spread the word about your project and engage your network into making it a success"
-      first_backers_important: "These people are fundamental to the success of your project."
-      how_know_important: "Yay! We reached  the final question."
-      headline_important: "It's a summary of  your project . 140 characteres tops!:D"
-      tags_important: "Check ou other projects in your category  <a href='%{href}' target='_blank'>here!</a>!."
-      subtitle: "The time to make it happen is now! We really want to know what you're up to..."
+      video_important: "Your project may be refused if your video contains inappropriate content"
+      more_links_important: "Information entered here is only visible to Catarse staff. Please seperate each link by a blank line."
+      first_backers_important: "Information entered here is only visible to Catarse staff. Please seperate each entry by a blank line."
+      how_know_important: "Let us know how you found us! (optional)"
+      headline_important: "This will appear as the subtitle on your project on Catarse's main webpages, make it catchy to draw attention"
+      tags_important: "This section needs to be removed."
+      subtitle: "Describe to us what you want to achieve..."
       title: "Submit your project"
       about: "Describe your project and how much do you need"
       category: "Project category"
