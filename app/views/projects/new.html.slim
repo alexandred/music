@@ -76,8 +76,8 @@ sass:
 	          li.fifth Review
 	        .fieldset
 				.title
-				  h2 Meet your new project
-				  h3 Start by giving it a name, a pic, and other important details.
+				  h2#h2 Meet your new project
+				  h3#h3 Start by giving it a name, a pic, and other important details.
 				.inputs.first
 					  .block
 					      = f.label :permalink, t('formtastic.labels.project.permalink')
@@ -110,15 +110,21 @@ sass:
 javascript:
 	$(window).load(function(){
 		$("li.first").click(function(){
-			$('.inputs').hide();
-			$('.inputs.first').fadeIn(400);
+			$('.inputs, #h2, #h3').hide();
+			$('#h2').text('Meet your new project');
+			$('#h3').text('Start by giving it a name, a pic, and other important details.')
+			$('.inputs.first, #h2, #h3').fadeIn(400);
 		})
 		$("li.second").click(function(){
-			$('.inputs').hide();
-			$('.inputs.second').fadeIn(400);
+			$('.inputs, #h2, #h3').hide();
+			$('#h2').text('Every project needs great rewards.');
+			$('#h3').text('Be creative and price them fairly. Explore other projects for inspiration!')
+			$('.inputs.second, #h2, #h3').fadeIn(400);
 		})
 		$("li.third").click(function(){
-			$('.inputs').hide();
-			$('.inputs.third').fadeIn(400);
+			$('.inputs, #h2, #h3').hide();
+			$('#h2').text('It’s not just a project, it’s a story.');
+			$('#h3').text('Tell it with a video. It doesn’t have to be fancy, it just has to be you.')
+			$('.inputs.third, #h2, #h3').fadeIn(400);
 		})
 	});
