@@ -1,16 +1,10 @@
-javascript:
-	$(function() {
-	  $('select').customStyle();
-	});
 sass:
 	.container
 		width: 100% !important
 		margin: 0 !important
 		padding: 0 !important
 	#project_form
-		fieldset
-			&:not(:first-of-type)
-				display: none
+		.fieldset
 			.inputs
 				width: 600px
 				margin-top: 20px
@@ -32,7 +26,6 @@ sass:
 					select
 						float: right
 						width: 410px
-						line-height: 80px
 					textarea
 						float: right
 						width: 410px
@@ -76,47 +69,56 @@ sass:
   	.bootstrap-form
 	    = form_for @project, html: { id: 'project_form' } do |f|
 	        ul#progressbar
-	          li Basics
-	          li Rewards
-	          li Story
-	          li Account
-	          li Review
-	        fieldset
-	          .title
-		          h2 Meet your new project
-		          h3 Start by giving it a name, a pic, and other important details.
-		      .inputs
-		      	  .block
-			          = f.label :permalink, t('formtastic.labels.project.permalink')
-			          = f.text_field :permalink
-		      	  .block
-			          = f.label :name, t('formtastic.labels.project.name')
-			          = f.text_field :name
-		      	  .block
-			          = f.label :headline, t('formtastic.labels.project.headline')
-			          = f.text_field :headline, { maxlength: 140 }
-		      	  .block
-			          = f.label :category, t('.category')
-			          = f.select :category_id, Category.array
-		      	  .block
-				      = f.label :goal, t('formtastic.labels.project.goal')
-				      = f.text_field :goal
-		      	  .block
-					  = f.label :online_days, t('formtastic.labels.project.expires_at')
-					  = f.text_field :online_days
-	        fieldset
-	          .title
-		          h2 Every project needs great rewards.
-		          h3 Be creative and price them fairly. Explore other projects for inspiration!
-	        fieldset
-	          .title
-		          h2 It’s not just a project, it’s a story.
-		          h3 Tell it with a video. It doesn’t have to be fancy, it just has to be you.
-		      .inputs
-		      	  .block
-			          = f.label :video_url, t('formtastic.labels.project.video')
-			          = f.text_field :video_url, data: { path: video_projects_path }
-		      	  .block
-			          = f.label :about, t('formtastic.labels.project.about')
-			          = f.text_area :about
+	          li.first Basics
+	          li.second Rewards
+	          li.third Story
+	          li.fourth Account
+	          li.fifth Review
+	        .fieldset
+				.title
+				  h2 Meet your new project
+				  h3 Start by giving it a name, a pic, and other important details.
+				.inputs.first
+					  .block
+					      = f.label :permalink, t('formtastic.labels.project.permalink')
+					      = f.text_field :permalink
+					  .block
+					      = f.label :name, t('formtastic.labels.project.name')
+					      = f.text_field :name
+					  .block
+					      = f.label :headline, t('formtastic.labels.project.headline')
+					      = f.text_field :headline, { maxlength: 140 }
+					  .block
+					      = f.label :category, t('.category')
+					      = f.select :category_id, Category.array
+					  .block
+					      = f.label :goal, t('formtastic.labels.project.goal')
+					      = f.text_field :goal
+					  .block
+						  = f.label :online_days, t('formtastic.labels.project.expires_at')
+						  = f.text_field :online_days
+				.inputs.second style="display:none;"
+					  h2 none
+				.inputs.third style="display:none;"
+					  .block
+					      = f.label :video_url, t('formtastic.labels.project.video')
+					      = f.text_field :video_url, data: { path: video_projects_path }
+					  .block
+					      = f.label :about, t('formtastic.labels.project.about')
+					      = f.text_area :about
 	.clearfix
+javascript:
+	$(window).load(function(){
+		$("li.first").click(function(){
+			$('.inputs').hide();
+			$('.inputs.first').fadeIn(400);
+		})
+		$("li.second").click(function(){
+			$('.inputs').hide();
+			$('.inputs.second').fadeIn(400);
+		})
+		$("li.third").click(function(){
+			$('.inputs').hide();
+			$('.inputs.third').fadeIn(400);
+		})
+	});
