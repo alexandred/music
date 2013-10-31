@@ -1,4 +1,7 @@
 sass:
+	$green-one: #00B22D
+	$blue-one: #3F4752
+	$blue-two: #79808B
 	.container
 		width: 100% !important
 		margin: 0 !important
@@ -6,12 +9,14 @@ sass:
 	#project_form
 		.fieldset
 			.panel
+				text-align: center
 				.inputs
+					text-align: left
+					margin: 0 auto
 					display: inline-block
-					float: left
 					width: 600px
 					margin-top: 20px
-					padding-right: 30px
+					padding-right: 40px
 					border-right: 1px dotted
 					.block
 						overflow: hidden
@@ -42,7 +47,102 @@ sass:
 						border: 0 none
 						border-radius: 5px
 				.template
-					display: inline
+					text-align: left
+					display: inline-block
+					position: absolute
+					padding-left: 35px
+					margin: 32px 40px 0px 20px
+					.project-box
+						height: 400px
+						box-shadow: 0 1px 4px darken(lightgray, 10%)
+						position: relative
+						margin: 0 20px 1.5em 0
+						float: left
+						width: 220px
+						font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+						&:nth-child(3n+0)
+							margin: 0 0 1.5em 0
+
+						.status-flag
+							position: absolute
+						a
+							text-decoration: none
+						.templateimage
+							opacity: 1
+							&:hover
+							opacity: .9
+							> .title a
+								text-decoration: underline !important
+
+						.name
+							margin: .4em 0
+							line-height: 1.1em
+							a
+								color: $blue-one
+								font-weight: bold
+								font-size: 0.95em
+								&:hover
+									text-decoration: underline !important
+
+						.padding
+							padding: .2em .8em
+
+						.headline
+							font-size: .8em
+							margin: .8em 0 .4em 0
+							line-height: 1.4em
+							font-weight: 400
+							height: 70px
+							a
+								color: $blue-two
+
+						.status
+							border-top: 1px solid rgba(0, 0, 0, 0.1)
+							bottom: 0px
+							position: absolute
+							width: 100%
+							background: #F8F8F8
+							color: $blue-two
+							span
+								color: $blue-one
+
+						.progress-percent
+							font-size: .6em
+							text-transform: uppercase
+							vertical-align: middle
+							margin: 0 0 .8em
+							span
+								font-weight: bold
+								font-size: 1.4em
+								line-height: 1.4em
+								position: relative
+								top: .1em
+
+						.progress-bar
+							#progress_wrapper, #progress
+								height: .4em
+								border-radius: 6px
+								box-shadow: inset 0 0 4px lighten(gray, 15%)
+							#progress
+								background: $green-one
+
+						.time-remaining, .money-raised
+							float: left
+							padding: 1em 0
+							text-transform: uppercase
+							font-size: .6em
+							color: $blue-two
+							span
+								display: block
+								font-weight: bold
+								font-size: 1.4em
+								text-transform: none
+								margin-bottom: .2em
+
+						.money-raised
+							float: right
+							margin-right: 2%
+
 			.title
 				padding-top: 20px
 				padding-bottom: 20px
@@ -119,7 +219,7 @@ sass:
 					.inputs.third style="display:none;"
 						  .block
 						      = f.label :video_url, t('formtastic.labels.project.video')
-						      = f.text_field :video_url, data: { path: video_projects_path }
+						      = f.text_field :video_url, data: { path: video_projects_path }, id: 'video-input'
 							  .hint= "#{t('formtastic.hints.project.video_url')} #{t('.video_important')}".html_safe
 						  .block
 						      = f.label :about, t('formtastic.labels.project.about')
@@ -128,16 +228,16 @@ sass:
 					.template
 						.project-box[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
 						  meta[itemprop="dateCreated"]
-						  .image = "none"
+						  .templateimage = "No video entered"
 						  .padding
-						    h4.title    = 'title'
-						    p.headline  = 'headline'
+						    h4.name    = 'Name'
+						    p.headline  = 'Subtitle'
 						  .status
 						    .padding
-						      p.progress-percent = 'progress'
-						      .progress-bar = 'bar'
-						      //= link_to t('channels.projects.time_remaining_html', count: project.time_to_go[:time], unit: project.time_to_go[:unit]), project_by_slug_path(project.permalink), title: project.name, class: 'time-remaining'
-						      //= link_to t('channels.projects.pledged_html', value: number_to_currency(project.pledged, precision: 0)), project_by_slug_path(project.permalink), title: project.name, class: 'money-raised'
+						      p.progress-percent = t('channels.projects.progress_html', percent: '0')
+						      .progress-bar = @project.progress_bar(dummy=true)
+							      //= link_to t('channels.projects.time_remaining_html', count: project.time_to_go[:time], unit: project.time_to_go[:unit]), project_by_slug_path(project.permalink), title: project.name, class: 'time-remaining'
+							      //= link_to t('channels.projects.pledged_html', value: number_to_currency(project.pledged, precision: 0)), project_by_slug_path(project.permalink), title: project.name, class: 'money-raised'
 	.clearfix
 javascript:
 	$(window).load(function(){
@@ -150,7 +250,7 @@ javascript:
 				$('.inputs.first, #h2, #h3').fadeIn(400);
 				index = 1;
 			}
-		})
+		});
 		$("li.second").click(function(){
 			if(index != 2) {
 				$('.inputs, #h2, #h3').hide();
@@ -159,7 +259,7 @@ javascript:
 				$('.inputs.second, #h2, #h3').fadeIn(400);
 				index = 2;
 			}
-		})
+		});
 		$("li.third").click(function(){
 			if(index !=3) {
 				$('.inputs, #h2, #h3').hide();
@@ -168,5 +268,28 @@ javascript:
 				$('.inputs.third, #h2, #h3').fadeIn(400);
 				index = 3;
 			}
-		})
+		});
+
+		$("#video-input").change(function(){
+			var vimeoVideo = $('#video-input').val();
+			var regExp = /^.+vimeo.com\/(.*\/)?([^#\?]*)/;
+			var vimeoVideoID = vimeoVideo.match(regExp)[2]
+			alert(vimeoVideoID);
+			$.ajax({
+			        type:'GET',
+			        url: 'http://vimeo.com/api/v2/video/' + vimeoVideoID  + '.json',
+			        jsonp: 'callback',
+			        dataType: 'jsonp',
+			        success: function(data){
+			            debugger;
+			           	  $('.templateimage').empty()
+			              $('<img/>' ,{
+			                 src:data[0].thumbnail_medium,
+			                 width:'220',
+			                 height:'140'
+			              })
+			              .appendTo('.templateimage');
+			        }
+			    });
+		});
 	});
