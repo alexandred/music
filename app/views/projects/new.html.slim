@@ -5,35 +5,44 @@ sass:
 		padding: 0 !important
 	#project_form
 		.fieldset
-			.inputs
-				width: 600px
-				margin-top: 20px
-				margin-left: auto
-				margin-right: auto
-				padding-right: 30px
-				border-right: 1px dotted
-				.block
-					overflow: hidden
-					label
-						padding-top: 5px
-						padding-left: 10px
-						font-weight: bold
-						display: inline-block
-					input
-						float: right
-						width: 400px
-						padding: 10px
-					select
-						float: right
-						width: 410px
-					textarea
-						float: right
-						width: 410px
-					margin: 10px 10px 10px 10px
-					padding: 5px 5px 10px 5px
-					background: #dddddd
-					border: 0 none
-					border-radius: 5px
+			.panel
+				.inputs
+					display: inline-block
+					float: left
+					width: 600px
+					margin-top: 20px
+					padding-right: 30px
+					border-right: 1px dotted
+					.block
+						overflow: hidden
+						label
+							padding-top: 5px
+							padding-left: 10px
+							font-weight: bold
+							display: inline-block
+						input
+							float: right
+							width: 400px
+							padding: 10px
+						select
+							float: right
+							width: 410px
+						textarea
+							float: right
+							width: 410px
+						.hint
+							float: right
+							width: 420px
+							padding: 0px
+							margin: 0px
+							color: #79808B
+						margin: 10px 10px 10px 10px
+						padding: 5px 5px 10px 5px
+						background: #dddddd
+						border: 0 none
+						border-radius: 5px
+				.template
+					display: inline
 			.title
 				padding-top: 20px
 				padding-bottom: 20px
@@ -49,18 +58,18 @@ sass:
 					border: none
 					padding-top: 10px
 					padding-bottom: 10px
-	.custom-select
-		margin-bottom: -2em
-		z-index: 2
-		opacity: 0
-		-webkit-appearance: none
-	.custom-select-label
-		padding-left: 0.5em
-		background: #ddd
-		margin: 0
-		-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.4)
-		box-shadow: 0px 1px 5px rgba(0,0,0,0.4)
-	
+		ul
+			padding: 10px 10px 10px 10px
+			background: black
+			width: 100%
+			li
+				background: #00b22d
+				border-radius: 3px
+				margin: 20px 5px 5px 5px
+				padding: 5px 5px 5px 5px
+				display: inline
+				color: white
+				cursor: pointer
 
 
 		
@@ -78,53 +87,86 @@ sass:
 				.title
 				  h2#h2 Meet your new project
 				  h3#h3 Start by giving it a name, a pic, and other important details.
-				.inputs.first
-					  .block
-					      = f.label :permalink, t('formtastic.labels.project.permalink')
-					      = f.text_field :permalink
-					  .block
-					      = f.label :name, t('formtastic.labels.project.name')
-					      = f.text_field :name
-					  .block
-					      = f.label :headline, t('formtastic.labels.project.headline')
-					      = f.text_field :headline, { maxlength: 140 }
-					  .block
-					      = f.label :category, t('.category')
-					      = f.select :category_id, Category.array
-					  .block
-					      = f.label :goal, t('formtastic.labels.project.goal')
-					      = f.text_field :goal
-					  .block
-						  = f.label :online_days, t('formtastic.labels.project.expires_at')
-						  = f.text_field :online_days
-				.inputs.second style="display:none;"
-					  h2 none
-				.inputs.third style="display:none;"
-					  .block
-					      = f.label :video_url, t('formtastic.labels.project.video')
-					      = f.text_field :video_url, data: { path: video_projects_path }
-					  .block
-					      = f.label :about, t('formtastic.labels.project.about')
-					      = f.text_area :about
+				.panel
+					.inputs.first
+						  .block
+						      = f.label :permalink, t('formtastic.labels.project.permalink')
+				              .input-prepend.permalink style="display: inline; float:right;"
+				                span.add-on style="padding: 10px; margin-top: 0px" = "#{::Configuration[:base_url]}/".gsub!("http://","")
+						      	= f.text_field :permalink, pattern: '^(\w|-)+$', style: "width:117px;"
+							  .hint= "#{t('.permalink_hint')} #{t('.permalink_important')}"
+						  .block
+						      = f.label :name, t('formtastic.labels.project.name')
+						      = f.text_field :name
+							  .hint= "#{t('formtastic.hints.project.name')} #{t('.name_important')}"
+						  .block
+						      = f.label :headline, t('formtastic.labels.project.headline')
+						      = f.text_field :headline, { maxlength: 140 }
+							  .hint= "#{t('formtastic.hints.project.headline')} #{t('.headline_important')}"
+						  .block
+						      = f.label :category, t('.category')
+						      = f.select :category_id, Category.array
+						  .block
+						      = f.label :goal, t('formtastic.labels.project.goal')
+						      = f.text_field :goal
+							  .hint= "#{t('formtastic.hints.project.goal')} #{t('.important_html')}"
+						  .block
+							  = f.label :online_days, t('formtastic.labels.project.expires_at')
+							  = f.text_field :online_days
+							  .hint= "#{t('formtastic.hints.project.online_days')} #{t('.online_days_important')}"
+					.inputs.second style="display:none;"
+						  h2 none
+					.inputs.third style="display:none;"
+						  .block
+						      = f.label :video_url, t('formtastic.labels.project.video')
+						      = f.text_field :video_url, data: { path: video_projects_path }
+							  .hint= "#{t('formtastic.hints.project.video_url')} #{t('.video_important')}".html_safe
+						  .block
+						      = f.label :about, t('formtastic.labels.project.about')
+						      = f.text_area :about
+							  .hint= "#{t('formtastic.hints.project.about')} #{t('.about_important')}"
+					.template
+						.project-box[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
+						  meta[itemprop="dateCreated"]
+						  .image = "none"
+						  .padding
+						    h4.title    = 'title'
+						    p.headline  = 'headline'
+						  .status
+						    .padding
+						      p.progress-percent = 'progress'
+						      .progress-bar = 'bar'
+						      //= link_to t('channels.projects.time_remaining_html', count: project.time_to_go[:time], unit: project.time_to_go[:unit]), project_by_slug_path(project.permalink), title: project.name, class: 'time-remaining'
+						      //= link_to t('channels.projects.pledged_html', value: number_to_currency(project.pledged, precision: 0)), project_by_slug_path(project.permalink), title: project.name, class: 'money-raised'
 	.clearfix
 javascript:
 	$(window).load(function(){
+		var index = index || 1;
 		$("li.first").click(function(){
-			$('.inputs, #h2, #h3').hide();
-			$('#h2').text('Meet your new project');
-			$('#h3').text('Start by giving it a name, a pic, and other important details.')
-			$('.inputs.first, #h2, #h3').fadeIn(400);
+			if(index != 1) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text('Meet your new project');
+				$('#h3').text('Start by giving it a name, a pic, and other important details.')
+				$('.inputs.first, #h2, #h3').fadeIn(400);
+				index = 1;
+			}
 		})
 		$("li.second").click(function(){
-			$('.inputs, #h2, #h3').hide();
-			$('#h2').text('Every project needs great rewards.');
-			$('#h3').text('Be creative and price them fairly. Explore other projects for inspiration!')
-			$('.inputs.second, #h2, #h3').fadeIn(400);
+			if(index != 2) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text('Every project needs great rewards.');
+				$('#h3').text('Be creative and price them fairly. Explore other projects for inspiration!')
+				$('.inputs.second, #h2, #h3').fadeIn(400);
+				index = 2;
+			}
 		})
 		$("li.third").click(function(){
-			$('.inputs, #h2, #h3').hide();
-			$('#h2').text('It’s not just a project, it’s a story.');
-			$('#h3').text('Tell it with a video. It doesn’t have to be fancy, it just has to be you.')
-			$('.inputs.third, #h2, #h3').fadeIn(400);
+			if(index !=3) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text('It’s not just a project, it’s a story.');
+				$('#h3').text('Tell it with a video. It doesn’t have to be fancy, it just has to be you.')
+				$('.inputs.third, #h2, #h3').fadeIn(400);
+				index = 3;
+			}
 		})
 	});
