@@ -493,8 +493,8 @@ waiting_confirmation.es.png: waiting_confirmation.es-9e274e199481fbad9a5649ca4f9
 waiting_confirmation/index.es.png: waiting_confirmation.es-9e274e199481fbad9a5649ca4f92f8c5.png
 waiting_confirmation.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
 waiting_confirmation/index.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
-application.js: application-5d81196b14fcbae222140750b77dc506.js
-application/index.js: application-5d81196b14fcbae222140750b77dc506.js
+application.js: application-fb608086e3ae78298b0b262e337ec8ae.js
+application/index.js: application-fb608086e3ae78298b0b262e337ec8ae.js
 application.css: application-15ab648b297cb09b001c403dc101131f.css
 application/index.css: application-15ab648b297cb09b001c403dc101131f.css
 catarse.css: catarse-962c76eee699b3f4f25eb7207c618199.css
