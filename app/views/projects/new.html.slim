@@ -300,6 +300,7 @@ sass:
 	.clearfix
 javascript:
 	$(window).load(function(){
+		$('.remove_nested_fields:first').hide();
 		var index = index || 1;
 		$("li.first").click(function(){
 			if(index != 1) {
@@ -394,7 +395,4 @@ javascript:
 		        }
 		    }
 		});
-		$( ".deletebutton" ).on( "click", function(){
-			alert('test');
-		});	
 	});
