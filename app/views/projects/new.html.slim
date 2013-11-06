@@ -146,18 +146,6 @@ sass:
 							span
 								color: $blue-one
 
-						.progress-percent
-							font-size: .6em
-							text-transform: uppercase
-							vertical-align: middle
-							margin: 0 0 .8em
-							span
-								font-weight: bold
-								font-size: 1.4em
-								line-height: 1.4em
-								position: relative
-								top: .1em
-
 						.progress-bar
 							#progress_wrapper, #progress
 								height: .6em
@@ -166,7 +154,7 @@ sass:
 							#progress
 								background: $green-one
 
-						.time-remaining, .money-raised
+						.time-remaining, .money-raised, .progress-percent
 							float: left
 							padding: 1em 0
 							text-transform: uppercase
@@ -178,6 +166,9 @@ sass:
 								font-size: 1.4em
 								text-transform: none
 								margin-bottom: .2em
+
+						.time-remaining
+							margin-left: 25px
 
 						.money-raised
 							float: right
@@ -315,8 +306,8 @@ sass:
 						    .headline  = 'Subtitle'
 						  .status
 						    .padding
-						      p.progress-percent = t('channels.projects.progress_html', percent: '0')
 						      .progress-bar = @project.progress_bar(dummy=true)
+						      .progress-percent = t('channels.projects.progress_html', percent: '0')
 						      .time-remaining
 						      	= t('channels.projects.time_remaining_html', count: '0', unit: 'days')
 						      .money-raised

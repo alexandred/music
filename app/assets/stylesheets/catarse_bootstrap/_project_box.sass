@@ -87,18 +87,6 @@ $blue-two: #79808B
     span
       color: $blue-one
 
-  .progress-percent
-    font-size: .6em
-    text-transform: uppercase
-    vertical-align: middle
-    margin: 0 0 .8em
-    span
-      font-weight: bold
-      font-size: 1.4em
-      line-height: 1.4em
-      position: relative
-      top: .1em
-
   .progress-bar
     #progress_wrapper, #progress
       height: .6em
@@ -108,7 +96,7 @@ $blue-two: #79808B
       background: $green-one
       +background-image(linear-gradient(0deg,lighten($green, 5%) 0%,$green 1%,lighten($green, 5%) 100%,lighten($green, 15%) 100%)) 
 
-  .time-remaining, .money-raised
+  .time-remaining, .money-raised, .progress-percent
     float: left
     padding: 1em 0
     text-transform: uppercase
@@ -120,6 +108,9 @@ $blue-two: #79808B
       font-size: 1.4em
       text-transform: none
       margin-bottom: .2em
+
+  .time-remaining
+    margin-left: 25px
 
   .money-raised
     float: right

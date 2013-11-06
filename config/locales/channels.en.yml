@@ -20,11 +20,11 @@ en:
       send: "Envie o seu projeto"
       see_how_it_works: "Veja como funciona e envie seu projeto."
       how_it_works: "Como funciona"
-      progress_html: "<span>%{percent}%</span> financiado"
+      progress_html: "<span>%{percent}%</span> funded"
       time_remaining_html:
-        one: "<span>%{count} %{unit}</span> restante"
-        other: "<span>%{count} %{unit}</span> restantes"
-      pledged_html: "<span>%{value}</span> levantados"
+        one: "<span>%{count} %{unit}</span> day to go"
+        other: "<span>%{count} %{unit}</span> days to go"
+      pledged_html: "<span>%{value}</span> pledged"
       new:
         title: "Agooora sim! Envie seu projeto para o Canal Asas"
         subtitle: "A hora de montar o seu projeto é agora. Estamos loucos para saber o que você está aprontando..."
