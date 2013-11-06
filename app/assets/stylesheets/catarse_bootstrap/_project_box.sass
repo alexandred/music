@@ -26,12 +26,34 @@ $blue-two: #79808B
     position: absolute
   a
     text-decoration: none
-  .image
-    opacity: 1
-    &:hover
-      opacity: .9
-      > .title a
-        text-decoration: underline !important
+  .wrapper
+    position: relative
+    .image
+      opacity: 1
+      margin-bottom: 0px
+      padding-bottom: 0px
+      &:hover
+        opacity: .9
+        > .title a
+          text-decoration: underline !important
+    .category
+      height: 15px
+      background-color: #dddddd
+      width: 70%
+      color: black
+      text-align: center
+      font-size: 12px
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      padding-top: 4px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 3px
+      border-top-left-radius: 2px
+      border-top-right-radius: 2px
+      color: $blue-two
 
   .title
     margin: .4em 0

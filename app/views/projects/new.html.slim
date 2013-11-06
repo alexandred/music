@@ -86,12 +86,32 @@ sass:
 							position: absolute
 						a
 							text-decoration: none
-						.templateimage
-							opacity: 1
-							&:hover
-							opacity: .9
-							> .title a
-								text-decoration: underline !important
+						.wrapper
+							position: relative
+							.templateimage
+								opacity: 1
+								&:hover
+								opacity: .9
+								> .title a
+									text-decoration: underline !important
+						    .category
+								height: 15px
+								background-color: #dddddd
+								width: 70%
+								color: black
+								text-align: center
+								font-size: 12px
+								position: absolute
+								bottom: 0
+								left: 0
+								right: 0
+								padding-top: 4px
+								margin-left: auto
+								margin-right: auto
+								margin-bottom: 3px
+								border-top-left-radius: 2px
+								border-top-right-radius: 2px
+								color: $blue-two
 
 						.name
 							margin: .4em 0
@@ -254,6 +274,7 @@ sass:
 								  	 	= rewards.text_field :days_to_delivery
 								  	 	.hint= "#{t('formtastic.hints.reward.days_to_delivery')}"
 							  = f.link_to_add "Add reward", :rewards, class: 'btn btn-success'
+						  .dummy style="height:30px"
 					.inputs.third style="display:none;"
 						  .block
 						      = f.label :video_url, t('formtastic.labels.project.video')
@@ -273,6 +294,7 @@ sass:
 						      = f.label :paypal, t('formtastic.labels.project.paypal')
 						      = f.text_field :paypal
 							  .hint= "#{t('formtastic.hints.project.paypal')}"
+						  .dummy style="height: 100px"
 					.inputs.fifth style="display:none;"
 						  .block
 						  	  .review
@@ -285,10 +307,12 @@ sass:
 					.template
 						.project-box[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
 						  meta[itemprop="dateCreated"]
-						  .templateimage = "No video entered"
+						  .wrapper
+						  	.templateimage = image_tag '/assets/videodummy.png'
+						  	.category = "Architecture & Urbanism"
 						  .padding
-						    h4.name    = 'Name'
-						    p.headline  = 'Subtitle'
+						    .name    = 'Name'
+						    .headline  = 'Subtitle'
 						  .status
 						    .padding
 						      p.progress-percent = t('channels.projects.progress_html', percent: '0')
@@ -386,6 +410,9 @@ javascript:
 			if (!$("#days-input").val()) {
 				$('.time-remaining').children('span').text('0 days');
 			}
+		});
+		$("#project_category_id").change(function(){
+			$('.category').text($("#project_category_id").find('option:selected').text());
 		});
 		$('#days-input, #goal-input').on('keypress', function(ev) {
 		    var keyCode = window.event ? ev.keyCode : ev.which;
