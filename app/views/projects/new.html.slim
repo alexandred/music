@@ -154,7 +154,7 @@ sass:
 							#progress
 								background: $green-one
 
-						.time-remaining, .money-raised, .progress-percent
+						.time-remaining, .money-raised, .percentage
 							float: left
 							padding: 1em 0
 							text-transform: uppercase
@@ -307,7 +307,7 @@ sass:
 						  .status
 						    .padding
 						      .progress-bar = @project.progress_bar(dummy=true)
-						      .progress-percent = t('channels.projects.progress_html', percent: '0')
+						      .percentage = t('channels.projects.progress_html', percent: '0')
 						      .time-remaining
 						      	= t('channels.projects.time_remaining_html', count: '0', unit: 'days')
 						      .money-raised
