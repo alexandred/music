@@ -15,7 +15,7 @@ header.header style="position:fixed; z-index:100; top:0px"
     nav.header-nav
       ul
         li.header-nav-li
-          = link_to t('layouts.header.submit'), guidelines_start_path, :class => 'submit-project'
+          = link_to t('layouts.header.submit'), new_project_path, :class => 'submit-project'
           = " | "
           = link_to t('layouts.header.explore'), explore_path, :class => 'explore'
         li.header-nav-li.search
