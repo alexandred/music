@@ -102,7 +102,7 @@ sass:
 								text-align: center
 								font-size: 12px
 								position: absolute
-								bottom: 0
+								bottom: -3px
 								left: 0
 								right: 0
 								padding-top: 4px
@@ -385,15 +385,15 @@ javascript:
 			    });
 		});
 		$("#name-input").keyup(function(){
-			$('h4.name').text($("#name-input").val());
+			$('.name').text($("#name-input").val());
 			if (!$("#name-input").val()) {
-				$('h4.name').text('Name');
+				$('.name').text('Name');
 			}
 		});
 		$("#headline-input").keyup(function(){
-			$('p.headline').text($("#headline-input").val());
+			$('.headline').text($("#headline-input").val());
 			if (!$("#headline-input").val()) {
-				$('p.headline').text('Subtitle');
+				$('.headline').text('Subtitle');
 			}
 		});
 		$("#days-input").keyup(function(){
