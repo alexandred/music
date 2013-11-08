@@ -608,6 +608,16 @@ en:
       submit: "Submit the project"
       subtitle: "Show us what you want to achieve..."
       title: "Submit your project"
+      firstheader: 'Meet your new project'
+      firstsubheader: 'Start by giving it a name, a pic, and other important details.'
+      secondheader: 'Every project needs great rewards.'
+      secondsubheader: 'Be creative and price them fairly. Explore other projects for inspiration!'
+      thirdheader: 'It’s not just a project, it’s a story.'
+      thirdsubheader: 'Tell it with a video. It doesn’t have to be fancy, it just has to be you.'
+      fourthheader: 'Account settings header.'
+      fourthsubheader: 'Account settings subheader'
+      fifthheader: 'Review header.'
+      fifthsubheader: 'Review subheader'
     twitter:
       take_a_look: "Check out %{name} on @catarse"
     video_embed:

@@ -320,8 +320,8 @@ javascript:
 		$("li.first").click(function(){
 			if(index != 1) {
 				$('.inputs, #h2, #h3').hide();
-				$('#h2').text('Meet your new project');
-				$('#h3').text('Start by giving it a name, a pic, and other important details.')
+				$('#h2').text("#{t('.firstheader')}");
+				$('#h3').text("#{t('.firstsubheader')}")
 				$('.inputs.first, #h2, #h3').fadeIn(400);
 				index = 1;
 			}
@@ -329,8 +329,8 @@ javascript:
 		$("li.second").click(function(){
 			if(index != 2) {
 				$('.inputs, #h2, #h3').hide();
-				$('#h2').text('Every project needs great rewards.');
-				$('#h3').text('Be creative and price them fairly. Explore other projects for inspiration!')
+				$('#h2').text("#{t('.secondheader')}");
+				$('#h3').text("#{t('.secondsubheader')}")
 				$('.inputs.second, #h2, #h3').fadeIn(400);
 				index = 2;
 			}
@@ -338,8 +338,8 @@ javascript:
 		$("li.third").click(function(){
 			if(index !=3) {
 				$('.inputs, #h2, #h3').hide();
-				$('#h2').text('It’s not just a project, it’s a story.');
-				$('#h3').text('Tell it with a video. It doesn’t have to be fancy, it just has to be you.')
+				$('#h2').text("#{t('.thirdheader')}");
+				$('#h3').text("#{t('.thirdsubheader')}")
 				$('.inputs.third, #h2, #h3').fadeIn(400);
 				index = 3;
 			}
@@ -347,8 +347,8 @@ javascript:
 		$("li.fourth").click(function(){
 			if(index !=4) {
 				$('.inputs, #h2, #h3').hide();
-				$('#h2').text('Account settings header.');
-				$('#h3').text('Account settings subheader')
+				$('#h2').text("#{t('.fourthheader')}");
+				$('#h3').text("#{t('.fourthsubheader')}")
 				$('.inputs.fourth, #h2, #h3').fadeIn(400);
 				index = 4;
 			}
@@ -356,8 +356,8 @@ javascript:
 		$("li.fifth").click(function(){
 			if(index !=5) {
 				$('.inputs, #h2, #h3').hide();
-				$('#h2').text('Review header.');
-				$('#h3').text('Review subheader')
+				$('#h2').text("#{t('.fifthheader')}");
+				$('#h3').text("#{t('.fifthsubheader')}")
 				$('.inputs.fifth, #h2, #h3').fadeIn(400);
 				index = 5;
 			}
