@@ -199,7 +199,7 @@ sass:
 		ul
 			padding: 10px 10px 10px 10px
 			background: black
-			width: 100%
+			width: auto
 			z-index: 100
 			li
 				background: #00b22d
@@ -428,15 +428,16 @@ javascript:
 		    }
 		});
 		$(window).scroll(function () {
-		var height = $('ul#progressbar').offset().top;
 		if($(window).scrollTop() >= 86) {
 		$('#bodyspacer').css('display','block');
 		$('ul#progressbar').css('top','0');
 		$('ul#progressbar').css('position','fixed');
+		$('ul#progressbar').css('width','100%');
 		} else {
 		$('#bodyspacer').css('display','none');
 		$('ul#progressbar').css('top','auto');
-		$('ul#progressbar').css('position','static');		
+		$('ul#progressbar').css('position','static');
+		$('ul#progressbar').css('width','auto');		
 		}
 		});
 	});
