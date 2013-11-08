@@ -43,6 +43,13 @@ sass:
 							color: #79808B
 						.review
 							margin: 10px
+							font-weight: bold
+							color: rgba(0, 0, 0, 0.8)
+							ol
+								margin-left: 10px
+								margin-top: 0px
+								li
+									margin: 10px 0px
 						margin: 10px 10px 10px 10px
 						padding: 5px 5px 10px 5px
 						background: #dddddd
@@ -193,6 +200,7 @@ sass:
 			padding: 10px 10px 10px 10px
 			background: black
 			width: 100%
+			z-index: 100
 			li
 				background: #00b22d
 				border-radius: 3px
@@ -208,6 +216,7 @@ sass:
   .container
   	.bootstrap-form
 	    = nested_form_for @project, html: { id: 'project_form' } do |f|
+	    	#bodyspacer style="display:none; height: 36px; width: 100%;"
 	        ul#progressbar
 	          li.first Basics
 	          li.second Rewards
@@ -289,7 +298,7 @@ sass:
 					.inputs.fifth style="display:none;"
 						  .block
 						  	  .review
-						  	  	= "#{t('formtastic.hints.project.review')}"
+						  	  	= "#{t('formtastic.hints.project.review')}".html_safe
 						  	  = f.label :accepted_terms, t('accept_terms_html', link: link_to(t('terms'), t('footer.links.terms_link'), target: :_blank)), class: 'inline'
 						  	  = f.check_box :accepted_terms, style: "float: none; display: inline; ,margin: 5px"
 			                  .bootstrap-twitter
@@ -319,6 +328,7 @@ javascript:
 		var index = index || 1;
 		$("li.first").click(function(){
 			if(index != 1) {
+				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.firstheader')}");
 				$('#h3').text("#{t('.firstsubheader')}")
@@ -328,6 +338,7 @@ javascript:
 		});
 		$("li.second").click(function(){
 			if(index != 2) {
+				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.secondheader')}");
 				$('#h3').text("#{t('.secondsubheader')}")
@@ -337,6 +348,7 @@ javascript:
 		});
 		$("li.third").click(function(){
 			if(index !=3) {
+				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.thirdheader')}");
 				$('#h3').text("#{t('.thirdsubheader')}")
@@ -346,6 +358,7 @@ javascript:
 		});
 		$("li.fourth").click(function(){
 			if(index !=4) {
+				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fourthheader')}");
 				$('#h3').text("#{t('.fourthsubheader')}")
@@ -355,6 +368,7 @@ javascript:
 		});
 		$("li.fifth").click(function(){
 			if(index !=5) {
+				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fifthheader')}");
 				$('#h3').text("#{t('.fifthsubheader')}")
@@ -412,5 +426,17 @@ javascript:
 		            ev.preventDefault();
 		        }
 		    }
+		});
+		$(window).scroll(function () {
+		var height = $('ul#progressbar').offset().top;
+		if($(window).scrollTop() >= 86) {
+		$('#bodyspacer').css('display','block');
+		$('ul#progressbar').css('top','0');
+		$('ul#progressbar').css('position','fixed');
+		} else {
+		$('#bodyspacer').css('display','none');
+		$('ul#progressbar').css('top','auto');
+		$('ul#progressbar').css('position','static');		
+		}
 		});
 	});

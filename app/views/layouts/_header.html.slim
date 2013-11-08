@@ -1,14 +1,4 @@
-sass:
-  header
-    background: rgba(255, 255, 255, 0.9) !important
-    -webkit-transition: background 0.25s ease-in-out
-    -moz-transition: background 0.25s ease-in-out
-    -ms-transition: background 0.25s ease-in-out
-    -o-transition: background 0.25s ease-in-out
-    transition: background 0.25s ease-in-out
-    &:hover
-      background: rgba(255, 255, 255, 1) !important
-header.header style="position:fixed; z-index:100; top:0px"
+header.header
   .centered
     h1
       = link_to "#{Configuration[:company_name]}", root_url(host: Configuration[:base_domain] || request.domain), :class => 'logo', :title => Configuration[:company_name]
