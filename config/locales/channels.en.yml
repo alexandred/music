@@ -22,8 +22,8 @@ en:
       how_it_works: "Como funciona"
       progress_html: "<span>%{percent}%</span> funded"
       time_remaining_html:
-        one: "<span>%{count} %{unit}</span> day to go"
-        other: "<span>%{count} %{unit}</span> days to go"
+        one: "<span>%{count} %{unit}</span> to go"
+        other: "<span>%{count} %{unit}</span> to go"
       pledged_html: "<span>%{value}</span> pledged"
       new:
         title: "Agooora sim! Envie seu projeto para o Canal Asas"

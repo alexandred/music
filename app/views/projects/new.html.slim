@@ -411,9 +411,9 @@ javascript:
 			}
 		});
 		$("#days-input").keyup(function(){
-			$('.time-remaining').children('span').text($("#days-input").val());
+			$('.time-remaining').children('span').text($("#days-input").val() + ' days');
 			if (!$("#days-input").val()) {
-				$('.time-remaining').children('span').text('0');
+				$('.time-remaining').children('span').text('0' + ' days');
 			}
 		});
 		$("#project_category_id").change(function(){

@@ -24,8 +24,7 @@ class Project < ActiveRecord::Base
 
   has_one :project_total
   accepts_nested_attributes_for :rewards,
-    :allow_destroy => true#,
-    #:reject_if     => :all_blank
+    :allow_destroy => true
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 
