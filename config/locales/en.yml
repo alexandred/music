@@ -519,6 +519,7 @@ en:
       empty: "Nobody has backed this project so far. Why not be the first?"
       confirmed: "Confirmed"
       pending: "Pending"
+      onerequired: "You must have at least one reward"
     project_header:
       subtitle_html: "A project by %{link}"
       without_city: "A project in %{category_name} by %{author}"

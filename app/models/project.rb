@@ -28,6 +28,12 @@ class Project < ActiveRecord::Base
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 
+  validate :has_at_least_one_reward
+
+  def has_at_least_one_reward
+    errors.add(:base, 'must have at least one reward') if self.rewards.blank?
+  end
+
   pg_search_scope :pg_search, against: [
       [:name, 'A'],
       [:headline, 'B'],

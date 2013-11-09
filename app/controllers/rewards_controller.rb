@@ -25,6 +25,10 @@ class RewardsController < ApplicationController
   end
 
   def destroy
+    if resource.project.rewards.size == 1
+      flash[:error] = t('projects.project_backers.onerequired')
+      return redirect_to project_by_slug_path(permalink: resource.project.permalink)
+    end
     destroy! { project_by_slug_path(permalink: resource.project.permalink) }
   end
 
