@@ -487,6 +487,8 @@ twitter_share.png: twitter_share-81710fffe333b83bf0e78d16e537b84a.png
 twitter_share/index.png: twitter_share-81710fffe333b83bf0e78d16e537b84a.png
 user.png: user-ca8b73fa63abc8691ac8ee382b5ec305.png
 user/index.png: user-ca8b73fa63abc8691ac8ee382b5ec305.png
+videodummy.png: videodummy-970e4a3167bd1d309bb4192ec51135ef.png
+videodummy/index.png: videodummy-970e4a3167bd1d309bb4192ec51135ef.png
 waiting_confirmation.en.png: waiting_confirmation.en-bb257d6f52eba5951bd42413363d1025.png
 waiting_confirmation/index.en.png: waiting_confirmation.en-bb257d6f52eba5951bd42413363d1025.png
 waiting_confirmation.es.png: waiting_confirmation.es-9e274e199481fbad9a5649ca4f92f8c5.png
@@ -495,10 +497,10 @@ waiting_confirmation.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627
 waiting_confirmation/index.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
 application.js: application-fb608086e3ae78298b0b262e337ec8ae.js
 application/index.js: application-fb608086e3ae78298b0b262e337ec8ae.js
-application.css: application-15ab648b297cb09b001c403dc101131f.css
-application/index.css: application-15ab648b297cb09b001c403dc101131f.css
-catarse.css: catarse-962c76eee699b3f4f25eb7207c618199.css
-catarse/index.css: catarse-962c76eee699b3f4f25eb7207c618199.css
+application.css: application-f33df1db9741bdd11a82266ac7fdd240.css
+application/index.css: application-f33df1db9741bdd11a82266ac7fdd240.css
+catarse.css: catarse-15b0115bc2a44d6285c889af4b3b5dd0.css
+catarse/index.css: catarse-15b0115bc2a44d6285c889af4b3b5dd0.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 catarse_moip.js: catarse_moip-1873830ba9729fb4dbc61d92cb97e337.js
