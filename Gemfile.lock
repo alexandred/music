@@ -32,9 +32,9 @@ GIT
 
 GIT
   remote: https://github.com/alexandred/catarse_stripe
-  revision: dc645b6597fb6daeb18dfbb097a05f1d1f280eca
+  revision: a8c529e7340a10794edc64a245914d5ea904df36
   specs:
-    catarse_stripe (0.1.0.0.1)
+    catarse_stripe (0.1.0.0.2)
       activemerchant (>= 1.17.0)
       figaro
       oauth2
