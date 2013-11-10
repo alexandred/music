@@ -78,7 +78,11 @@ end
   instagram_url: 'http://instagram.com/catarse_',
   blog_url: "http://blog.catarse.me",
   github_url: 'http://github.com/catarse',
-  contato_url: 'http://suporte.catarse.me/'
+  contato_url: 'http://suporte.catarse.me/',
+  stripe_api_key: 'pk_test_Cn1EzZY1Z9JqEnRC7q6Ro3tE',
+  stripe_secret_key: 'sk_test_kPcf0Yb4LTS95jqvojnNn2ls',
+  stripe_test: 'TRUE',
+  stripe_client_id: 'ca_2uW3Flc20I4UqjNiwOGyDyZUv3Xi8kua'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({

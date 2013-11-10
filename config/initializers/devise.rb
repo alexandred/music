@@ -5,6 +5,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "Catarse <system@catarse.me>"
+
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
@@ -249,4 +250,5 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
+   config.secret_key = '503f1959d3daa074c797a8693bff03f2c19eefd972f35cdc8b6c27dc24599a5e652b10f31b941b3b513eabbd8cbc011c988421b2c3f3cb3c8093758d83226c8c'
 end

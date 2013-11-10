@@ -43,6 +43,7 @@ class ProjectsController < ApplicationController
     create!(notice: t('projects.create.success')) do |success, failure|
       success.html{ return redirect_to project_by_slug_path(@project.permalink) }
     end
+    check_for_stripe_keys
   end
 
   def update
@@ -57,6 +58,7 @@ class ProjectsController < ApplicationController
     fb_admins_add(resource.user.facebook_id) if resource.user.facebook_id
     @updates_count = resource.updates.count
     @update = resource.updates.where(id: params[:update_id]).first if params[:update_id].present?
+    check_for_stripe_keys
   end
 
   def video
@@ -81,4 +83,16 @@ class ProjectsController < ApplicationController
   def resource
     @project ||= (params[:permalink].present? ? Project.by_permalink(params[:permalink]).first! : Project.find(params[:id]))
   end
+def check_for_stripe_keys
+  if @project.stripe_userid.nil?
+    [:stripe_access_token, :stripe_key, :stripe_userid].each do |field|
+      @project.send("#{field.to_s}=", @project.user.send(field).dup)
+    end
+  elsif @project.stripe_userid != @project.user.stripe_userid
+    [:stripe_access_token, :stripe_key, :stripe_userid].each do |field|
+      @project.send("#{field.to_s}=", @project.user.send(field).dup)
+    end
+  end
+  @project.save
+end  
 end

@@ -29,11 +29,13 @@ gem 'schema_associations'
 gem 'chartkick'
 
 # Payment engine using Paypal
-gem 'catarse_paypal_express', '~> 1.0.0'
+#gem 'catarse_paypal_express', '~> 1.0.0'
 
 # Payment engine using Moip
-gem 'catarse_moip', '~> 1.0.9'
+#gem 'catarse_moip', '~> 1.0.9'
 #gem 'catarse_moip', path: '../catarse_moip'
+gem 'catarse_stripe', :git => 'https://github.com/alexandred/catarse_stripe'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 # Decorators
