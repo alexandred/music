@@ -35,7 +35,6 @@ gem 'chartkick'
 #gem 'catarse_moip', '~> 1.0.9'
 #gem 'catarse_moip', path: '../catarse_moip'
 gem 'catarse_stripe', :git => 'https://github.com/alexandred/catarse_stripe'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 # Decorators
@@ -85,7 +84,7 @@ gem 'http_accept_language'
 gem 'routing-filter'
 
 # Payment
-gem 'moip', git: 'git://github.com/catarse/moip-ruby.git'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'activemerchant', '>= 1.17.0', require: 'active_merchant'
 gem 'httpclient',     '>= 2.2.5'
 
