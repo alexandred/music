@@ -8,15 +8,6 @@ GIT
       supermodel
 
 GIT
-  remote: git://github.com/catarse/moip-ruby.git
-  revision: 39f9dab38fc33fe9bf614deb8e90ca166ab2d6bf
-  specs:
-    moip (1.0.2)
-      activesupport (>= 2.3.2)
-      httparty (~> 0.6.1)
-      nokogiri (~> 1.5.0)
-
-GIT
   remote: git://github.com/ncri/validation_reflection.git
   revision: 60320e6beb088808fd625a8d958dbd0d2661d494
   specs:
@@ -506,7 +497,6 @@ DEPENDENCIES
   launchy
   letter_opener
   mail (= 2.5.3)
-  moip!
   nested_form
   newrelic_rpm (= 3.6.5.130)
   omniauth
