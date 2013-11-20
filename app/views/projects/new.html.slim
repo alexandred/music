@@ -50,13 +50,28 @@ sass:
 								margin-top: 0px
 								li
 									margin: 10px 0px
+						.stripe_info
+							display: inline
+							margin-left: 100px
+							a
+								img
+									vertical-align: top
+									margin-bottom: 10px
+									margin-top: 5px
+						.refresh
+						    margin-left: 10px
+						    margin-top: 18px
+						    font-size: 20px
+						    padding: 5px
+						   	a
+							    text-decoration: none
+							    color: rgb(255, 255, 255)
 						margin: 10px 10px 10px 10px
 						padding: 5px 5px 10px 5px
 						background: #dddddd
 						border: 0 none
 						border-radius: 5px
 					.reward
-						border-bottom: 1px dotted
 						margin-bottom: 15px
 						margin-top: 10px
 						padding-bottom: 10px
@@ -70,6 +85,17 @@ sass:
 							float: right
 							margin-right: 10px
 							margin-top: 10px
+						.border
+							padding-top: 35px
+							margin: 0 auto
+							width: 70%
+							border-bottom: 1px dotted
+					.add_nested_fields
+						margin: 5px auto 25px auto
+						left: 0
+						right: 0
+						display: block
+						width: 80px
 
 				.template
 					text-align: left
@@ -196,7 +222,7 @@ sass:
 					border: none
 					padding-top: 10px
 					padding-bottom: 10px
-		ul
+		ul#progressbar
 			padding: 10px 10px 10px 10px
 			background: black
 			width: auto
@@ -209,6 +235,33 @@ sass:
 				display: inline
 				color: white
 				cursor: pointer
+		ul#navbar
+		    display: inline-block
+		    top: 0px
+		    vertical-align: top
+		    margin-top: 30px
+		    li
+		    	background: #dddddd
+			    padding: 5px 15px 5px 5px
+			    margin-bottom: 20px
+			    border-top-left-radius: 5px
+			    border-bottom-left-radius: 5px
+			    color: rgba(0, 0, 0, 0.8)
+		    	opacity: 1
+			    -moz-transition: all 0.2s ease-in
+			    -o-transition: all 0.2s ease-in
+			    -webkit-transition: all 0.2s ease-in
+			    -ms-transition: all 0.2s ease-in
+			    transition: all 0.2s ease-in
+			    cursor: pointer
+			    &:hover
+			    	opacity: 0.6
+				    -moz-transition: all 0.2s ease-out
+				    -o-transition: all 0.2s ease-out
+				    -webkit-transition: all 0.2s ease-out
+				    -ms-transition: all 0.2s ease-out
+				    transition: all 0.2s ease-out
+
 
 
 		
@@ -216,8 +269,8 @@ sass:
   .container
   	.bootstrap-form
 	    = nested_form_for @project, html: { id: 'project_form' } do |f|
-	    	#bodyspacer style="display:none; height: 36px; width: 100%;"
-	        ul#progressbar
+	    	/#bodyspacer style="display:none; height: 36px; width: 100%;"
+	        /ul#progressbar
 	          li.first Basics
 	          li.second Rewards
 	          li.third Story
@@ -228,6 +281,12 @@ sass:
 				  h2#h2 Meet your new project
 				  h3#h3 Start by giving it a name, a pic, and other important details.
 				.panel
+			        ul#navbar
+			          li.first Basics
+			          li.second Rewards
+			          li.third Story
+			          li.fourth Account
+			          li.fifth Review
 					.inputs.first
 						  .block
 						      = f.label :permalink, t('formtastic.labels.project.permalink')
@@ -273,8 +332,12 @@ sass:
 								  	 	= rewards.label :days_to_delivery, t('activerecord.attributes.reward.days_to_delivery')
 								  	 	= rewards.text_field :days_to_delivery
 								  	 	.hint= "#{t('formtastic.hints.reward.days_to_delivery')}"
+								  	.block
+								  	 	= rewards.label :maximum_backers, t('activerecord.attributes.reward.maximum_backers')
+								  	 	= rewards.text_field :maximum_backers
+								  	 	.hint= "#{t('formtastic.hints.reward.maximum_backers')}"
+									.border
 							  = f.link_to_add "Add reward", :rewards, class: 'btn btn-success'
-						  .dummy style="height:30px"
 					.inputs.third style="display:none;"
 						  .block
 						      = f.label :video_url, t('formtastic.labels.project.video')
@@ -291,9 +354,17 @@ sass:
 						      = f.hidden_field :govid_cache
 							  .hint= "#{t('formtastic.hints.project.identification')}".html_safe
 						  .block
-						      = f.label :paypal, t('formtastic.labels.project.paypal')
-						      = f.text_field :paypal
-							  .hint= "#{t('formtastic.hints.project.paypal')}"
+						      = f.label :paypal, t('formtastic.labels.project.stripe')
+						      .stripe_info
+								  - if current_user.stripe_key.blank?
+								  	= link_to( image_tag('catarse_stripe/auth/stripe_blue.png'), '/payment/stripe/auth', target: "_blank")
+								  - else
+								  	= t('formtastic.hints.project.stripe_activated')
+							  .hint= "#{t('formtastic.hints.project.stripe')}"
+							  - if current_user.stripe_key.blank?
+							      .bootstrap-twitter
+							      	.refresh.btn.btn-success
+							      		= link_to '↻', stripe_info_path, remote: true
 						  .dummy style="height: 100px"
 					.inputs.fifth style="display:none;"
 						  .block
@@ -427,6 +498,7 @@ javascript:
 		        }
 		    }
 		});
+		/*
 		$(window).scroll(function () {
 		if($(window).scrollTop() >= 86) {
 		$('#bodyspacer').css('display','block');
@@ -440,4 +512,5 @@ javascript:
 		$('ul#progressbar').css('width','auto');		
 		}
 		});
+		*/
 	});

@@ -16,15 +16,17 @@ class Project < ActiveRecord::Base
   schema_associations
   belongs_to :user
   has_many :backers, dependent: :destroy
-  has_many :rewards, dependent: :destroy
+  has_many :rewards, dependent: :destroy, autosave: true
   has_many :updates, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
   has_and_belongs_to_many :channels
 
   has_one :project_total
+
   accepts_nested_attributes_for :rewards,
-    :allow_destroy => true
+    :allow_destroy => true,
+    :reject_if => :all_blank
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 

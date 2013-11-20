@@ -65,6 +65,7 @@ Catarse::Application.routes.draw do
 
 
   match "/explore" => "explore#index", as: :explore
+  match "/stripe_info" => "projects#stripe_info", as: :stripe_info
 
   resources :posts, only: [:index, :create]
 

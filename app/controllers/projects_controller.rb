@@ -78,6 +78,12 @@ class ProjectsController < ApplicationController
     render layout: false
   end
 
+  def refresh_stripe
+    respond_to do |format|
+      format.js
+    end
+  end
+
   protected
 
   def resource

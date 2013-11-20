@@ -1,0 +1,4 @@
+- if current_user.stripe_key.blank?
+	= link_to( image_tag('catarse_stripe/auth/stripe_blue.png'), '/payment/stripe/auth', target: "_blank")
+- else
+	= t('formtastic.hints.project.stripe_activated')
