@@ -206,7 +206,7 @@ class Backer < ActiveRecord::Base
     end
 
     event :refund do
-      transition [:requested_refund, :confirmed] => :refunded
+      transition [:requested_refund, :confirmed] => :refunded_and_canceled
     end
 
     event :hide do
