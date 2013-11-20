@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/alexandred/catarse_stripe
-  revision: 2faa93c881b13baa12d9104f0ea83d37b92307ab
+  revision: 56871b217d89630ad5139118a167135af44487aa
   specs:
     catarse_stripe (0.2)
       activemerchant (>= 1.17.0)
