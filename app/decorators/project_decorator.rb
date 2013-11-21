@@ -42,11 +42,11 @@ class ProjectDecorator < Draper::Decorator
   end
 
   def display_pledged
-    number_to_currency source.pledged
+    number_to_currency source.pledged, unit: ISO4217::Currency.from_code(source.currency).symbol
   end
 
   def display_goal
-    number_to_currency source.goal
+    number_to_currency source.goal, unit: ISO4217::Currency.from_code(source.currency).symbol
   end
 
   def progress_bar(dummy=false)
