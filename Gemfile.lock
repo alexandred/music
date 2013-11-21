@@ -23,7 +23,8 @@ GIT
 
 GIT
   remote: https://github.com/alexandred/catarse_stripe
-  revision: 9add848f208773d7cfed5d97b9a4910fe827c730
+  revision: 35cae071d807333f1a43459a055b6838b0ff5807
+  branch: music
   specs:
     catarse_stripe (0.2)
       activemerchant (>= 1.17.0)
