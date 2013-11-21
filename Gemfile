@@ -34,7 +34,7 @@ gem 'chartkick'
 # Payment engine using Moip
 #gem 'catarse_moip', '~> 1.0.9'
 #gem 'catarse_moip', path: '../catarse_moip'
-gem 'catarse_stripe', :git => 'https://github.com/alexandred/catarse_stripe'
+gem 'catarse_stripe', :git => 'https://github.com/alexandred/catarse_stripe', :branch => "music"
 
 
 # Decorators

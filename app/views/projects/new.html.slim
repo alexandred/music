@@ -241,6 +241,7 @@ sass:
 		    vertical-align: top
 		    margin-top: 30px
 		    li
+		    	text-align: left
 		    	background: #dddddd
 			    padding: 5px 15px 5px 5px
 			    margin-bottom: 20px
@@ -354,6 +355,10 @@ sass:
 						      = f.hidden_field :govid_cache
 							  .hint= "#{t('formtastic.hints.project.identification')}".html_safe
 						  .block
+						  	  = f.label :currency, t('formtastic.labels.project.currency')
+ 							  = f.select :currency, options_for_select((Project.currencies).map {|cur| cur.upcase })
+ 							  .hint= "#{t('formtastic.hints.project.currency')}"
+						  .block
 						      = f.label :paypal, t('formtastic.labels.project.stripe')
 						      .stripe_info
 								  - if current_user.stripe_key.blank?
@@ -365,7 +370,7 @@ sass:
 							      .bootstrap-twitter
 							      	.refresh.btn.btn-success
 							      		= link_to '↻', stripe_info_path, remote: true
-						  .dummy style="height: 100px"
+						  .dummy style="height: 30px"
 					.inputs.fifth style="display:none;"
 						  .block
 						  	  .review
@@ -398,8 +403,8 @@ javascript:
 		$('.remove_nested_fields:first').hide();
 		var index = index || 1;
 		$("li.first").click(function(){
+		$("body, html").animate( {scrollTop: 86}, 'fast');
 			if(index != 1) {
-				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.firstheader')}");
 				$('#h3').text("#{t('.firstsubheader')}")
@@ -408,8 +413,8 @@ javascript:
 			}
 		});
 		$("li.second").click(function(){
+			$("body, html").animate( {scrollTop: 86}, 'fast');
 			if(index != 2) {
-				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.secondheader')}");
 				$('#h3').text("#{t('.secondsubheader')}")
@@ -418,8 +423,8 @@ javascript:
 			}
 		});
 		$("li.third").click(function(){
+			$("body, html").animate( {scrollTop: 86}, 'fast');
 			if(index !=3) {
-				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.thirdheader')}");
 				$('#h3').text("#{t('.thirdsubheader')}")
@@ -428,8 +433,8 @@ javascript:
 			}
 		});
 		$("li.fourth").click(function(){
+			$("body, html").animate( {scrollTop: 86}, 'fast');
 			if(index !=4) {
-				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fourthheader')}");
 				$('#h3').text("#{t('.fourthsubheader')}")
@@ -438,8 +443,8 @@ javascript:
 			}
 		});
 		$("li.fifth").click(function(){
+			$("body, html").animate( {scrollTop: 86}, 'fast');
 			if(index !=5) {
-				$("body, html").scrollTop(86);
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fifthheader')}");
 				$('#h3').text("#{t('.fifthsubheader')}")

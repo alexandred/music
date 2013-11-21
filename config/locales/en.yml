@@ -292,6 +292,7 @@ en:
         stripe: "All payments on Catarse are currently handled by Stripe. Stripe will allow you to keep track of all payments made to you during your campaign."
         review: "You are about to send your project to the Catarse team for review; you will be able to make changes on the project draft page. To ensure that the project is accepted as soon as possible by our curators, make sure you have checked the following:<br><ol><li>All fields in this form have been filled in</li><li>There are no spelling errors in the fields</li><li>Your video does not contain any copyrighted or inappropriate material</li><li>The ID you have provided is valid and matches the information you have provided in your user profile section</li><li>You have taken into consideration the flat fee of 10% that Catarse charges</li><li>Your Paypal email is correct</li><li>You have organised all delivery options for your rewards and you have committed to providing them once your campaign ends</li></ol> If all of these check out, go ahead and click the submit button. Thank you for choosing Catarse."
         stripe_activated: "Your Stripe account has been linked to your project."
+        currency: "Supported countries at this time: United Kingdom, United States, Canada, Ireland."
       reward:
         description: "Describe the reward in a way that attracts people into backing the project."
         maximum_backers: "If the reward is limited, tell us the maximum amount of backers."
@@ -320,6 +321,7 @@ en:
         uploaded_image: "Thumbnail *"
         identification: "Identification"
         stripe: "Stripe"
+        currency: "Currency"
       reward:
         maximum_backers: "Maximum backers (optional)"
         days_to_delivery: "Days to delivery"

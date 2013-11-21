@@ -97,6 +97,10 @@ class Project < ActiveRecord::Base
   validates_format_of :video_url, with: /(https?\:\/\/|)(youtu(\.be|be\.com)|vimeo).*+/, message: I18n.t('project.video_regex_validation')
   validate :permalink_cant_be_route, allow_nil: true
 
+  def self.currencies
+    [:gbp, :usd, :cad, :eur]
+  end
+
   def self.between_created_at(start_at, ends_at)
     return scoped unless start_at.present? && ends_at.present?
     where("created_at between to_date(?, 'dd/mm/yyyy') and to_date(?, 'dd/mm/yyyy')", start_at, ends_at)
