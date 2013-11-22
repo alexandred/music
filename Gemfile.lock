@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/alexandred/catarse_stripe
-  revision: 35cae071d807333f1a43459a055b6838b0ff5807
+  revision: 94c81f0e1aed7d20adc9ce9ffd717463c2e4fe2a
   branch: music
   specs:
     catarse_stripe (0.2)
