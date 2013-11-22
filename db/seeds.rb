@@ -12,10 +12,7 @@ puts 'Seeding the database...'
   { en: 'R&B' },
   { en: 'Rock' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
-   category.update_attributes({
-     name_en: name[:en]
-   })
+   category = Category.find_or_initialize_by_name_en name[:en]
  end
 
 [
