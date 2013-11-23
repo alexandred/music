@@ -1,9 +1,29 @@
-.m-scooch.m-fluid.m-scooch-photos
-	  .m-scooch-inner
-	  	== render @recommends
-	  .m-scooch-controls.m-scooch-bulleted
-	    a.m-active data-m-slide="1" href="#"
-	    a data-m-slide="2" href="#"
-	    a data-m-slide="3" href="#"
+h2.list-title= t('sections.selection.title')
+.carousel
+	.m-scooch.m-fluid.m-scooch-photos
+		  .m-scooch-inner
+		  	== render @recommends
+		  .m-scooch-controls.m-scooch-bulleted
+		    a.m-active data-m-slide="1" href="#"
+		    a data-m-slide="2" href="#"
+		    a data-m-slide="3" href="#"
+h2.list-title= t('sections.recents.title')
+.carousel
+	.m-scooch.m-fluid.m-scooch-photos
+		  .m-scooch-inner
+		  	== render @recent
+		  .m-scooch-controls.m-scooch-bulleted
+		    a.m-active data-m-slide="1" href="#"
+		    a data-m-slide="2" href="#"
+		    a data-m-slide="3" href="#"
+h2.list-title= t('sections.expiring.title')
+.carousel
+	.m-scooch.m-fluid.m-scooch-photos
+		  .m-scooch-inner
+		  	== render @expiring
+		  .m-scooch-controls.m-scooch-bulleted
+		    a.m-active data-m-slide="1" href="#"
+		    a data-m-slide="2" href="#"
+		    a data-m-slide="3" href="#"
 javascript:
 	$('.m-scooch').scooch()
