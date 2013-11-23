@@ -1,0 +1,14 @@
+footer.footer
+	.links
+		.quick_links
+			ul
+				.footer-title Quick Links
+				li= link_to "Explore", explore_path
+				- if current_user
+					li= link_to "My Profile", user_path(current_user)
+				li= link_to "Help", "#{Configuration[:faq_url]}"
+		.social
+			ul
+				.footer-title Social
+				li= link_to t('footer.links.twitter'), "#{::Configuration[:twitter_url]}", target: '_blank'
+				li= link_to t('footer.links.facebook'), "#{::Configuration[:facebook_url]}", target: '_blank'
