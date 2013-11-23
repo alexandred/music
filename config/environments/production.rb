@@ -42,9 +42,6 @@ Catarse::Application.configure do
   #config.assets.compile = false
   config.assets.compile = true
   config.assets.precompile << 'catarse.css'
-  config.sass.load_paths ||= []
-  config.sass.load_paths << "#{Rails.root}/app/assets/stylesheets"
-  config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
 
   # Generate digests for assets URLs
   config.assets.digest = true
