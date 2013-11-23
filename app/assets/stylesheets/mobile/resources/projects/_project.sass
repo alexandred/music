@@ -1,0 +1,68 @@
+$green-one: #00B22D
+$blue-one: #3F4752
+$blue-two: #79808B
+
+.project-box
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+	border: 2px solid #e9e9ec
+	border-radius: 5px
+	width: 220px
+	margin: 0 auto
+	overflow: hidden
+	a
+		text-decoration: none !important
+	.title
+		margin: .4em 0
+		line-height: 1.1em
+		a
+			color: $blue-one
+			font-weight: bold
+			font-size: 0.95em
+			text-decoration: none !important
+	.headline
+		font-size: .8em
+		margin: .8em 0 0 0
+		font-weight: 400
+		a
+			color: $blue-two
+			text-decoration: none !important
+
+	.status
+		text-align: left
+		bottom: 0px
+		width: 100%
+		color: $blue-two
+		span
+			color: $blue-one
+	.padding
+		padding: .2em .8em
+		margn-top: 2px
+
+	.progress-bar
+		#progress_wrapper, #progress
+			height: .6em
+			border-radius: 6px
+			box-shadow: inset 0 0 4px lighten(gray, 15%)
+		#progress
+			background: $green-one
+			//+background-image(linear-gradient(0deg,lighten($green, 5%) 0%,$green 1%,lighten($green, 5%) 100%,lighten($green, 15%) 100%)) 
+
+	.time-remaining, .money-raised, .progress-percent
+		float: left
+		padding: 1em 0
+		text-transform: uppercase
+		font-size: .6em
+		color: $blue-two
+		span
+			display: block
+			font-weight: bold
+			font-size: 1.4em
+			text-transform: none
+			margin-bottom: .2em
+
+	.time-remaining
+		margin-left: 25px
+
+	.money-raised
+		float: right
+		margin-right: 2%

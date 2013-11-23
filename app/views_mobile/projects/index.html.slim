@@ -1,10 +1,9 @@
 .m-scooch.m-fluid.m-scooch-photos
-  .m-scooch-inner
-  	== render @recommends
-  .m-scooch-controls.m-scooch-bulleted
-    a.m-active data-m-slide="1" href="#"
-    a data-m-slide="2" href="#"
-    a data-m-slide="3" href="#"
-
+	  .m-scooch-inner
+	  	== render @recommends
+	  .m-scooch-controls.m-scooch-bulleted
+	    a.m-active data-m-slide="1" href="#"
+	    a data-m-slide="2" href="#"
+	    a data-m-slide="3" href="#"
 javascript:
 	$('.m-scooch').scooch()
