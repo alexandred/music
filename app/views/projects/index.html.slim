@@ -1,4 +1,4 @@
-.banner
+/.banner
   p.post-author= t('main.banner')
 #page_content
   .container
@@ -17,13 +17,6 @@
           = link_to t('main.links.selected'), explore_path(anchor: :recommended), class: "more-projects"
         .projects
           == render @recommends
-
-      section.channel_projects.list
-        header
-          h2.list-title= t('sections.channels.title')
-          = link_to t('main.links.channels'), root_url(subdomain: 'asas'), class: "more-projects"
-        .projects
-          == render @channel_projects
 
       section.expiring_projects.list
         header
