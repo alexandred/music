@@ -1,1 +1,10 @@
-="test"
+.carousel
+	.m-carousel.m-fluid.m-carousel-photos
+	  .m-carousel-inner
+	  	== render @recommends
+	  .m-carousel-controls.m-carousel-bulleted
+	    a data-slide="1" href="#"
+	    a data-slide="2" href="#"
+	    a data-slide="3" href="#"
+javascript:
+	$('.m-carousel').carousel();
