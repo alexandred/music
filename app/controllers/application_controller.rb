@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :redirect_user_back_after_login, unless: :devise_controller?
   before_filter :checkcountdown
+  before_filter :check_for_mobile
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from ActionController::RoutingError, with: :render_404
@@ -26,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso
+  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso, :mobile_device?
 
   before_filter :set_locale
   before_filter :force_http
@@ -35,6 +36,25 @@ class ApplicationController < ActionController::Base
   before_filter do
     @fb_admins = [100000428222603, 547955110]
   end
+
+  #mobile device methods
+  def check_for_mobile
+    session[:mobile_override] = params[:mobile] if params[:mobile]
+    prepare_for_mobile if mobile_device?
+  end
+
+  def prepare_for_mobile
+    prepend_view_path Rails.root + 'app' + 'views_mobile'
+  end
+
+  def mobile_device?
+    if session[:mobile_override]
+      session[:mobile_override] == "1"
+    else
+      (request.user_agent =~ /Mobile|webOS/)
+    end
+  end
+
 
   # We use this method only to make stubing easier
   # and remove FB templates from acceptance tests
