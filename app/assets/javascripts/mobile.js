@@ -18,6 +18,5 @@
 //= require ./lib/backbone.js
 //= require ./lib/skull.js
 //= require_tree ./lib
-//= require_tree ./mobile
 //= require jquery_nested_form
 
