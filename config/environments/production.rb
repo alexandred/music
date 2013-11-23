@@ -42,6 +42,7 @@ Catarse::Application.configure do
   #config.assets.compile = false
   config.assets.compile = true
   config.assets.precompile << 'catarse.css'
+  config.assets.precompile << 'mobile.css.sass'
 
   # Generate digests for assets URLs
   config.assets.digest = true
