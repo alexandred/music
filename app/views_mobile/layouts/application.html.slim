@@ -63,4 +63,9 @@ javascript:
   $('.menu-link').click(function() {
     menu.toggleClass("navpush");
     push.toggleClass("containerpush");
+    if(menu.hasClass("navpush")) {
+      $('body').bind('touchmove', function(e){e.preventDefault()})
+    } else {
+      $('body').unbind('touchmove')
+    }
   });
