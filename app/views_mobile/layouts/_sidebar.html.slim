@@ -19,3 +19,5 @@ nav.menu
 				= link_to "settings", user_path(current_user, anchor: 'settings')
 			li
 				= link_to "log out", destroy_user_session_path, method: :delete
+	.logo
+		= image_tag 'catarse_bootstrap/logo_icon_catarse.png'
