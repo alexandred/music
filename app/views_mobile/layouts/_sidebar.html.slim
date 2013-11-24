@@ -1,15 +1,18 @@
-nav#menu.panel role="navigation"
+nav.menu
 	ul
-		li test
+		li test1
 		li test2
-		li test3
 javascript:
-    $(document).ready(function() {
-        $('.menu-link').bigSlide();
-    });
-sass:
-	.panel
-	    position: fixed
-	    left: -15.625em
-	    width: 15.625em
-	    background: #101820
+	var menu = $('.menu');
+	var push = $('.push');
+
+    var positionOffScreen = {
+      'position': 'fixed',
+      'top': '0',
+      'bottom': '0',
+      'width': '15.625em',
+      'height': '100%'
+    };
+
+    menu.css(positionOffScreen);
+
