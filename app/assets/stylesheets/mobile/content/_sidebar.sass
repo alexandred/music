@@ -1,9 +1,42 @@
 .menu
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif
 	-webkit-transform: translate3d(-15.625em, 0, 0)
 	transform: translate3d(-15.625em, 0, 0)
 	-webkit-transition: all .5s ease
 	transition: all 1s ease
 	background: #101820
+	.profile_image
+		height: 60px
+		img
+			border: 1px #333333
+			box-shadow: rgba(black, 0.3) 1px 1px 2px
+			transition: all, 0.5s
+			border-radius: 20px
+			position: relative
+			float: left
+			margin-top: 10px
+			margin-left: 15px
+		#name
+			overflow: hidden
+			margin: 15px 0px 0px 15px
+			float: left
+			a
+				text-decoration: none
+				color: #fff
+				font-size: 20px
+	ul
+		li
+			border-bottom: 1px solid #263442
+			list-style-type: none
+			&:first-of-type
+				border-top: 1px solid #263442
+			margin-left: 15px
+			padding: 10px 0px 10px 10px
+			a
+				text-decoration: none
+				color: #fff
+				font-size: 20px
+
 .navpush
 	-webkit-transform: translate3d(0, 0, 0)
 	transform: translate3d(0, 0, 0)
@@ -19,3 +52,15 @@
 	transform: translate3d(15.625em, 0, 0)
 	-webkit-transition: all .5s ease
 	transition: all 1s ease
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+.menu-link
+	ul
+		float: left
+		margin-top: 18px
+		margin-left: 5px
+		li
+			background: #101820
+			height: 6px
+			width: 25px
+			margin-bottom: 2px
+			list-style-type: none

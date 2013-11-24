@@ -1,18 +1,15 @@
 nav.menu
+	.profile_image
+		-if current_user
+			= link_to image_tag(current_user.display_image, :size => "40x40"), user_path(current_user)
+			#name
+				= link_to current_user.name, user_path(current_user)
 	ul
-		li test1
-		li test2
-javascript:
-	var menu = $('.menu');
-	var push = $('.push');
-
-    var positionOffScreen = {
-      'position': 'fixed',
-      'top': '0',
-      'bottom': '0',
-      'width': '15.625em',
-      'height': '100%'
-    };
-
-    menu.css(positionOffScreen);
-
+		- if !current_user
+			li
+				= link_to "sign in", new_user_session_path
+			li
+				= link_to "sign up", new_user_registration_path
+		- else
+			li
+				= link_to "log out", destroy_user_session_path, method: :delete
