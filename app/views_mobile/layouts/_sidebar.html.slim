@@ -12,4 +12,10 @@ nav.menu
 				= link_to "sign up", new_user_registration_path
 		- else
 			li
+				= link_to "backed projects", user_path(current_user, anchor: 'backs')
+			li
+				= link_to "my projects", user_path(current_user, anchor: 'projects')
+			li
+				= link_to "settings", user_path(current_user, anchor: 'settings')
+			li
 				= link_to "log out", destroy_user_session_path, method: :delete
