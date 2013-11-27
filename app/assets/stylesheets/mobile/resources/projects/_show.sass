@@ -1,3 +1,50 @@
 [data-namespace="null"][data-controller="projects"][data-action="show"]
-.video
-	width: 100%
+.information
+	font-family: Helvetica Neue, Helvetica, Arial, sans-
+	border-bottom: 1px solid #e9e9ec
+	.video
+		width: 100%
+	.project_text
+		width: 80%
+		margin: 0 auto
+		#name
+			font-weight: bold
+			text-align: center
+			margin-bottom: 5px
+		#by
+			text-align: center
+			margin-bottom: 20px
+			font-size: 12px
+			a
+				text-decoration: none
+				font-weight: bold
+				color: #000
+		#subtitle
+			text-align: center
+			font-size: 15px
+			margin-bottom: 10px
+.wrapper
+	text-align: center
+	border-bottom: 1px solid #e9e9ec
+	.status
+		display: inline-block
+		font-family: Helvetica Neue, Helvetica, Arial, sans-
+		text-align: left
+		.time-remaining, .money-raised, .progress-percent
+			border-right: 1px solid #e9e9ec
+			float: left
+			padding: 1em 0
+			text-transform: uppercase
+			font-size: .6em
+			color: $blue-two
+			padding-right: 10px
+			margin-left: 10px
+			&:last-of-type
+				border-right: none
+			span
+				color: #000
+				display: block
+				font-weight: bold
+				font-size: 1.4em
+				text-transform: none
+				margin-bottom: .2em

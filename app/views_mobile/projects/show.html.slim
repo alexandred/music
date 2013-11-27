@@ -1,1 +1,11 @@
-iframe class="video" src="#{@project.display_video_embed_url}" width="300" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen
+.information
+	iframe class="video" src="#{@project.display_video_embed_url}" width="300" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen
+	.project_text
+		#name= @project.name
+		#by= t('projects.project_header.by', author: link_to(@project.user.name, user_path(@project.user))).html_safe
+		#subtitle= @project.headline
+.wrapper
+	.status
+	    .progress-percent= t('channels.projects.progress_html', percent: @project.progress)
+	    .time-remaining= t('channels.projects.time_remaining_html', count: @project.time_to_go[:time], unit: @project.time_to_go[:unit])
+	    .money-raised= t('channels.projects.pledged_html', value: number_to_currency(@project.pledged, precision: 0))

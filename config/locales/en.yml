@@ -528,6 +528,7 @@ en:
       subtitle_html: "A project by %{link}"
       without_city: "A project in %{category_name} by %{author}"
       with_city: "A project in %{category_name}, in %{city}, by %{author}"
+      by: "by %{author}"
     project_updates:
       empty: "This project doesn't have any updates yet."
       submit: "Send update"
