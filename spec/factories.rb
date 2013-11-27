@@ -41,6 +41,7 @@ FactoryGirl.define do
     f.first_backers 'Foo bar'
     f.video_url 'http://vimeo.com/17298435'
     f.state 'online'
+    f.govid { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'image.png')) }
   end
 
   factory :notification_type do |f|
