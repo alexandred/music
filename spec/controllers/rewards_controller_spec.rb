@@ -38,7 +38,7 @@ describe RewardsController do
 
   shared_examples_for "DELETE rewards destroy" do
     before { delete :destroy, project_id: project.id, id: reward.id, locale: :pt }
-    it { project.rewards.should be_empty}
+    it { project.rewards.should_not be_empty}
   end
 
   shared_examples_for "DELETE rewards destroy without permission" do
