@@ -9,3 +9,20 @@
 	    .progress-percent= t('channels.projects.progress_html', percent: @project.progress)
 	    .time-remaining= t('channels.projects.time_remaining_html', count: @project.time_to_go[:time], unit: @project.time_to_go[:unit])
 	    .money-raised= t('channels.projects.pledged_html', value: number_to_currency(@project.pledged, precision: 0))
+.condition
+	p
+	  = t("projects.back_project.display_status.#{@project.display_status}", goal: @project.display_goal, date: @project.display_expires_at)
+.links_box
+	a.user href=user_path(@project.user)
+		= image_tag @project.user.uploaded_image.thumb_avatar.url || '/assets/user.png'
+		#by= t('projects.project_header.subtitle_html', link: "<span>#{@project.user.name}</span>".html_safe)
+	a.comments href="#"
+		= "Comments"
+		#comment_count
+			fb:comments-count href="#{request.url}"
+	a.updates href="#"
+		= "Updates"
+		#update_count
+			= @project.updates.count
+	a.more href="#"
+		= "More details"
