@@ -24,7 +24,7 @@ class Backer < ActiveRecord::Base
   scope :anonymous, where(anonymous: true)
   scope :credits, where(credits: true)
   scope :requested_refund, where(state: 'requested_refund')
-  scope :refunded, where(state: 'refunded')
+  scope :refunded, where(state: 'refunded_and_canceled')
   scope :not_anonymous, where(anonymous: false)
   scope :confirmed, where(state: 'confirmed')
   scope :waiting_confirmation, where(state: 'waiting_confirmation')

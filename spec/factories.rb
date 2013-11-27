@@ -20,6 +20,9 @@ FactoryGirl.define do
     f.password "123456"
     f.email { generate(:email) }
     f.bio "This is Foo bar's biography."
+    f.stripe_access_token "test token"
+    f.stripe_key "test key"
+    f.stripe_userid "test userid"
   end
 
   factory :category do |f|
@@ -42,6 +45,7 @@ FactoryGirl.define do
     f.video_url 'http://vimeo.com/17298435'
     f.state 'online'
     f.govid { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'image.png')) }
+    f.currency 'GBP'
   end
 
   factory :notification_type do |f|

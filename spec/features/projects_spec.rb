@@ -33,7 +33,7 @@ describe "Projects" do
     before do
       create(:project, name: 'Foo', state: 'online', online_days: 30, recommended: true)
       create(:project, name: 'Lorem', state: 'online', online_days: 30, recommended: false)
-      visit explore_path(locale: :pt)
+      visit explore_path
       sleep 4
     end
     it "should show recommended projects" do
@@ -65,12 +65,18 @@ describe "Projects" do
     it "should present the form and save the data" do
       all("form#project_form").should have(1).items
       [
-        'permalink', 'name', 'video_url',
-        'headline', 'goal', 'online_days',
-        'about', 'first_backers', 'how_know', 'more_links'
+        'project_permalink', 'name-input', 
+        'headline-input', 'goal-input'
       ].each do |a|
-        fill_in "project_#{a}", with: project.attributes[a]
+        fill_in "#{a}", with: project.attributes[a]
       end
+      find('li.third').click
+      [
+        'video-input', 'project_about'
+      ].each do |a|
+        fill_in "#{a}", with: project.attributes[a]
+      end
+      find('li.fifth').click
       check 'project_accepted_terms'
       find('#project_submit').click
       #Project.first.name.should == project.name

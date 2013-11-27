@@ -53,7 +53,7 @@ describe Adm::BackersController do
 
   describe 'PUT refund' do
     let(:backer) { create(:backer, state: 'confirmed') }
-    subject { backer.refunded? }
+    subject { backer.refunded_and_canceled? }
 
     before do
       put :refund, id: backer.id, locale: :pt 

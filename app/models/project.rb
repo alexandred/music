@@ -91,7 +91,7 @@ class Project < ActiveRecord::Base
   validates :video_url, presence: true
   validates_presence_of :name, :user, :category, :about, :headline, :goal, :permalink, :govid
   validates_length_of :headline, maximum: 140
-  validates_numericality_of :online_days, less_than_or_equal_to: 60, greater_than: 0
+  validates_numericality_of :online_days, less_than_or_equal_to: 60
   validates_uniqueness_of :permalink, allow_blank: true, allow_nil: true, case_sensitive: false
   validates_format_of :permalink, with: /^(\w|-)*$/, allow_blank: true, allow_nil: true
   validates_format_of :video_url, with: /(https?\:\/\/|)(youtu(\.be|be\.com)|vimeo).*+/, message: I18n.t('project.video_regex_validation')

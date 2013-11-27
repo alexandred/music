@@ -323,12 +323,12 @@ describe Backer do
 
       context 'when backer is confirmed' do
         let(:initial_state){ 'confirmed' }
-        it('should switch to refunded state') { backer.refunded?.should be_true }
+        it('should switch to refunded state') { backer.refunded_and_canceled?.should be_true }
       end
 
       context 'when backer is requested refund' do
         let(:initial_state){ 'requested_refund' }
-        it('should switch to refunded state') { backer.refunded?.should be_true }
+        it('should switch to refunded state') { backer.refunded_and_canceled?.should be_true }
       end
 
       context 'when backer is pending' do
