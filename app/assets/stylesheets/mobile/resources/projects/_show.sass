@@ -58,10 +58,10 @@
 	p
 		color: $blue-two
 		font-size: 12px
-.links_box
+.links_box, .rewards_box
 	border: 1px solid #e9e9ec
 	width: 90%
-	margin: 0 auto
+	margin: 0 auto 10px
 	border-radius: 5px
 	text-decoration: none
 	a
@@ -83,20 +83,40 @@
 				display: block
 				font-weight: bold
 				font-size: 16px
-	.comments, .updates, .more
+	.comments, .updates, .more, .reward
 		display: block
 		padding: 10px 5px 10px 10px
 		border-bottom: 1px solid #e9e9ec
-		font-size: 14px
+		font-size: 14px	
+		color: $blue-two
 		#comment_count, #update_count
 			margin-right: 5px
 			width: 25px
-			height: 15px
+			height: 17px
 			background-color: #C0C0C0
 			border-radius: 10px
 			color: #fff
 			float: right
 			text-align: center
 			font-size: 13px
+		#title
+			font-weight: bold
+			margin-bottom: 5px
+			float: left
+			color: #000
+		#amount
+			color: #76CC1E
+			margin-bottom: 5px
+			font-size: 12px
+			font-weight: bold
+			clear: left
+		#remaining
+			font-size: 12px
+			float: right
+			color: #000
+		#description, #days
+			font-size: 12px
+			margin-bottom: 5px
 		&:last-of-type
 			border-bottom: none
+	

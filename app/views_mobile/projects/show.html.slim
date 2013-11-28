@@ -26,3 +26,12 @@
 			= @project.updates.count
 	a.more href="#"
 		= "More details"
+.rewards_box
+	- @project.rewards.each do |reward|
+		a.reward href="#{new_project_backer_path(@project, reward_id: reward.id)}"
+			#title= t('projects.rewards.reward_title', minimum: number_to_currency(reward.minimum_value, unit:  ISO4217::Currency.from_code(@project.currency).symbol))
+			- if reward.maximum_backers > 0
+				#remaining= "#{reward.remaining}/#{reward.maximum_backers} " + t('remaining_singular')
+			#amount= pluralize(reward.backers.confirmed.count, 'backer')
+			#description= reward.display_description
+			#days= "#{t('projects.rewards.reward_deliver_time', prevision: reward.display_deliver_prevision)}".html_safe
