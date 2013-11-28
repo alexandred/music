@@ -17,22 +17,25 @@
 		= image_tag @project.user.uploaded_image.thumb_avatar.url || '/assets/user.png'
 		#by= t('projects.project_header.subtitle_html', link: "<span>#{@project.user.name}</span>".html_safe)
 	a.pledge href="#"
-		= "Rewards"
+		= t('projects.show.menu.rewards')
 	a.updates href="#"
-		= "Updates"
+		= t('projects.show.menu.updates')
 		#update_count
 			= @project.updates.count
 	a.more href="#"
-		= "More details"
+		= t('projects.show.menu.more_details')
+.social_like
+	#facebook= render_facebook_like(href: project_by_slug_url(permalink: @project.permalink))
+	#twitter= render_twitter(url: project_by_slug_url(permalink: @project.permalink))
 .rewards_box
 	.reward_section
 		a.reward href="#{new_project_backer_path(@project)}"
-			#title= "Back with no reward"
-			#description= "I just want to support the project"
+			#title= t('projects.rewards.no_reward_title')
+			#description= t('projects.rewards.no_reward_description')
 		- @project.rewards.each do |reward|
 			a.reward href="#{new_project_backer_path(@project, reward_id: reward.id)}"
 				#title= t('projects.rewards.reward_title', minimum: number_to_currency(reward.minimum_value, unit:  ISO4217::Currency.from_code(@project.currency).symbol))
-				- if reward.maximum_backers > 0
+				- if reward.maximum_backers and reward.maximum_backers > 0
 					#remaining= "#{reward.remaining}/#{reward.maximum_backers} " + t('remaining_singular')
 				#amount= pluralize(reward.backers.confirmed.count, 'backer')
 				#description= reward.display_description
@@ -40,8 +43,8 @@
 	.updates_section
 		- if @project.updates.count == 0
 			.update
-				#title= "No updates"
-				#description= "The author hasn't updated this project yet. Stay tuned!"
+				#title= t('projects.project_updates.empty_header')
+				#description= t('projects.project_updates.empty')
 		- @project.updates.each do |update|
 			.update
 				#title= update.title

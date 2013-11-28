@@ -530,6 +530,7 @@ en:
       with_city: "A project in %{category_name}, in %{city}, by %{author}"
       by: "by %{author}"
     project_updates:
+      empty_header: "No updates"
       empty: "This project doesn't have any updates yet."
       submit: "Send update"
       comment: "Update text"
@@ -545,6 +546,8 @@ en:
         one:  "1 back awaiting confirmation."
         other: "%{count} backs awaiting confirmation."
       title: "Back and receive..."
+      no_reward_title: "Back with no reward"
+      no_reward_description: "I just want to support the project"
     send_mail:
       success: "Your project was successfully submitted! We will contact you soon. Thank you for choosing Catarse."
     show:
@@ -565,6 +568,8 @@ en:
         backers: Backers
         comments: Comments
         updates: Updates
+        rewards: Rewards
+        more_details: More details
         edit: Edit
         reports: Reports
         add_reward: 'Add Rewards'
