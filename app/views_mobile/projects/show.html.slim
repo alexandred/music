@@ -16,10 +16,8 @@
 	a.user href=user_path(@project.user)
 		= image_tag @project.user.uploaded_image.thumb_avatar.url || '/assets/user.png'
 		#by= t('projects.project_header.subtitle_html', link: "<span>#{@project.user.name}</span>".html_safe)
-	a.comments href="#"
-		= "Comments"
-		#comment_count
-			fb:comments-count href="#{request.url}"
+	a.pledge href="#"
+		= "Rewards"
 	a.updates href="#"
 		= "Updates"
 		#update_count
@@ -27,11 +25,65 @@
 	a.more href="#"
 		= "More details"
 .rewards_box
-	- @project.rewards.each do |reward|
-		a.reward href="#{new_project_backer_path(@project, reward_id: reward.id)}"
-			#title= t('projects.rewards.reward_title', minimum: number_to_currency(reward.minimum_value, unit:  ISO4217::Currency.from_code(@project.currency).symbol))
-			- if reward.maximum_backers > 0
-				#remaining= "#{reward.remaining}/#{reward.maximum_backers} " + t('remaining_singular')
-			#amount= pluralize(reward.backers.confirmed.count, 'backer')
-			#description= reward.display_description
-			#days= "#{t('projects.rewards.reward_deliver_time', prevision: reward.display_deliver_prevision)}".html_safe
+	.reward_section
+		a.reward href="#{new_project_backer_path(@project)}"
+			#title= "Back with no reward"
+			#description= "I just want to support the project"
+		- @project.rewards.each do |reward|
+			a.reward href="#{new_project_backer_path(@project, reward_id: reward.id)}"
+				#title= t('projects.rewards.reward_title', minimum: number_to_currency(reward.minimum_value, unit:  ISO4217::Currency.from_code(@project.currency).symbol))
+				- if reward.maximum_backers > 0
+					#remaining= "#{reward.remaining}/#{reward.maximum_backers} " + t('remaining_singular')
+				#amount= pluralize(reward.backers.confirmed.count, 'backer')
+				#description= reward.display_description
+				#days= "#{t('projects.rewards.reward_deliver_time', prevision: reward.display_deliver_prevision)}".html_safe
+	.updates_section
+		- if @project.updates.count == 0
+			.update
+				#title= "No updates"
+				#description= "The author hasn't updated this project yet. Stay tuned!"
+		- @project.updates.each do |update|
+			.update
+				#title= update.title
+				#description= update.comment
+	.more_details_section
+		.about
+			#description= @project.about
+javascript:
+  var index = 1;
+  $('a.pledge').click(function() {
+  	$('html,body').animate({ scrollTop: $('.links_box').offset().top }, 'fast');
+  	if(index != 1) {
+	  	$('.updates_section').fadeOut().hide()
+	  	$('.more_details_section').fadeOut().hide()
+	  	$('.reward_section').fadeOut().hide().fadeIn();
+	  	index = 1;
+	  		return false;
+	  	} else {
+	  		return false;
+	}
+  });
+  $('a.updates').click(function() {
+  	$('html,body').animate({ scrollTop: $('.links_box').offset().top }, 'fast');
+  	if(index != 2) {
+	  	$('.reward_section').fadeOut().hide();
+	  	$('.more_details_section').fadeOut().hide()
+	  	$('.updates_section').fadeOut().hide().fadeIn();
+	  	index = 2;
+	  		return false;
+	  	} else {
+	  		return false;
+	}
+  });
+  $('a.more').click(function() {
+  	$('html,body').animate({ scrollTop: $('.links_box').offset().top }, 'fast');
+  	if(index != 3) {
+	  	$('.reward_section').fadeOut().hide();
+	  	$('.updates_section').fadeOut().hide()
+	  	$('.more_details_section').fadeOut().hide().fadeIn();
+	  	index = 3;
+	  		return false;
+	  	} else {
+	  		return false;
+	}
+  });
