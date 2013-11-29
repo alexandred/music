@@ -1,0 +1,38 @@
+.title
+  h1= t('.header.title')
+= semantic_form_for @backer, url: @create_url, html: { id: 'backer_form' } do |form|
+  = form.inputs do
+    = hidden_field_tag 'credits', current_user.credits.to_i
+    .bootstrap-twitter
+      .input-prepend
+        span.add-on= @backer.project.currency_symbol
+        = form.input :value, required: true, as: :string, label: false,  input_html: { pattern: '\\d+', autocomplete: 'off', data: { rewards: @rewards.map{|r| {id: r.id, minimum_value: r.minimum_value.to_i} }.to_json } }, hint: ""
+    .rewards_box
+      = form.input :reward, as: :radio, collection: @rewards
+    .anonymous_box
+      = form.input :anonymous
+  = form.actions do
+    .bootstrap-twitter
+      .bootstrap-form
+        = form.submit t('.submit'), class: 'btn btn-primary btn-large', id: "backer_submit"
+javascript:
+  var rewards = $("#backer_value").data('rewards');
+  $(document).find('input:checked').parent().parent().addClass('checked');
+  $( ".choice" ).click(function() {
+      var radButton = $(this).find('input[type=radio]');
+      $(radButton).prop("checked", true);
+      if(reward()) {
+      $('#backer_value').val(reward().minimum_value);
+      } else {
+      $('#backer_value').val("");
+      }
+      $('.choice').each(function(){$(this).removeClass('checked')});
+      $(this).addClass('checked');
+  });
+
+  function reward(){
+    var $reward = $(document).find('input[type=radio]:checked');
+    if($reward.length > 0){
+      return _.find(rewards, function(r){ return r.id == $reward.val() });
+    }
+  };

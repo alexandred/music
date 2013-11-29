@@ -14,6 +14,10 @@ class ProjectDecorator < Draper::Decorator
     end
   end
 
+  def currency_symbol
+    ISO4217::Currency.from_code(source.currency).symbol
+  end
+
   # Method for width of progress bars only
   def display_progress
     return 100 if source.successful? || source.progress > 100
