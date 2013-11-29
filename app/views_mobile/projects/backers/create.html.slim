@@ -1,0 +1,81 @@
+#project_review data-thank-you-path=project_backer_path(project_id: @project.id, id: @backer.id)
+  .project_info
+    h1= t('.you_are_about_html', link: link_to(@project.name, project_by_slug_path(permalink: @project.permalink)))
+    #review_text
+      - if @backer.reward
+        .review_content
+          = t('.review_with_reward_html', value: @backer.display_value)
+          = @backer.reward.description
+      - else
+        .review_content
+          = t('.review_without_reward_html', value: @backer.display_value)
+  .title
+    h1= t('.title')
+  .bootstrap-form
+    = semantic_form_for current_user, url: credits_checkout_project_backer_path(@backer.project, @backer), html: { data: { update_info_path: update_info_project_backer_path(project_id: @backer.project.id, id: @backer.id) }, id: 'review_form', class: "form-horizontal #{('dont_align' if @backer.credits)}" } do |form|
+      = hidden_field_tag 'project_id', @backer.project.id
+      = hidden_field_tag 'backer_id', @backer.id
+      = hidden_field_tag 'backer_credits', @backer.credits
+      = hidden_field_tag 'payment_method_url', nil
+      = form.inputs do
+        = form.input :full_name, required: true, as: :string
+        = form.input :email, required: true, as: :string
+      .submit
+        fieldset.accept_terms
+          = check_box_tag 'accept'
+          = label_tag 'accept', t('accept_terms_html', link: link_to(t('terms'), t('footer.links.terms_link'), target: :_blank)), class: 'inline'
+
+    #payment.hide data-update-info-path=update_info_project_backer_path(project_id: @backer.project.id, id: @backer.id)
+      .title
+        h1= t('.choose_payment')
+        h2= t('.choose_payment_subtitle')
+
+      .tab_container
+        nav#payment_menu
+          - PaymentEngines.engines.each do |engine|
+            = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , data: {target: "##{engine[:name]}_payment"} do
+              = t("projects.backers.review.#{engine[:name]}")
+      .tab_content_container
+        - PaymentEngines.engines.each do |engine|
+          div[id="#{engine[:name]}_payment" class="payments_type hide" data-path=engine[:review_path].call(@backer) ]
+javascript:
+  $('#accept').click(function() {
+    if(validate()){
+      $('#payment').show();
+      updateBacker();
+    } else {
+      return false;
+    }
+  });
+
+  $('#payment_menu a').click(function() {
+  updatePaymentMethod();
+  });
+
+  function updatePaymentMethod() {
+    var $selected_tab = $('#payment_menu a.selected');
+    $.post($('#payment').data('update-info-path'), {
+      backer: {
+        payment_method: $selected_tab.prop('id')
+      }
+    })
+  }
+
+  function updateBacker(){
+    var backer_data = {
+      payer_name: $('#user_full_name').val(),
+      payer_email: $('#user_email').val()
+    }
+    $.post($('#payment').data('update-info-path'), {
+      backer: backer_data
+    });
+  };
+
+  function validate(){
+    var valid = true;
+    $('input:visible').each(function(){
+      valid = valid && this.checkValidity();
+    });
+    $('input.error:visible:first').select();
+    return valid;
+  }
