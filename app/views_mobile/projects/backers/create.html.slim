@@ -30,41 +30,29 @@
         h1= t('.choose_payment')
         h2= t('.choose_payment_subtitle')
 
-      .tab_container
-        nav#payment_menu
-          - PaymentEngines.engines.each do |engine|
-            = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , data: {target: "##{engine[:name]}_payment"} do
-              = t("projects.backers.review.#{engine[:name]}")
       .tab_content_container
         - PaymentEngines.engines.each do |engine|
-          div[id="#{engine[:name]}_payment" class="payments_type hide" data-path=engine[:review_path].call(@backer) ]
+          div[id="#{engine[:name]}_payment" class="payments_type hide" data-path=engine[:review_path].call(@backer) data-name=engine[:name]]
 javascript:
   $('#accept').click(function() {
     if(validate()){
       $('#payment').show();
       updateBacker();
+      $.get($('#stripe_payment').data('path')).success(function(data){
+        $('#stripe_payment').html(data);
+      });
     } else {
       return false;
     }
   });
 
-  $('#payment_menu a').click(function() {
-  updatePaymentMethod();
-  });
-
-  function updatePaymentMethod() {
-    var $selected_tab = $('#payment_menu a.selected');
-    $.post($('#payment').data('update-info-path'), {
-      backer: {
-        payment_method: $selected_tab.prop('id')
-      }
-    })
-  }
 
   function updateBacker(){
     var backer_data = {
       payer_name: $('#user_full_name').val(),
-      payer_email: $('#user_email').val()
+      payer_email: $('#user_email').val(),
+      payment_method: $('#stripe_payment').data('name')
+
     }
     $.post($('#payment').data('update-info-path'), {
       backer: backer_data
