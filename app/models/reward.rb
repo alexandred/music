@@ -46,7 +46,7 @@ class Reward < ActiveRecord::Base
   end
   
   def display_minimum
-    number_to_currency minimum_value
+    number_to_currency minimum_value, unit: project.currency_symbol
   end
 
   def short_description
