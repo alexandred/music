@@ -3,49 +3,51 @@
     h1= t('.you_are_about_html', link: link_to(@project.name, project_by_slug_path(permalink: @project.permalink)))
     #review_text
       - if @backer.reward
-        .review_content
-          = t('.review_with_reward_html', value: @backer.display_value)
-          = @backer.reward.description
+        .reward
+          #amount_backed= @backer.display_value
+          #description_reward= @backer.reward.description
       - else
-        .review_content
-          = t('.review_without_reward_html', value: @backer.display_value)
-  .title
-    h1= t('.title')
-  .bootstrap-form
-    = semantic_form_for current_user, url: credits_checkout_project_backer_path(@backer.project, @backer), html: { data: { update_info_path: update_info_project_backer_path(project_id: @backer.project.id, id: @backer.id) }, id: 'review_form', class: "form-horizontal #{('dont_align' if @backer.credits)}" } do |form|
-      = hidden_field_tag 'project_id', @backer.project.id
-      = hidden_field_tag 'backer_id', @backer.id
-      = hidden_field_tag 'backer_credits', @backer.credits
-      = hidden_field_tag 'payment_method_url', nil
-      = form.inputs do
-        = form.input :full_name, required: true, as: :string
-        = form.input :email, required: true, as: :string
-      .submit
-        fieldset.accept_terms
+        .reward
+          #donation= @backer.display_value
+  = semantic_form_for current_user, url: credits_checkout_project_backer_path(@backer.project, @backer), html: { data: { update_info_path: update_info_project_backer_path(project_id: @backer.project.id, id: @backer.id) }, id: 'review_form', class: "form-horizontal #{('dont_align' if @backer.credits)}" } do |form|
+    = hidden_field_tag 'project_id', @backer.project.id
+    = hidden_field_tag 'backer_id', @backer.id
+    = hidden_field_tag 'backer_credits', @backer.credits
+    = hidden_field_tag 'payment_method_url', nil
+    = form.inputs do
+      .bootstrap-twitter
+        .input-prepend
+          span.add-on= "Name"
+          = form.input :full_name, required: true, as: :string
+        .input-prepend
+          span.add-on.second= "Email"
+          = form.input :email, required: true, as: :string
+    .submit
+      fieldset.accept_terms
+        .terms_and_conditions
           = check_box_tag 'accept'
           = label_tag 'accept', t('accept_terms_html', link: link_to(t('terms'), t('footer.links.terms_link'), target: :_blank)), class: 'inline'
 
     #payment.hide data-update-info-path=update_info_project_backer_path(project_id: @backer.project.id, id: @backer.id)
-      .title
-        h1= t('.choose_payment')
-        h2= t('.choose_payment_subtitle')
-
       .tab_content_container
         - PaymentEngines.engines.each do |engine|
           div[id="#{engine[:name]}_payment" class="payments_type hide" data-path=engine[:review_path].call(@backer) data-name=engine[:name]]
 javascript:
   $('#accept').click(function() {
-    if(validate()){
-      $('#payment').show();
-      updateBacker();
-      $.get($('#stripe_payment').data('path')).success(function(data){
-        $('#stripe_payment').html(data);
-      });
+    if ($('#stripe_payment').html()) {
+      $('#stripe_payment').empty();
     } else {
-      return false;
+      if(validate()){
+        $('#payment').show();
+        updateBacker();
+        $.get($('#stripe_payment').data('path')).success(function(data){
+          $('#stripe_payment').html(data);
+        });
+      } else {
+        return false;
+      }
     }
   });
-
 
   function updateBacker(){
     var backer_data = {

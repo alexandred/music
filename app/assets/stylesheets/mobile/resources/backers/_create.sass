@@ -1,0 +1,82 @@
+[data-namespace="null"][data-controller="backers"][data-action="create"]
+*
+	font-family: Helvetica Neue, Helvetica, Arial, sans-
+#project_review
+	width: 90%
+	margin: 0 auto
+	h1
+		font-size: 20px
+		font-weight: normal
+		border-bottom: 1px solid #e9e9ec
+		margin-bottom: 10px
+		a
+			text-decoration: none
+			font-weight: bold
+			color: #000
+	#review_text
+		.reward
+			width: auto
+			background: rgba(100,203,100,0.2)
+			border-radius: 5px
+			padding: 10px
+			font-size: 14px
+			margin-bottom: 10px
+			#amount_backed
+				font-size: 16px
+				font-weight: bold
+				margin: 2px
+			#description_reward
+				font-size: 14px
+				margin: 2px
+				color: $blue-two
+			#donation
+				font-size: 20px
+				font-weight: bold
+				text-align: center
+	#review_form
+		.input-prepend
+			.add-on
+				padding: 8px !important
+				float: left
+				font-size: 18px
+				&.second
+					padding: 8px 9.5px !important
+					margin-bottom: 10px
+			#user_full_name, #user_email
+				width: -webkit-calc(100% - 66px)
+				width: -moz-calc(100% - 66px)
+				padding: 4px
+				height: 36px
+				margin: 0
+				font-size: 16px
+				-webkit-box-sizing: border-box
+				-moz-box-sizing: border-box
+				-o-box-sizing: border-box
+				-ms-box-sizing: border-box
+				box-sizing: border-box
+			label
+				display: none
+	.terms_and_conditions
+		height: 40px
+		background: rgba(100,203,100,0.2)
+		border-radius: 5px
+		padding: 10px 5px 10px 10px
+		font-size: 14px
+		font-weight: bold
+		margin-bottom: 10px
+		text-align: center
+		input
+			margin-top: 6px
+			margin-right: 10px
+		a
+			color: #000
+#stripe_payment
+	h3
+		color: $blue-two
+		font-size: 17px
+		text-align: center
+		margin-bottom: 10px
+	#catarse_stripe_form
+		text-align: center
+		.btn
+			display: inline-block
