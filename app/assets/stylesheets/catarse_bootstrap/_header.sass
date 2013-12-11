@@ -11,8 +11,14 @@ $orange: #F69219
   display: inline-block
   width: 100%
   background: #fff
-  padding: 1em 0
+  padding: 1em 0 0
   border-bottom: 1px solid $border-gray
+  h2
+    float: left
+    margin: 30px 0 0 20px
+    font-weight: bold
+    color: rgb(63, 71, 82)
+
   .logo
     background: url("/assets/catarse_bootstrap/catarse-assets.png") repeat scroll -21px -14px transparent
     display: block
@@ -23,7 +29,46 @@ $orange: #F69219
     transition: 0.4s all
     &:hover
       opacity: 0.5
-
+nav
+  .links
+    float: left
+    clear: left
+    width: 100% !important
+    ul
+      li.header-nav-li
+        line-height: 100% !important
+        float: left
+        margin-top: 18px
+        margin-left: 0px
+        a
+          border-right: 1px solid rgb(233, 233, 236)
+          font-size: 17px
+          font-weight: bold
+          padding: 10px
+          color: rgb(63, 71, 82) !important
+      .search
+        margin-top: 0px !important
+        float: right !important
+  .navigation
+    margin-top: 13px
+    font-weight: bold
+    ul
+      li
+        .user
+          a
+            font-size: 13px !important
+            font-weight: normal !important
+        a
+          font-size: 17px !important
+          color: rgb(63, 71, 82) !important
+    .button.facebook
+      border: medium none
+      border-radius: 4px 4px 4px 4px
+      font-weight: bold
+      text-decoration: none
+      background: none repeat scroll 0% 0% rgb(59, 89, 152)
+      color: white !important
+      padding: 10px
 .header-nav
   float: right
   text-align: right
@@ -76,6 +121,7 @@ $orange: #F69219
 
 .discover-form
   position: relative
+  float: right
   margin: 6px 0 6px
   width: 250px
   height: 36px

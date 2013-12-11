@@ -338,12 +338,14 @@ en:
     header:
       blog: Blog
       help: Help
+      header: "Support & Discover Great Artists"
       signup: "Sign up"
       signin: Login
       discover: Discover
       submit: Submit your project
       profile: "My profile"
       account: "My account"
+      home: "Home"
     user:
       logout: Logout
       my_credits: "My credits"

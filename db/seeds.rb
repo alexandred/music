@@ -28,8 +28,8 @@ end
 
 {
   company_name: 'Catarse',
-  host: 'floating-sierra-3183.herokuapp.com',
-  base_url: "http://floating-sierra-3183.herokuapp.com",
+  host: 'tribaltears.com',
+  base_url: "http://tribaltears.com",
   email_contact: 'contato@catarse.me',
   email_payments: 'financeiro@catarse.me',
   email_projects: 'projetos@catarse.me',
@@ -42,7 +42,7 @@ end
   mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
   catarse_fee: '0.13',
   support_forum: 'http://suporte.catarse.me/',
-  base_domain: 'floating-sierra-3183.herokuapp.com',
+  base_domain: 'tribaltears.com',
   uservoice_secret_gadget: 'change_this',
   uservoice_key: 'uservoice_key',
   faq_url: 'http://suporte.catarse.me/',
