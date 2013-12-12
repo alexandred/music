@@ -123,6 +123,9 @@ en:
     buttons:
       newsletter: Submit
   sections:
+    title:
+      header: "Discover & Support Great Artists"
+      subheader: "Catarse is the best way to support and get connected with artists with love"
     near:
       title: near me
     selection:
