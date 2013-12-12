@@ -94,6 +94,7 @@ group :production do
 
   # Gem used to handle image uploading
   gem 'fog', '>= 1.3.1'
+  gem 'unf'
 
   # Workers, forks and all that jazz
   gem 'unicorn'
