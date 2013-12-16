@@ -497,10 +497,10 @@ waiting_confirmation.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627
 waiting_confirmation/index.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
 application.js: application-53774d643fa0b4e67bd6e17178182941.js
 application/index.js: application-53774d643fa0b4e67bd6e17178182941.js
-application.css: application-07056f7bddc378fa1502d512fff41c14.css
-application/index.css: application-07056f7bddc378fa1502d512fff41c14.css
-catarse.css: catarse-72c86535ec4f5ab5fce38df96d3e2444.css
-catarse/index.css: catarse-72c86535ec4f5ab5fce38df96d3e2444.css
+application.css: application-a1556056703cb9561f03167bff865e43.css
+application/index.css: application-a1556056703cb9561f03167bff865e43.css
+catarse.css: catarse-70b37e58bbb375eaa6eefc9460ac1ca0.css
+catarse/index.css: catarse-70b37e58bbb375eaa6eefc9460ac1ca0.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 catarse_stripe/auth/stripe-outline.png: catarse_stripe/auth/stripe-outline-cdbe5cfbbb2a476b255e161b15f59988.png
