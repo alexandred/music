@@ -61,7 +61,7 @@ end
   secure_review_host: true,
   aws_access_key: 'AKIAIDJAMCVP5M44OGGA',
   aws_secret_key: 'XXX',
-  aws_bucket: 'catarse.music'
+  aws_bucket: 'catarsemusic'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({

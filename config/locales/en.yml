@@ -270,6 +270,7 @@ en:
       subtitle: "Explore our projects, find the ones that interest you, and make them happen!"
       successful: Successful
       title: "Explore amazing projects"
+      recently_viewed_projects: "Recently viewed projects:"
     title: "Explore the projects"
     project:
       empty: "We couldn't find any projects related to your search."

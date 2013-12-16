@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso, :mobile_device?
+  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso, :mobile_device?, :store_viewed_projects, :get_viewed_projects
 
   before_filter :set_locale
   before_filter :force_http
@@ -35,6 +35,26 @@ class ApplicationController < ActionController::Base
   # TODO: Change this way to get the opendata
   before_filter do
     @fb_admins = [100000428222603, 547955110]
+  end
+
+  #recently viewed projects
+  def store_viewed_projects(project)
+    array = ActiveSupport::JSON.decode(cookies[:project_history]) unless !cookies[:project_history]
+    array ||= []
+    unless array.include? project.permalink
+      array.delete_at(0) if array.size >= 5
+      array << project.permalink
+    end
+    cookies[:project_history] = { value: ActiveSupport::JSON.encode(array), expires: 1.year.from_now }
+  end
+
+  def get_viewed_projects
+    array = []
+    cookie = ActiveSupport::JSON.decode(cookies[:project_history]) unless !cookies[:project_history]
+    cookie.each { |permalink| 
+    array << Project.where(permalink: permalink).first
+    } if cookie
+    array
   end
 
   #mobile device methods

@@ -3,7 +3,7 @@
 
 #page_content
   .container
-    .main
+    .main style="float: left; width: 720px"
       .quickexplore
         ul
           li
@@ -30,12 +30,14 @@
         .results &nbsp;
         .clearfix
         #loading= image_tag "loading.gif"
+      = render partial: 'layouts/recently_viewed'
 
     aside.main-sidebar.sidebar-discover
 
         - unless @categories.empty?
           section.main-sidebar-division
-            h2.title= t('.categories')
+            h2.title
+              .explore_title= t('.categories')
             ul
               - @categories.each_with_index do |category, index|
                 li

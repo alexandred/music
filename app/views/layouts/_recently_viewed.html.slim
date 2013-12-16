@@ -1,0 +1,6 @@
+#recently_viewed
+  .recently_viewed_header= t('explore.index.recently_viewed_projects') if @recently_viewed != []
+  - for i in @recently_viewed.uniq
+    .item
+      = link_to image_tag(i.display_image, size: '110x70'), project_path(i)
+      span= i.name

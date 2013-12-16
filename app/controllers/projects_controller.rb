@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
           @projects_near = Project.online.near_of(current_user.address_state).order("random()").limit(3) if current_user
           @expiring = ProjectsForHome.expiring
           @recent   = ProjectsForHome.recents
+          @recently_viewed = get_viewed_projects
         end
       end
     end
@@ -59,6 +60,7 @@ class ProjectsController < ApplicationController
     @updates_count = resource.updates.count
     @update = resource.updates.where(id: params[:update_id]).first if params[:update_id].present?
     check_for_stripe_keys
+    store_viewed_projects(@project)
   end
 
   def video

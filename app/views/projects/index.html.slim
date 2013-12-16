@@ -17,6 +17,7 @@
           h2.title= t('sections.title.subheader')
         .projects
           == render @recommends
+        = render partial: 'layouts/recently_viewed'
 
       //section.expiring_projects.list
         header
