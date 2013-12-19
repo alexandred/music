@@ -36,7 +36,7 @@ module Catarse
     end
     config.active_record.observers = [
       :backer_observer, :user_observer, :notification_observer,
-      :update_observer, :project_observer, :payment_notification_observer
+      :update_observer, :project_observer, :payment_notification_observer, :favourite_observer
     ]
 
     # Enable the asset pipeline

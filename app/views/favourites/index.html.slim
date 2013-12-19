@@ -1,0 +1,13 @@
+#page_content
+  .container
+    .main
+      .bootstrap-twitter
+        h1.favourites= t('favourites.header')
+
+        h2.favourites= t('favourites.active')
+        - @favourites_active.each do |favourite|
+          = render partial: 'project', locals: { project: favourite, user: @user}
+
+        h2.favourites= t('favourites.expired')
+        - @favourites_expired.each do |favourite|
+          = render partial: 'projects/project', locals: { project: favourite, user: @user }

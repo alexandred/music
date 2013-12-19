@@ -1,4 +1,11 @@
 en:
+  favourites:
+    title: "Favourite Projects"
+    header: "We will notify you 48 hours before these projects end."
+    active: "Active"
+    none_active: "You haven't favourited any projects yet."
+    expired: "Expired"
+    none_expired: "None of your favourites have expired yet."
   controllers:
     updates:
       create:

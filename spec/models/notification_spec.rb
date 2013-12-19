@@ -16,6 +16,7 @@ describe Notification do
     it{ should belong_to :notification_type }
     it{ should belong_to :backer }
     it{ should belong_to :project_update }
+    it{ should belong_to :favourite }
   end
 
   describe "#send_email" do

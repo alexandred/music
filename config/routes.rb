@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Catarse::Application.routes.draw do
 
+
   devise_for :users, path: '',
     path_names:   { sign_in: :login, sign_out: :logout, sign_up: :sign_up },
     controllers:  { omniauth_callbacks: :omniauth_callbacks, passwords: :passwords }
@@ -98,6 +99,7 @@ Catarse::Application.routes.draw do
   end
   resources :users do
     resources :projects, controller: 'users/projects', only: [ :index ]
+    resources :favourites, only: [ :index, :create, :destroy ]
     collection do
       get :uservoice_gadget
     end

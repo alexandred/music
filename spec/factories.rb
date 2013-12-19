@@ -48,6 +48,11 @@ FactoryGirl.define do
     f.currency 'GBP'
   end
 
+  factory :favourite do |f|
+    f.association :project, factory: :project
+    f.association :user, factory: :user
+  end
+
   factory :notification_type do |f|
     f.name "confirm_backer"
   end
@@ -62,6 +67,7 @@ FactoryGirl.define do
     f.association :user, factory: :user
     f.association :backer, factory: :backer
     f.association :project, factory: :project
+    f.association :favourite, factory: :favourite
     f.association :notification_type, factory: :notification_type
   end
 

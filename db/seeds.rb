@@ -58,7 +58,7 @@ end
   stripe_secret_key: 'sk_test_kPcf0Yb4LTS95jqvojnNn2ls',
   stripe_test: 'TRUE',
   stripe_client_id: 'ca_2uW3Flc20I4UqjNiwOGyDyZUv3Xi8kua',
-  secure_review_host: true,
+  #secure_review_host: true,
   aws_access_key: 'AKIAIDJAMCVP5M44OGGA',
   aws_secret_key: 'XXX',
   aws_bucket: 'catarsemusic'

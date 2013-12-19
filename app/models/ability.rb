@@ -26,6 +26,11 @@ class Ability
       project.user == current_user && ( project.draft? || project.rejected? )
     end
 
+    #NOTE: Favourite authorisations
+
+    can :create, :favourites if current_user.persisted?
+
+    can :manage, :favourites, :user => { :id => current_user.id }
 
     # NOTE: Reward authorizations
     can :create, :rewards do |reward|

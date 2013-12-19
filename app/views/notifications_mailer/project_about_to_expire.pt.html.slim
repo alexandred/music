@@ -1,0 +1,15 @@
+- project = @notification.project
+- user = @notification.user
+|Hey #{user.name}!
+br
+|You favourited the project "#{project.name}" so we thought we would just let you know that this project is about to expire in 2 days.
+br
+br
+|If you were considering backing this project, please visit the following link to view the project again: 
+= link_to project.name, project_by_slug_url(project)
+br
+br
+|Kind regards,
+br
+br
+|The #{Configuration[:company_name]} Team

@@ -72,3 +72,6 @@ en:
     temporary_password:
       subject: "Temporary password for Catarse"
       header: "Log on to change your password"
+    project_about_to_expire:
+      subject: "%{project_name} is about to expire"
+      header: "The project you favourited is about to expire"

@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
   has_many :rewards, dependent: :destroy, autosave: true
   has_many :updates, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   has_and_belongs_to_many :channels
 
