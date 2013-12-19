@@ -10,4 +10,4 @@
 
         h2.favourites= t('favourites.expired')
         - @favourites_expired.each do |favourite|
-          = render partial: 'projects/project', locals: { project: favourite, user: @user }
+          = render partial: 'project', locals: { project: favourite, user: @user }
