@@ -12,7 +12,11 @@ class Favourite < ActiveRecord::Base
 
   	event :finish do
   		transition pending: :notified , if: ->(favourite) {
-  			Time.now.getutc > favourite.project.expires_at - 48.hours
+        if favourite.project.expires_at
+  			 Time.now.getutc > favourite.project.expires_at - 48.hours
+        else
+          false
+        end
   		}
   	end
 

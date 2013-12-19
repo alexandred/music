@@ -18,10 +18,7 @@ header.header
                 = image_tag(current_user.display_image, :size => "40x40", :class => 'profile-picture')
               ul.dropdown.user
                 li= link_to t('layouts.header.profile'), current_user
-                li
-                  = link_to t('layouts.user.my_credits'), user_path(current_user, anchor: 'credits')
-                  .small
-                    | (#{current_user.display_credits})
+                li= link_to t('layouts.header.favourites'), user_favourites_path(current_user)
                 - if current_user.admin?
                   li.divider
                   - for menu, path in Adm::BaseController.menu do
