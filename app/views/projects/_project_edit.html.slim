@@ -8,7 +8,7 @@
       - if current_user.admin
         = form.input :user_id
         = form.input :permalink, as: :string
-        = form.input :currency, as: :select
+        = form.input :currency, as: :select, collection: ((Project.currencies).map {|cur| cur.upcase }), required: true
       - if can? :update, @project, :name
         = form.input :name, as: :string, required: false
       - if can? :update, @project, :headline

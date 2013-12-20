@@ -61,7 +61,15 @@ end
   #secure_review_host: true,
   aws_access_key: 'AKIAIDJAMCVP5M44OGGA',
   aws_secret_key: 'XXX',
-  aws_bucket: 'catarsemusic'
+  aws_bucket: 'catarsemusic',
+  banner1: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/1",
+  banner2: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/2",
+  banner3: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/3",
+  banner4: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/4",
+  banner1_id: '6',
+  banner2_id: '7',
+  banner3_id: '8',
+  banner4_id: '9'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({

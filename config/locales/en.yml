@@ -358,6 +358,7 @@ en:
       favourites: "My favourites"
       account: "My account"
       home: "Home"
+      favourites2: "Favourites"
     user:
       logout: Logout
       my_credits: "My credits"

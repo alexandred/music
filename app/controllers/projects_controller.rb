@@ -26,6 +26,12 @@ class ProjectsController < ApplicationController
           @expiring = ProjectsForHome.expiring
           @recent   = ProjectsForHome.recents
           @recently_viewed = get_viewed_projects
+          @banner = [
+            Project.find(::Configuration[:banner1_id].to_i),
+            Project.find(::Configuration[:banner2_id].to_i),
+            Project.find(::Configuration[:banner3_id].to_i),
+            Project.find(::Configuration[:banner4_id].to_i)
+          ]
         end
       end
     end
@@ -60,6 +66,7 @@ class ProjectsController < ApplicationController
     @updates_count = resource.updates.count
     @update = resource.updates.where(id: params[:update_id]).first if params[:update_id].present?
     check_for_stripe_keys
+    @recently_viewed = get_viewed_projects
     store_viewed_projects(@project)
   end
 
