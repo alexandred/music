@@ -20,10 +20,10 @@ javascript:
           h1.title= t('sections.title.header')
           h2.title= t('sections.title.subheader')
         .slideshow
-          = link_to image_tag Configuration[:banner1], project_by_slug_path(permalink: @banner[0])
-          = link_to image_tag Configuration[:banner2], project_by_slug_path(permalink: @banner[1])
-          = link_to image_tag Configuration[:banner3], project_by_slug_path(permalink: @banner[2])
-          = link_to image_tag Configuration[:banner4], project_by_slug_path(permalink: @banner[3])
+          = link_to image_tag Configuration[:banner1], project_by_slug_path(permalink: @banner[0].permalink)
+          = link_to image_tag Configuration[:banner2], project_by_slug_path(permalink: @banner[1].permalink)
+          = link_to image_tag Configuration[:banner3], project_by_slug_path(permalink: @banner[2].permalink)
+          = link_to image_tag Configuration[:banner4], project_by_slug_path(permalink: @banner[3].permalink)
         .projects
           == render @recommends
         = render partial: 'layouts/recently_viewed'
