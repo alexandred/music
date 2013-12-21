@@ -16,9 +16,9 @@ class ProjectsController < ApplicationController
         else
           @title = t("site.title")
           if current_user && current_user.recommended_projects.present?
-            @recommends = current_user.recommended_projects.limit(8)
+            @recommends = current_user.recommended_projects.limit(8).shuffle
           else
-            @recommends = ProjectsForHome.recommends
+            @recommends = ProjectsForHome.recommends.shuffle
           end
 
           @channel_projects = Project.from_channels.order_for_search.limit(3)

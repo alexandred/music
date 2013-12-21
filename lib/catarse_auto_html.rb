@@ -14,9 +14,10 @@ module CatarseAutoHtml
         '<' => '&lt;',
         '"' => '"' }
       image
+      soundcloud target: :_blank
       youtube width: options[:video_width], height: options[:video_height], wmode: "opaque"
       vimeo width: options[:video_width], height: options[:video_height]
-      redcloth target: :_blank
+      #redcloth target: :_blank
       link target: :_blank
     end
   end
