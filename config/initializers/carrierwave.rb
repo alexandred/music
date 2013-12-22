@@ -7,7 +7,7 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = Configuration[:aws_bucket]
     config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-    config.assets_host = "http://#{config.fog_directory}"
+    config.asset_host = "http://#{config.fog_directory}"
   else
     config.enable_processing = false if Rails.env.test? or Rails.env.cucumber?
   end
