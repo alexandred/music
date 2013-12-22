@@ -72,7 +72,9 @@ end
   banner1_id: '6',
   banner2_id: '7',
   banner3_id: '8',
-  banner4_id: '9'
+  banner4_id: '9',
+  mandrill_username: 'alex.daoud@mac.com',
+  mandrill_password: 'XXX'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
