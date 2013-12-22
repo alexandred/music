@@ -64,7 +64,7 @@ end
   #secure_review_host: true,
   aws_access_key: 'AKIAIDJAMCVP5M44OGGA',
   aws_secret_key: 'XXX',
-  aws_bucket: 'catarsemusic',
+  aws_bucket: 's3.tribaltears.com',
   banner1: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/1",
   banner2: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/2",
   banner3: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/3",
@@ -90,8 +90,8 @@ Channel.find_or_create_by_name!(
 
 OauthProvider.find_or_create_by_name!(
   name: 'facebook',
-  key: 'your_facebook_app_key',
-  secret: 'your_facebook_app_secret',
+  key: '1420536498183067',
+  secret: 'XXX',
   path: 'facebook'
 )
 
