@@ -1,48 +1,46 @@
 - backer = @notification.backer
-|Hi, #{backer.user.name}!
+|Dear #{backer.user.name},
 br
 br
-  |The project #{link_to(backer.project.name, "#{Configuration[:base_url]}/projects/#{backer.project.to_param}")} that you backed was funded successfully on #{Configuration[:company_name].downcase}! Time to celebrate o/
+  |The project #{link_to(backer.project.name, "#{Configuration[:base_url]}/projects/#{backer.project.to_param}")} that you backed was succesfully funded at #{Configuration[:company_name].downcase}!
 br
 br
-|The project had, including you, #{backer.project.total_backers} marvellous backers, raised #{backer.project.display_pledged} and reached #{backer.project.progress}% of its goal =D
+|The project has, including you, #{backer.project.total_backers} total backers. You have collectively raised #{backer.project.display_pledged} and reached #{backer.project.progress}% of the owner's goal.
 br
 br
-|An important reminder: #{Configuration[:company_name]}'s team takes up to 3 days to pass the contact info of all backers to the project producers. Therefore, the project's owner may take a few days to contact you about the rewards, ok?
+|It may take up to a week for the project owner to collect all backer information and send you details about when you will receive your reward.
 br
 br
-|Meanwhile, share this success with the world!
+|Meanwhile, why not share this success with the world?
 br
 br
 - fb_img = "<img src=\"#{Configuration[:base_url]}/assets/auth/facebook_64.png\" title='Facebook' class='social' />".html_safe
-== raw link_to(fb_img, "http://www.facebook.com/share.php?u=#{Configuration[:base_url]}/projects/#{backer.project.to_param}&t=Uhuu! The project '#{backer.project.name}', that I backed, was successfully funded on #{Configuration[:company_name]}!" , :target => :_blank)
+== raw link_to(fb_img, "http://www.facebook.com/share.php?u=#{Configuration[:base_url]}/projects/#{backer.project.to_param}&t=The project '#{backer.project.name}', that I backed, was successfully funded at #{Configuration[:company_name]}!" , :target => :_blank)
 - twitter_img = "<img src='#{Configuration[:base_url]}/assets/auth/twitter_64.png' title='Twitter' class='social' />".html_safe
-== raw link_to(twitter_img,"http://twitter.com/?status=#{"Uhuu! The project '#{backer.project.name}', that I backed, was successful on @#{Configuration[:twitter_username]}! #{project_by_slug_url(permalink: backer.project.permalink)}"}", :target => :_blank)
+== raw link_to(twitter_img,"http://twitter.com/?status=#{"The project '#{backer.project.name}', that I backed, was successful at @#{Configuration[:twitter_username]}! #{project_by_slug_url(permalink: backer.project.permalink)}"}", :target => :_blank)
 br
 br
 strong
-  |Important information about your pledge (that will help to clear any doubts):
+  |Important information about your back:
   br
   br
-  |Pledged amount: #{backer.value}
+  |Amount backed: #{backer.value}
   br
   - if backer.reward
-    |Choosen reward value: #{backer.reward.minimum_value}
+    |Value of chosen reward: #{backer.reward.minimum_value}
     br
-    |Choosen reward: #{backer.reward.description}
+    |Reward: #{backer.reward.description}
     br
-  |Pledge date: #{backer.created_at.strftime("%d/%m/%Y")}
+  |Date of your back: #{backer.created_at.strftime("%d/%m/%Y")}
   br
-  |Key: #{backer.key}
+  |Backer ID: #{backer.key}
   br
   br
-|If you want to talk to #{backer.project.user.name}, send an email to #{mail_to backer.project.user.email}
+|If you need to contact #{backer.project.user.name}, please send an email to #{mail_to backer.project.user.email}.
 br
 br
 |If you have any other questions, access our #{link_to('FAQ', "#{Configuration[:base_url]}/faq")} or send an email to #{mail_to Configuration[:email_contact]}
 br
 br
-|A big hug,
 br
-br
-|#{Configuration[:company_name]} team
+|The #{Configuration[:company_name]} team

@@ -3,16 +3,16 @@
 puts 'Seeding the database...'
 
 [
-  { en: 'Country' },
-  { en: 'Electronic' },
-  { en: 'Hip Hop' },
-  { en: 'Jazz' },
-  { en: 'Metal'},
-  { en: 'Pop' },
-  { en: 'R&B' },
-  { en: 'Rock' }
+  { en: 'Country', en: 'Country'},
+  { en: 'Electronic', pt: 'Electronic' },
+  { en: 'Hip Hop', pt: 'Hip Hop' },
+  { en: 'Jazz', pt: 'Jazz' },
+  { en: 'Metal', pt: 'Metal'},
+  { en: 'Pop', pt: 'Pop' },
+  { en: 'R&B', pt: 'R&B' },
+  { en: 'Rock', pt: 'Rock' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_en name[:en]
+   category = Category.find_or_initialize_by_name_pt name[:pt]
  end
 
 [

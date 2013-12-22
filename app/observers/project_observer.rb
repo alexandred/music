@@ -75,7 +75,7 @@ class ProjectObserver < ActiveRecord::Observer
         backer.update_attributes({ notified_finish: true })
       end
     end
-
+=begin
     if project.failed?
       project.backers.in_time_to_confirm.each do |backer|
         Notification.create_notification_once(
@@ -85,7 +85,7 @@ class ProjectObserver < ActiveRecord::Observer
           {backer: backer, project: project, project_name: project.name })
       end
     end
-
+=end
     Notification.create_notification_once(:project_unsuccessful,
       project.user,
       {project_id: project.id, user_id: project.user.id},

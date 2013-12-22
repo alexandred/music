@@ -1,43 +1,38 @@
 - backer = @notification.backer
-|Hi, <strong>#{backer.user.display_name}</strong>!
+|Dear <strong>#{backer.user.display_name}</strong>,
 br
 br
-|Your pledge to #{link_to(backer.project.name, project_by_slug_url(permalink: backer.project.permalink))} was confirmed by <strong>#{backer.payment_method}</strong>
+|Your back on #{link_to(backer.project.name, project_by_slug_url(permalink: backer.project.permalink))} has been confirmed by <strong>#{backer.payment_method}</strong>
 |!
 br
 br
-|Keep this email with you as a receipt.
+|Please keep this email as confirmation of your back.=
 br
 br
-|Very important information:<strong> if you paid using a credit card</strong>, the name that will show up in your invoice is #{backer.payment_method}. Unfortunately, credit card operators don't allow #{Configuration[:company_name]}'s name to be shown, ok?
+|Please note that #{backer.payment_method} is the company name that will appear on your bank statement.
 br
 br
-|Pledged amount: <strong>R$ #{backer.value}</strong>
+|Amount Backed: <strong>#{number_to_currency(backer.value, unit: project.currency_symbol)}</strong>
 br
 -if backer.reward
-  |Chosen reward: <strong>#{backer.reward.description}</strong>
+  |Reward: <strong>#{backer.reward.description}</strong>
 -else
-  |No reward chosen, any questions please contact our team on #{mail_to Configuration[:email_contact]}
+  |Reward: <strong>No reward chosen</strong>
 br
-|Back key: #{backer.key}
-br
-br
-|If the project is successful on <strong>#{backer.project.expires_at.strftime("%d/%m/%Y")}</strong>, the people responsible for the project will contact you in order to deliver the rewards. This contact will come, usually, a week later, which is the time it takes for us to forward all the backers information to the project owner.
+|Backer ID: #{backer.key}
 br
 br
-|If the project doesn't reach it's goal, you will receive another email with instructions to:
-br
-|1) back another project with the generated credits; OR
-br
-|2) ask for a refund.
+|The project owner will contact you soon after <strong>#{backer.project.expires_at.strftime("%d/%m/%Y")}</strong>. Please take note that it may take up to a week for thr project owner to collect the data on all backers.
 br
 br
-|If you want to contact #{backer.project.user.name}, send an email to #{mail_to backer.project.user.email}
+|As #{Configuration[:company_name] is a take-it-all crowdfunding platform, if the project doesn't reach its goal, your back will still be registered but it will be up to the owner how they will raise the rest of the money needed:
+br
+br
+|If you need to contact #{backer.project.user.name}, please send an email to #{mail_to backer.project.user.email}.
 br
 br
 |If you have any other questions, access our #{link_to('FAQ', "#{Configuration[:base_url]}/faq")} or send an email to #{mail_to Configuration[:email_contact]}
 br
 br
-|A big hug,
 br
-|#{Configuration[:company_name]} Team
+|The #{Configuration[:company_name]} team
