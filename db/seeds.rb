@@ -3,7 +3,7 @@
 puts 'Seeding the database...'
 
 [
-  { en: 'Country', en: 'Country'},
+  { en: 'Country', pt: 'Country'},
   { en: 'Electronic', pt: 'Electronic' },
   { en: 'Hip Hop', pt: 'Hip Hop' },
   { en: 'Jazz', pt: 'Jazz' },
@@ -12,7 +12,10 @@ puts 'Seeding the database...'
   { en: 'R&B', pt: 'R&B' },
   { en: 'Rock', pt: 'Rock' }
 ].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
+   category = Category.find_or_initialize_by(name_pt: name[:pt])
+   category.update_attributes({
+     name_en: name[:en]
+   })
  end
 
 [
