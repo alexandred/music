@@ -12,7 +12,7 @@ puts 'Seeding the database...'
   { en: 'R&B', pt: 'R&B' },
   { en: 'Rock', pt: 'Rock' }
 ].each do |name|
-   category = Category.find_or_initialize_by(name_pt: name[:pt])
+   category = Category.find_or_initialize_by_name_pt name[:pt]
    category.update_attributes({
      name_en: name[:en]
    })
@@ -73,12 +73,12 @@ end
   banner2_id: '7',
   banner3_id: '8',
   banner4_id: '9'
-].each do |name|
-   category = Category.find_or_initialize_by_name_pt name[:pt]
-   category.update_attributes({
-     name_en: name[:en]
-   })
- end
+}.each do |name, value|
+   conf = Configuration.find_or_initialize_by_name name
+   conf.update_attributes({
+     value: value
+   }) if conf.new_record?
+end
 
 
 Channel.find_or_create_by_name!(
