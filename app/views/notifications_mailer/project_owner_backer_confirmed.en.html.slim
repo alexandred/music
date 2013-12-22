@@ -13,9 +13,10 @@ br
 |<strong>Back amount:</strong> #{backer.display_value}
 br
 br
-|<strong>Reward:</strong> #{backer.reward.display_description}
-br
-br
+- if backer.reward
+	|<strong>Reward:</strong> #{backer.reward.display_description}
+	br
+	br
 |<strong>Email:</strong> #{backer.user.email}
 br
 br
