@@ -7,10 +7,10 @@ en:
       subject: "Backer canceled after confirmed"
       header: "Backer canceled after confirmed"
     project_owner_backer_confirmed:
-      subject: "Hooray! Another new supporter backed your project"
+      subject: "Someone has just backed your project!"
       header: "A new back has just been confirmed for your project"
     confirm_backer:
-      subject: "Thank you! Your back for %{project_name} was confirmed!"
+      subject: "Your back for %{project_name} has been confirmed!"
       header: "Back confirmed"
     payment_slip:
       subject: "Status do apoio para %{project_name}: boleto impresso"
@@ -19,29 +19,29 @@ en:
       subject: "Seu apoio para %{project_name} foi recebido e está aguardando confirmação do %{payment_method}"
       header: "Apoio Em Análise - o que é isso?"
     updates:
-      subject: "Project UPDATE #%{update_number} - %{project_name}"
-      header: "Project UPDATE #%{update_number} - %{project_name}"
+      subject: "A project you backed has been updated!"
+      header: "Update #%{update_number} - %{project_name}"
     project_in_wainting_funds:
       subject: "O prazo do seu projeto acabou, saiba quais são os próximos passos"
       header: "Acabou o prazo!"
     project_success:
-      subject: "Project successful: some necessary information"
-      header: "Project successful"
+      subject: "Your project was succesfully funded!"
+      header: "Your project was succesfully funded!"
     project_unsuccessful:
-      subject: "Your project was not funded on Catarse, but we would like your feedback x)"
-      header: "Project was not successfully funded ;)"
+      subject: "Your project was partially funded"
+      header: "Your project was partially funded"
     backer_project_successful:
-      subject: "Hooray! The project %{project_name} has succeeded on Catarse"
-      header: "Hooray! The project you backed has succeeded on Catarse"
+      subject: "%{project_name} was succesfully funded!"
+      header: "The project you backed has succeeded at Catarse"
     backer_project_unsuccessful:
-      subject: "The project %{project_name} was not funded - some useful information"
-      header: "Information on credits and refunds ;)"
+      subject: "%{project_name} was partially funded"
+      header: "The project you backed was partially funded at Catarse"
     pending_backer_project_unsuccessful:
       subject: "You started to back the project %{project_name}, which was not funded - some useful information"
       header: "Information about confirmation of support, credits and refunds ;)"
     project_received:
-      subject: "Your project was received by Catarse"
-      header: "Your project was received by the Catarse team"
+      subject: "Your project has been received"
+      header: "Your project has been received by the Catarse team"
     project_received_channel:
       subject: "Your project was received by the Wings Channel"
       header: "Your project was welcomed by the staff of the Wings Channel"
@@ -49,11 +49,11 @@ en:
       subject: "The project %{project_name} has just been created"
       header:  "A new project is awaiting review"
     project_visible:
-      subject: "Your project is now online at Catarse"
-      header: "Now it's for real"
+      subject: "Your project is now online"
+      header: "Your project is now online"
     project_rejected:
-      subject: "Your project does not fit Catarse's focus"
-      header: "Your project was not accepted ;("
+      subject: "Your project has been rejected"
+      header: "Your project has been rejected"
     new_draft_project:
       subject: "New project created - %{project_name}"
       header: "New project created"
