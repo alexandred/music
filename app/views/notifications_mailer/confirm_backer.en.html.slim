@@ -12,7 +12,7 @@ br
 |Please note that #{backer.payment_method} is the company name that will appear on your bank statement.
 br
 br
-|Amount Backed: <strong>#{number_to_currency(backer.value, unit: project.currency_symbol)}</strong>
+|Amount Backed: <strong>#{number_to_currency(backer.value, unit: backer.project.currency_symbol)}</strong>
 br
 -if backer.reward
   |Reward: <strong>#{backer.reward.description}</strong>
