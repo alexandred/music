@@ -63,6 +63,7 @@ sass:
 							margin: 10px
 							input
 								float: left
+								width: auto
 							label
 								padding-top: 0px !important
 						.stripe_info
@@ -453,7 +454,9 @@ javascript:
 				$('.time-remaining').children('span').text($("#days-input").val() + ' days')
 			}
 			$('.category').text($("#project_category_id").find('option:selected').text());
-			$('img.thumbnail').attr('src', "http://#{::Configuration[:host]}/#{@project.uploaded_image.path}")
+			if (!#{!@project.display_image}) {
+			$('img.thumbnail').attr('src', "#{@project.display_image}")
+			}
 		}
 		$(".guideline_form").click(function(){
 			if($('input#accept').is(':checked')) {
