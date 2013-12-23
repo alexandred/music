@@ -423,20 +423,29 @@ sass:
 						  meta[itemprop="dateCreated"]
 						  .wrapper
 						  	.templateimage style="height: 140px; width: 220px;"
-						  		- if @project.uploaded_image
-						  			=image_tag "/#{ImageUploader::cache_dir}/#{@project.uploaded_image_cache}", class: "thumbnail"
+						  		- if @project.uploaded_image.path
+						  			= image_tag @project.display_image, class: 'thumbnail', style: "height: 140px; width: 220px"
 						  		- else
 						  			img.thumbnail
-						  	.category = "Country"
+						  	- if @project.category
+						  		.category = @project.category
+						  	- else
+						  		.category = "Country"
 						  .padding
-						    .name    = 'Name'
-						    .headline  = 'Subtitle'
+						  	- if @project.name
+						  		.name = @project.name
+						  	- else
+						    	.name    = 'Name'
+						    - if @project.headline
+						    	.headline = @project.headline
+						    - else
+						    	.headline  = 'Subtitle'
 						  .status
 						    .padding
 						      .progress-bar = @project.progress_bar(dummy=true)
 						      .percentage = t('channels.projects.progress_html', percent: '0')
 						      .time-remaining
-						      	= t('channels.projects.time_remaining_html', count: '0', unit: 'days')
+						      	= t('channels.projects.time_remaining_html', count: "#{@project.online_days ? @project.online_days : 0}", unit: 'days')
 						      .money-raised
 						      	= t('channels.projects.pledged_html', value: number_to_currency(0, precision: 0))
 	.clearfix
@@ -446,25 +455,15 @@ javascript:
 		var index = index || 0;
 		if (localStorage.getItem('guidelinesaccepted') == "true") {
 			$('input#accept').prop('checked', true);
-			guidelines_accepted = true;
-			if ($("#name-input").val()) { 
-				$('.name').text($("#name-input").val()) 
-			}
-			if ($("#headline-input").val()) {
-				$('.headline').text($("#headline-input").val())
-			}
-			if ($("#days-input").val() != 0) {
-				$('.time-remaining').children('span').text($("#days-input").val() + ' days')
-			}
-			$('.category').text($("#project_category_id").find('option:selected').text());
+				guidelines_accepted = true;
 		}
 		$(".guideline_form").click(function(){
 			if($('input#accept').is(':checked')) {
-			guidelines_accepted = true;
-			localStorage.setItem('guidelinesaccepted',true)
+				guidelines_accepted = true;
+				localStorage.setItem('guidelinesaccepted',true)
 			} else {
-			guidelines_accepted = false;
-			localStorage.setItem('guidelinesaccepted',false)
+				guidelines_accepted = false;
+				localStorage.setItem('guidelinesaccepted',false)
 			}
 		});
 		if ($('.inputs.first').find($('.field_with_errors')).length > 0) {
