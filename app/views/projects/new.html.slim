@@ -423,7 +423,10 @@ sass:
 						  meta[itemprop="dateCreated"]
 						  .wrapper
 						  	.templateimage style="height: 140px; width: 220px;"
-						  		img.thumbnail
+						  		- if @project.uploaded_image
+						  			=image_tag "/#{ImageUploader::cache_dir}/#{@project.uploaded_image_cache}", class: "thumbnail"
+						  		- else
+						  			img.thumbnail
 						  	.category = "Country"
 						  .padding
 						    .name    = 'Name'
@@ -454,9 +457,6 @@ javascript:
 				$('.time-remaining').children('span').text($("#days-input").val() + ' days')
 			}
 			$('.category').text($("#project_category_id").find('option:selected').text());
-			if (!#{!@project.display_image}) {
-			$('img.thumbnail').attr('src', "#{@project.display_image}")
-			}
 		}
 		$(".guideline_form").click(function(){
 			if($('input#accept').is(':checked')) {
