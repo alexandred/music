@@ -50,6 +50,21 @@ sass:
 								margin-top: 0px
 								li
 									margin: 10px 0px
+						.guideline_header
+							font-weight: bold
+							color: rgba(0, 0, 0, 0.8)
+							font-size: 20px
+							margin: 15px 10px
+						.guideline_content
+							color: rgba(0,0,0,0.8)
+							font-size: 15px
+							margin: 5px 10px
+						.guideline_form
+							margin: 10px
+							input
+								float: left
+							label
+								padding-top: 0px !important
 						.stripe_info
 							display: inline
 							margin-left: 100px
@@ -262,6 +277,10 @@ sass:
 				    -webkit-transition: all 0.2s ease-out
 				    -ms-transition: all 0.2s ease-out
 				    transition: all 0.2s ease-out
+	.input_error
+		border-left: 5px solid rgb(204, 21, 41)
+	.field_with_errors
+		display: inline
 
 
 
@@ -272,6 +291,7 @@ sass:
 	    = nested_form_for @project, html: { id: 'project_form' } do |f|
 	    	/#bodyspacer style="display:none; height: 36px; width: 100%;"
 	        /ul#progressbar
+	          li.zero Guidelines
 	          li.first Basics
 	          li.second Rewards
 	          li.third Story
@@ -279,16 +299,28 @@ sass:
 	          li.fifth Review
 	        .fieldset
 				.title
-				  h2#h2 Meet your new project
-				  h3#h3 Start by giving it a name, a pic, and other important details.
+				  h2#h2=t('.zeroheader')
+				  h3#h3=t('.zerosubheader')
 				.panel
 			        ul#navbar
+			          li.zero Guidelines
 			          li.first Basics
 			          li.second Rewards
 			          li.third Story
 			          li.fourth Account
 			          li.fifth Review
-					.inputs.first
+			        .inputs.zero
+			        	  .block
+		        	  		.guideline_header= t('.guidelines.firstheader')
+		        	  		.guideline_content= t('.guidelines.firstcontent')
+		        	  		.guideline_header= t('.guidelines.secondheader')
+		        	  		.guideline_content= t('.guidelines.secondcontent')
+		        	  		.guideline_header= t('.guidelines.thirdheader')
+		        	  		.guideline_content= t('.guidelines.thirdcontent')
+			        	  	.guideline_form= form_tag do
+			        	  		= check_box_tag(:accept)
+			        	  		= label_tag(:accept, "I accept terms")
+					.inputs.first style='display: none'
 						  .block
 						      = f.label :permalink, t('formtastic.labels.project.permalink')
 				              .input-prepend.permalink style="display: inline; float:right;"
@@ -341,6 +373,11 @@ sass:
 							  = f.link_to_add "Add reward", :rewards, class: 'btn btn-success'
 					.inputs.third style="display:none;"
 						  .block
+						  	  = f.label :uploaded_image, t('formtastic.labels.project.uploaded_image')
+						  	  = f.file_field :uploaded_image, as: :file, onchange: "getImage(this);"
+						  	  = f.hidden_field :uploaded_image_cache
+						  	  .hint= "#{t('formtastic.hints.project.uploaded_image')}".html_safe
+						  .block
 						      = f.label :video_url, t('formtastic.labels.project.video')
 						      = f.text_field :video_url, data: { path: video_projects_path }, id: 'video-input'
 							  .hint= "#{t('formtastic.hints.project.video_url')} #{t('.video_important')}".html_safe
@@ -370,7 +407,7 @@ sass:
 							      .bootstrap-twitter
 							      	.refresh.btn.btn-success
 							      		= link_to '↻', stripe_info_path, remote: true
-						  .dummy style="height: 30px"
+						  .dummy style="height: 60px"
 					.inputs.fifth style="display:none;"
 						  .block
 						  	  .review
@@ -385,7 +422,8 @@ sass:
 						  meta[itemprop="dateCreated"]
 						  .wrapper
 						  	.templateimage style="height: 140px; width: 220px;"
-						  	.category = "Architecture & Urbanism"
+						  		img.thumbnail
+						  	.category = "Country"
 						  .padding
 						    .name    = 'Name'
 						    .headline  = 'Subtitle'
@@ -401,10 +439,63 @@ sass:
 javascript:
 	$(window).load(function(){
 		$('.remove_nested_fields:first').hide();
-		var index = index || 1;
+		var index = index || 0;
+		if (localStorage.getItem('guidelinesaccepted') == "true") {
+			$('input#accept').prop('checked', true);
+			guidelines_accepted = true;
+			if ($("#name-input").val()) { 
+				$('.name').text($("#name-input").val()) 
+			}
+			if ($("#headline-input").val()) {
+				$('.headline').text($("#headline-input").val())
+			}
+			if ($("#days-input").val() != 0) {
+				$('.time-remaining').children('span').text($("#days-input").val() + ' days')
+			}
+			$('.category').text($("#project_category_id").find('option:selected').text());
+			$('img.thumbnail').attr('src', "#{@project.uploaded_image.path}")
+		}
+		$(".guideline_form").click(function(){
+			if($('input#accept').is(':checked')) {
+			guidelines_accepted = true;
+			localStorage.setItem('guidelinesaccepted',true)
+			} else {
+			guidelines_accepted = false;
+			localStorage.setItem('guidelinesaccepted',false)
+			}
+		});
+		if ($('.inputs.first').find($('.field_with_errors')).length > 0) {
+			$('li.first').addClass('input_error');
+		}
+		if ($('.inputs.second').find($('.field_with_errors')).length > 0) {
+			$('li.second').addClass('input_error');
+		}
+		if ($('.inputs.second').find($('.block')).length == 0) {
+			$('.inputs.second').css('min-height','420px');
+			$('li.second').addClass('input_error');
+		}
+		if ($('.inputs.third').find($('.field_with_errors')).length > 0) {
+			$('li.third').addClass('input_error');
+		}
+		if ($('.inputs.fourth').find($('.field_with_errors')).length > 0) {
+			$('li.fourth').addClass('input_error');
+		}
+		if ($('.inputs.fifth').find($('.field_with_errors')).length > 0) {
+			$('li.fifth').addClass('input_error');
+		}
+		$("li.zero").click(function(){
+		$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index != 0) {
+				$('.inputs, #h2, #h3').hide();
+				$('#h2').text("#{t('.zeroheader')}");
+				$('#h3').text("#{t('.zerosubheader')}")
+				$('.inputs.zero, #h2, #h3').fadeIn(400);
+				index = 0;
+			}
+		});
 		$("li.first").click(function(){
-		$("body, html").animate( {scrollTop: 86}, 'fast');
-			if(index != 1) {
+		$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index != 1 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.firstheader')}");
 				$('#h3').text("#{t('.firstsubheader')}")
@@ -413,8 +504,8 @@ javascript:
 			}
 		});
 		$("li.second").click(function(){
-			$("body, html").animate( {scrollTop: 86}, 'fast');
-			if(index != 2) {
+			$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index != 2 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.secondheader')}");
 				$('#h3').text("#{t('.secondsubheader')}")
@@ -423,8 +514,8 @@ javascript:
 			}
 		});
 		$("li.third").click(function(){
-			$("body, html").animate( {scrollTop: 86}, 'fast');
-			if(index !=3) {
+			$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index !=3 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.thirdheader')}");
 				$('#h3').text("#{t('.thirdsubheader')}")
@@ -433,8 +524,8 @@ javascript:
 			}
 		});
 		$("li.fourth").click(function(){
-			$("body, html").animate( {scrollTop: 86}, 'fast');
-			if(index !=4) {
+			$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index !=4 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fourthheader')}");
 				$('#h3').text("#{t('.fourthsubheader')}")
@@ -443,36 +534,14 @@ javascript:
 			}
 		});
 		$("li.fifth").click(function(){
-			$("body, html").animate( {scrollTop: 86}, 'fast');
-			if(index !=5) {
+			$("body, html").animate( {scrollTop: 130}, 'fast');
+			if(index !=5 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fifthheader')}");
 				$('#h3').text("#{t('.fifthsubheader')}")
 				$('.inputs.fifth, #h2, #h3').fadeIn(400);
 				index = 5;
 			}
-		});
-
-		$("#video-input").change(function(){
-			var vimeoVideo = $('#video-input').val();
-			var regExp = /^.+vimeo.com\/(.*\/)?([^#\?]*)/;
-			var vimeoVideoID = vimeoVideo.match(regExp)[2]
-			$.ajax({
-			        type:'GET',
-			        url: 'http://vimeo.com/api/v2/video/' + vimeoVideoID  + '.json',
-			        jsonp: 'callback',
-			        dataType: 'jsonp',
-			        success: function(data){
-			            debugger;
-			           	  $('.templateimage').empty()
-			              $('<img/>' ,{
-			                 src:data[0].thumbnail_medium,
-			                 width:'220',
-			                 height:'140'
-			              })
-			              .appendTo('.templateimage');
-			        }
-			    });
 		});
 		$("#name-input").keyup(function(){
 			$('.name').text($("#name-input").val());
@@ -519,3 +588,17 @@ javascript:
 		});
 		*/
 	});
+	function getImage(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+
+	            reader.onload = function (e) {
+	                $('img.thumbnail')
+	                    .attr('src', e.target.result)
+	                    .width(220)
+	                    .height(140);
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }

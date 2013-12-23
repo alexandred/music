@@ -634,6 +634,15 @@ en:
       submit: "Submit the project"
       subtitle: "Show us what you want to achieve..."
       title: "Submit your project"
+      zeroheader: "Guidelines header"
+      zerosubheader: "Guidelines subheader"
+      guidelines:
+        firstheader: Everything on Kickstarter must be a project.
+        firstcontent: A project is something with a clear end, like making an album, a film, or a new game. A project will eventually be completed, and something will be produced as a result.
+        secondheader: Every project on Kickstarter must fit into one of our categories.
+        secondcontent: Our categories are Art, Comics, Dance, Design, Fashion, Film, Food, Games, Music, Photography, Publishing, Technology, and Theater.
+        thirdheader: Are those the only guidelines?
+        thirdcontent: Those are the main two, but read on for specific uses of Kickstarter that are not allowed, and note that Hardware and Product Design projects have additional guidelines below. We don't curate projects based on taste. Instead, we do a quick check to make sure they meet these guidelines.
       firstheader: 'Meet your new project'
       firstsubheader: 'Start by giving it a name, a pic, and other important details.'
       secondheader: 'Every project needs great rewards.'
@@ -863,12 +872,12 @@ en:
       anonymous: "Anonymous back."
       no_backs: "%{name} hasn't backed any project yet."
       no_backs_current_user_html: "You haven't backed any project yet. What about <a href=\"/\">starting now</a>?"
-      no_reward: "You didn't pick a reward"
+      no_reward: "You didn't choose a reward"
       title: "Projects %{name} has backed"
       title_current_user: "Projects I've backed"
       your_reward: "Your reward"
     unsubscribes:
-      title: "Choose which projects you want to receive update notifications from:"
+      title: "Choose the projects you want to receive update notifications from:"
       updates: "I want to receive project updates"
     current_user_fields:
       bio_limit: 'only 140 characters'
