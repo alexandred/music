@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "#{Rails.root}/public/uploads"
+    "#{::Configuration[:host]}/public/uploads"
   end
 
 end
