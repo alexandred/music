@@ -453,7 +453,7 @@ javascript:
 				$('.time-remaining').children('span').text($("#days-input").val() + ' days')
 			}
 			$('.category').text($("#project_category_id").find('option:selected').text());
-			$('img.thumbnail').attr('src', "#{@project.uploaded_image.path}")
+			$('img.thumbnail').attr('src', "http://#{::Configuration[:host]}/#{@project.uploaded_image.path}")
 		}
 		$(".guideline_form").click(function(){
 			if($('input#accept').is(':checked')) {
