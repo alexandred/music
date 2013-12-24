@@ -97,6 +97,7 @@ class Project < ActiveRecord::Base
   validates_format_of :permalink, with: /^(\w|-)*$/, allow_blank: true, allow_nil: true
   validates_format_of :video_url, with: /(https?\:\/\/|)(youtu(\.be|be\.com)|vimeo).*+/, message: I18n.t('project.video_regex_validation')
   validate :permalink_cant_be_route, allow_nil: true
+  validate :user_must_have_stripe_account
 
   def self.currencies
     [:gbp, :usd, :cad, :eur]
@@ -219,6 +220,10 @@ class Project < ActiveRecord::Base
 
   def permalink_cant_be_route
     errors.add(:permalink, I18n.t("activerecord.errors.models.project.attributes.permalink.invalid")) if Project.permalink_on_routes?(permalink)
+  end
+
+  def user_must_have_stripe_account
+    errors[:base] << "You must link a Stripe account" if !user.stripe_key
   end
 
   def self.permalink_on_routes?(permalink)

@@ -46,11 +46,11 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.new(params[:project])
-
     create!(notice: t('projects.create.success')) do |success, failure|
       success.html{ return redirect_to project_by_slug_path(@project.permalink) }
+      flash.now[:error] = "You must link a Stripe account" if !@project.user.stripe_key
     end
-    check_for_stripe_keys
+    check_for_stripe_keys if @project.user.stripe_key
   end
 
   def update

@@ -447,7 +447,7 @@ sass:
 						      .time-remaining
 						      	= t('channels.projects.time_remaining_html', count: "#{@project.online_days ? @project.online_days : 0}", unit: 'days')
 						      .money-raised
-						      	= t('channels.projects.pledged_html', value: number_to_currency(0, precision: 0))
+						      	= t('channels.projects.pledged_html', value: number_to_currency(0, precision: 0, unit: ISO4217::Currency.from_code(@project.currency ? @project.currency : "GBP").symbol))
 	.clearfix
 javascript:
 	$(window).load(function(){
@@ -565,6 +565,23 @@ javascript:
 		});
 		$("#project_category_id").change(function(){
 			$('.category').text($("#project_category_id").find('option:selected').text());
+		});
+		$("#project_currency").change(function(){
+			switch($("#project_currency").val()) {
+				case "USD":
+					text = "$";
+					break;
+				case "GBP":
+					text = "£";
+					break;
+				case "EUR":
+					text = "€";
+					break;
+				case "CAD":
+					text = "$";
+					break;
+			}
+			$('.money-raised > span').text(text + "0");			
 		});
 		$('#days-input, #goal-input').on('keypress', function(ev) {
 		    var keyCode = window.event ? ev.keyCode : ev.which;
