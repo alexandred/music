@@ -424,7 +424,7 @@ sass:
 						  .wrapper
 						  	.templateimage style="height: 140px; width: 220px;"
 						  		- if @project.uploaded_image.path
-						  			= image_tag "#{ImageUploader::cache_dir}/#{@project.uploaded_image_cache}", class: 'thumbnail', style: "height: 140px; width: 220px"
+						  			= image_tag @project.display_image.gsub!("http://s3.tribaltears.com",""), class: 'thumbnail', style: "height: 140px; width: 220px"
 						  		- else
 						  			img.thumbnail
 						  	- if @project.category
