@@ -1,7 +1,6 @@
 CarrierWave.configure do |config|
   if Rails.env.production? and Configuration[:aws_access_key]
-    path = Pathname.new(Configuration[:host])
-    config.root = path.join('tmp')
+    config.root = Rails.root.join('tmp')
     config.cache_dir = 'carrierwave'
     config.fog_credentials = {
       provider: 'AWS',
