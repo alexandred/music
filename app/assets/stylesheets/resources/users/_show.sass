@@ -1,4 +1,37 @@
 [data-namespace="null"][data-controller="users"][data-action="show"]
+  .tab_container
+    width: 920px
+    height: 19px
+    padding: 11px 10px
+    background-color: rgb(30,30,30)
+    margin-left: 0px
+    border-bottom: none
+    padding-top: 10px !important
+    nav
+      a
+        border-radius: 0px
+        margin-left: 1px
+        margin-right: 1px
+        padding: 12px
+        background: rgb(60,60,60)
+        color: white
+        font-family: Arial
+        font-size: 12px
+        text-transform: uppercase
+        text-decoration: none
+        border: 1px solid rgb(80,80,80)
+        height: 19px
+        +transition(all, 0.4s)
+        &:hover
+          +box-shadow(rgba(black, 0.4) 0px 0px 10px inset)
+        &.selected
+          color: black
+          background: white
+          border: 1px $df_gryn solid
+          border-bottom: 2px white solid
+          padding: 12px 12px 11px 12px
+          &:hover
+            +box-shadow(none)
   .loading img
     display: none
   .inline-hints
@@ -18,6 +51,7 @@
     padding-bottom: 20px
     float: left
     #user_profile_content
+      padding-left: 0px
       .content
         p.empty
           text-align: center
@@ -27,14 +61,18 @@
     .section_header
       +grid(12)
       +grid-suffix(1)
+      margin-left: 0px !important
       .profile_image
         +grid(3)
         +alpha
+        width: auto !important
         .avatar_wrapper
-          +box-shadow(rgba(black, 0.4) 2px 2px 5px)
+          //+box-shadow(rgba(black, 0.4) 2px 2px 5px)
+          border-radius: 5px
       .profile_title
         +grid(9)
         +omega
+        width: 300px !important
         h1
           color: $ultra_gryn
           font-size: 28px
