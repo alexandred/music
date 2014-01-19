@@ -857,6 +857,8 @@ en:
       submit: 'Save my email and proceed'
     show:
       attention: Attention
+      backed_text: "Backed %{amount} projects"
+      joined_text: "Joined %{date}"
       tabs:
         backed_projects: "Backed projects"
         created_projects: "Created projects"
