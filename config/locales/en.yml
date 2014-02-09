@@ -174,13 +174,13 @@ en:
         minimum_value: "Minimum value"
         days_to_delivery: "Days to delivery"
       user:
-        address_city: City
+        address_city: Country
         address_complement: Complement
         address_neighbourhood: Neighbourhood
-        address_number: Number
+        address_number: Address 2
         address_state: State
-        address_street: Street
-        address_zip_code: "Zip code"
+        address_street: Address 1
+        address_zip_code: "Post Code"
         cpf: 'CPF / CNPJ '
         cpf_hint_title: 'Nota Fiscal será emitida para esse documento'
         cpf_hint: '(?)'
@@ -189,12 +189,12 @@ en:
         moip_login_hint: '(How to create an account)'
         current_password: "Current password"
         email: Email
-        full_name: "Full name / Company Name"
-        bio: 'Mini Bio'
-        name: 'Full name'
+        full_name: "Full name"
+        bio: 'Biography'
+        name: 'Display name'
         password: Password
         password_confirmation: "Password Confirmation"
-        phone_number: "Mobile phone number"
+        phone_number: "Telephone"
         newsletter: 'I want to receive news from Catarse'
     models:
       backer: Backer
@@ -356,6 +356,7 @@ en:
       submit: Submit your project
       profile: "My profile"
       favourites: "My favourites"
+      settings: "My settings"
       account: "My account"
       home: "Home"
       favourites2: "Favourites"
@@ -882,12 +883,15 @@ en:
       title: "Choose the projects you want to receive update notifications from:"
       updates: "I want to receive project updates"
     current_user_fields:
-      bio_limit: 'only 140 characters'
+      payment_gateways: "Stripe"
+      stripe_key_info: "Stripe Key"
+      stripe_customer_info: "Customer Key"
+      bio_limit: '140 characters'
       updated: "Your information has been updated"
       update_social_info: "Update info"
       social_info: "Contact info"
-      twitter: "twitter ( username )"
-      facebook_link: "facebook profile (full link)"
+      twitter: "twitter username"
+      facebook_link: "facebook profile link"
       other_link: "another internet page"
       change_password: "Change my password"
       current_password_hint: "<i>We need your current password to confirm your changes.</i>"
@@ -895,7 +899,7 @@ en:
       email_tooltip: "Click here to fill your email..."
       gravatar_hint_html: "Want to change your picture? Use %{link} with your email. It's as simple as uploading an image and works for other sites as well ;)"
       local_avatar: "My avatar"
-      submit_text: "Choose your picture"
+      submit_text: "Avatar"
       submit: "Submit"
       my_data: "My profile"
       newsletter: "I want to receive news from Catarse via email"

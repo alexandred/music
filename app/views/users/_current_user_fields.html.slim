@@ -1,65 +1,142 @@
-- unless @user.has_facebook_authentication?
-  #my_facebook
-    h1= t('.my_facebook')
+#profile_settings
+  #my_data
     ul
       li
-        = link_to t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), class: 'facebook_start'
-#my_data
-  h1= t('.my_data')
-  ul
-    li
-      .bootstrap-form
-        = semantic_form_for @user, html: {method: :put, id: 'user_form'}  do |f|
-          .profile
-            = f.input :id, as: :string, input_html: { disabled:  'disabled'} if current_user.admin?
-            = f.input :full_name, required: true, as: :string
-            = f.input :uploaded_image, as: :file, label: t('.submit_text')
-            = f.input :name, required: false, as: :string
-            = f.input :address_street, as: :string
-            = f.input :address_number, as: :string
-            = f.input :address_zip_code, as: :string, input_html: {autocomplete: 'off'}
-            = f.input :address_city, as: :string
-          .socialmidia
-            .div
-              = f.label :twitter, t('.twitter')
-              = f.text_field :twitter
-            .div
-              = f.label :facebook_link, t('.facebook_link')
-              = f.text_field :facebook_link
-            = f.input :phone_number, required: false, as: :string
-            = f.input :email, as: :string
-            = hidden_field_tag 'id', @user.id
-            = f.input :newsletter, as: :boolean, label: t('.newsletter')
-            = f.input :bio, hint: t('.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 140  }
-          .bootstrap-twitter
-            p= f.submit t('.update_social_info'), class: 'btn', id: "user_submit"
-#payment_gateways
-h1 = t('.payment_gateways')
-ul
-  li
-    - if @user.stripe_key.blank?
-      = link_to( image_tag('catarse_stripe/auth/stripe_blue.png'), '/payment/stripe/auth')
-    - else
-      = image_tag 'catarse_stripe/auth/stripe-solid.png'
-      br
-      p= t('.stripe_key_info')
-      p= @user.stripe_key
-      br
-      p= t('.stripe_customer_info')
-      p= @user.stripe_userid
-#change_password
-  h1= t('.change_password')
-  ul
-    li
-      .bootstrap-form
-        = form_for(@user, url: {action: "update_password"}, html: { method: :put, class: 'skip_feed_event', id: 'password_form' }) do |f|
-          span.hint= t('.current_password_hint').html_safe
-          br
-          .div
-            = f.label :current_password
-            = f.password_field :current_password, class:'empty'
-          .div
-            = f.label :password, t('passwords.edit.label_new_password')
-            = f.password_field :password, class:'empty'
-          .bootstrap-twitter
-            p= f.submit 'OK', class: 'btn', id: 'password_submit'
+        .bootstrap-form
+          = semantic_form_for @user, html: {method: :put, id: 'user_form'}  do |f|
+            .profile
+              - if current_user.admin?
+                .profile_input
+                  = f.input :id, as: :string, input_html: { disabled:  'disabled'}
+              .profile_input
+                = f.input :full_name, required: true, as: :string
+              .profile_input
+                = f.input :uploaded_image, as: :file, label: t('.submit_text')
+                = @user.display_image_html width: 169, height: 121
+              .profile_input
+                = f.input :name, required: false, as: :string
+              .profile_input
+                h1="Address"
+                = f.input :address_street, as: :string
+                = f.input :address_number, as: :string
+                = f.input :address_zip_code, as: :string, input_html: {autocomplete: 'off'}
+                = f.input :address_city, as: :string
+              .profile_input
+                = f.label :twitter, t('.twitter')
+                = f.text_field :twitter
+              .profile_input
+                = f.label :facebook_link, t('.facebook_link')
+                = f.text_field :facebook_link
+              .profile_input
+                = f.input :phone_number, required: false, as: :string
+              .profile_input
+                = f.input :email, as: :string
+              = hidden_field_tag 'id', @user.id
+              .profile_input
+                = f.input :newsletter, as: :boolean, label: t('.newsletter')
+              .profile_input
+                = f.input :bio, hint: t('.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 140  }
+            .bootstrap-twitter
+              p= f.submit t('.update_social_info'), class: 'btn', id: "user_submit"
+#account_settings style="display: none"
+  #payment_gateways
+    .profile_input
+      h1 = t('.payment_gateways')
+      ul
+        li
+          - if @user.stripe_key.blank?
+            = link_to( image_tag('catarse_stripe/auth/stripe_blue.png'), '/payment/stripe/auth')
+          - else
+            h2= t('.stripe_key_info')
+            br
+            p= @user.stripe_key
+            br
+            br
+            h2= t('.stripe_customer_info')
+            br
+            p= @user.stripe_userid
+  #change_password
+    .profile_input
+      h1= t('.change_password')
+      ul
+        li
+          .bootstrap-form
+            = form_for(@user, url: {action: "update_password"}, html: { method: :put, class: 'skip_feed_event', id: 'password_form' }) do |f|
+              span.hint= t('.current_password_hint').html_safe
+              #current_password_field
+                = f.label :current_password
+                = f.password_field :current_password, class:'empty'
+              #new_password_field
+                = f.label :password, t('passwords.edit.label_new_password')
+                = f.password_field :password, class:'empty'
+              .bootstrap-twitter
+                p= f.submit 'OK', class: 'btn', id: 'password_submit'
+  - unless @user.has_facebook_authentication?
+    #my_facebook
+      .profile_input
+        h1= t('.my_facebook')
+        ul
+          li
+            = link_to t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), class: 'facebook_start'
+#notification_settings style="display: none"
+  #my_data
+    ul
+      = I18n.t('users.unsubscribes.title')
+    ul
+      li
+        .bootstrap-form
+        = semantic_form_for(@user, url: user_unsubscribes_path(user_id: @user.id), html:{ method: :post}) do |f|
+          = f.inputs do
+            = f.semantic_fields_for :unsubscribes, @subscribed_to_updates do |u|
+              - u.object.created_at.nil? ? (checked = { checked: 'checked' }) : (checked = nil)
+              #subscribed_check
+                = u.input :subscribed, as: :boolean, input_html: checked, label: I18n.t('users.unsubscribes.updates')
+            - if @unsubscribes
+              = f.semantic_fields_for :unsubscribes, @unsubscribes do |u|
+                = u.inputs do
+                  - u.object.created_at.nil? ? (checked = { checked: 'checked' }) : (checked = nil)
+                  .subscribed_projects
+                    = u.input :subscribed, as: :boolean, input_html: checked, label: Project.find(u.object.project_id).name
+                  = u.input :project_id, as: :hidden
+                  = u.input :user_id, as: :hidden
+                  = u.input :notification_type_id, as: :hidden
+
+          p= f.submit t('users.current_user_fields.update_social_info'), class: 'btn', id: "unsubscribe_submit"
+javascript:
+    if (window.location.hash == "#settings") {
+      $("#backed_projects_link").remove();
+      $("#created_projects_link").remove();
+      $("#user_profile_menu").append("<a id='profile_settings_link' class='default_selected' href='#'>Profile</a>");
+      $("#user_profile_menu").append("<a id='account_settings_link' href='#'>Account</a>");
+      $("#user_profile_menu").append("<a id='notifications_settings_link' href='#'>Notifications</a>");
+
+      $("#profile_settings_link").click(function() {
+        $('#notifications_settings_link').removeClass("selected");
+        $('#account_settings_link').removeClass("selected");
+        $('#account_settings').hide();
+        $('#notification_settings').hide();
+        $('#profile_settings_link').addClass("selected");
+        $('#profile_settings').show();
+        return false;
+      });
+
+      $("#account_settings_link").click(function() {
+        $('#profile_settings_link').removeClass("selected default_selected");
+        $('#notifications_settings_link').removeClass("selected");
+        $('#profile_settings').hide();
+        $('#notification_settings').hide();
+        $('#account_settings_link').addClass("selected");
+        $('#account_settings').show();
+        return false;
+      });
+
+      $("#notifications_settings_link").click(function() {
+        $('#profile_settings_link').removeClass("selected default_selected");
+        $('#account_settings_link').removeClass("selected");
+        $('#profile_settings').hide();
+        $('#account_settings').hide();
+        $('#notifications_settings_link').addClass("selected");
+        $('#notification_settings').show();
+        return false;
+      });
+    }

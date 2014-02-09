@@ -32,6 +32,46 @@
           padding: 12px 12px 11px 12px
           &:hover
             +box-shadow(none)
+        &.default_selected
+          color: black
+          background: white
+          border: 1px $df_gryn solid
+          border-bottom: 2px white solid
+          padding: 12px 12px 11px 12px
+          &:hover
+            +box-shadow(none)
+  #current_password_field, #new_password_field
+    display: inline_block
+  .profile_input
+    h1
+      margin-bottom: 5px
+    width: 600px
+    border-top: 2px solid rgb(208, 211, 206)
+    display: inline-block
+    padding: 10px
+    li
+      width: 100%
+    label
+      display: inline-block
+      margin-right: 10px
+      width: 100px
+      font-weight: bold
+    #user_newsletter_input
+      label
+        width: 400px !important
+        display: inline
+        margin-right: 10px
+        input
+          display: inline
+          margin-right: 10px
+    #user_bio_input
+      label
+        vertical-align: top
+      .inline-hints
+        width: 100px
+        margin-left: 110px
+    .avatar_wrapper
+      margin-left: 110px
   .loading img
     display: none
   .inline-hints
@@ -184,7 +224,7 @@
               color: $pink
   #social_info
     margin-top: 20px
-  #my_data, #social_info, #my_avatar, #change_password, #my_facebook
+  #my_data, #social_info, #my_avatar, #change_password, #my_facebook, #payment_gateways
     h1
       color: #333333
       font-family: Lato
@@ -194,7 +234,6 @@
       letter-spacing: -1px
     ul
       padding-top: 20px
-      border-bottom: 1px dotted #ccc
       font-family: Lato
       li
         font-family: Lato
@@ -262,7 +301,7 @@
                 width: 130px
               input#user_cpf, input#user_state_inscription
                 width: 120px
-              input#user_address_street
+              input#user_address_street, input#user_address_number
                 width: 450px
               input#user_full_name
                 width: 320px
@@ -280,6 +319,7 @@
             width: 221px
             border: none
             margin-bottom: 30px
+            clear: left
           .socialmidia
             #user_newsletter_input, #user_email_input, #user_phone_number_input
               #user_newsletter
