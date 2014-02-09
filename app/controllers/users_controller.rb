@@ -60,4 +60,8 @@ class UsersController < ApplicationController
     end
     return redirect_to user_path(@user, anchor: 'settings')
   end
+
+  def settings_redirect
+    redirect_to user_path(current_user, anchor: 'settings')
+  end
 end

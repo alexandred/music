@@ -149,6 +149,7 @@ Catarse::Application.routes.draw do
   end
 
   match "/mudancadelogin" => "users#set_email", as: :set_email_users
+  match "/user_change_settings" => "users#settings_redirect", as: :user_settings
   match "/:permalink" => "projects#show", as: :project_by_slug
 
 end
