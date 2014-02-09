@@ -886,7 +886,7 @@ en:
       payment_gateways: "Stripe"
       stripe_key_info: "Stripe Key"
       stripe_customer_info: "Customer Key"
-      bio_limit: '140 characters'
+      bio_limit: '300 characters'
       updated: "Your information has been updated"
       update_social_info: "Update info"
       social_info: "Contact info"

@@ -35,7 +35,7 @@
               .profile_input
                 = f.input :newsletter, as: :boolean, label: t('.newsletter')
               .profile_input
-                = f.input :bio, hint: t('.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 140  }
+                = f.input :bio, hint: t('.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 300  }
             .bootstrap-twitter
               p= f.submit t('.update_social_info'), class: 'btn', id: "user_submit"
 #account_settings style="display: none"

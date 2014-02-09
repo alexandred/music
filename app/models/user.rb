@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :uploaded_image, UserUploader
 
-  validates_length_of :bio, maximum: 140
+  validates_length_of :bio, maximum: 300
 
   validates_presence_of :email
   validates_uniqueness_of :email, :allow_blank => true, :if => :email_changed?, :message => I18n.t('activerecord.errors.models.user.attributes.email.taken')

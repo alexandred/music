@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso, :mobile_device?, :store_viewed_projects, :get_viewed_projects
-
+  helper_method :namespace, :fb_admins, :render_facebook_sdk, :render_facebook_like, :render_twitter, :display_uservoice_sso, :mobile_device?, :store_viewed_projects, :get_viewed_projects, :render_pinterest_sdk, :render_pinit_button, :render_google_sdk, :render_plus_one
+  
   before_filter :set_locale
   before_filter :force_http
 
@@ -82,12 +82,28 @@ class ApplicationController < ActionController::Base
     render_to_string(partial: 'layouts/facebook_sdk').html_safe
   end
 
+  def render_pinterest_sdk
+    render_to_string(partial: 'layouts/pinterest_sdk').html_safe
+  end
+
+  def render_google_sdk
+    render_to_string(partial: 'layouts/google_sdk').html_safe
+  end
+
   def render_twitter options={}
     render_to_string(partial: 'layouts/twitter', locals: options).html_safe
   end
 
   def render_facebook_like options={}
     render_to_string(partial: 'layouts/facebook_like', locals: options).html_safe
+  end
+
+  def render_pinit_button options={}
+    render_to_string(partial: 'layouts/pinit_button', locals: options).html_safe
+  end
+
+  def render_plus_one options={}
+    render_to_string(partial: 'layouts/plus_one', locals: options).html_safe
   end
 
   def display_uservoice_sso
