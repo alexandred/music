@@ -1,7 +1,11 @@
 en:
+  recommend_to_friend:
+    flash:
+      failed_email: "Please enter a valid email address and name."
+      successful: "Your friend was notified!"
   favourites:
     title: "Favourite Projects"
-    header: "We will notify you 48 hours before these projects end."
+    header: "We will notify you 24 hours before these projects end."
     active: "Active"
     none_active: "You haven't favourited any projects yet."
     expired: "Expired"

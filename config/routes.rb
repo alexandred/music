@@ -95,6 +95,7 @@ Catarse::Application.routes.draw do
       get 'embed'
       get 'video_embed'
       get 'embed_panel'
+      put 'recommend_to_friend'
     end
   end
   resources :users do

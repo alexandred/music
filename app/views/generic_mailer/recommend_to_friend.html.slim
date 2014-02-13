@@ -1,0 +1,7 @@
+= "Hi there <strong>#{@name}</strong>, your friend <strong>#{@user.full_name}</strong> (#{@user.email}) thought you might like the following project on Jampoff:".html_safe
+br
+.project_box style="margin: 0 auto; width: 240px"
+	iframe frameborder="0" height="425px" src="#{embed_project_url(@project)}" width="240px"
+= "Thanks,"
+br
+= "The Jampoff Team"

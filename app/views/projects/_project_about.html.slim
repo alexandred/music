@@ -24,3 +24,8 @@
 .text
   p
     = @project.about_html.html_safe
+
+  = form_tag recommend_to_friend_project_path(@project.id), id: 'mailee-form', method: 'put', class: 'newsletter newsletter-footer' do
+    = text_field_tag 'name', nil, label: "name"
+    = email_field_tag 'email', nil, placeholder: t('sidebar.placeholders.email'), label: 'email', class: 'newsletter-input newsletter-input-footer'
+    = submit_tag t('sidebar.buttons.newsletter'), class: 'newsletter-submit'

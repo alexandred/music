@@ -1,5 +1,8 @@
 en:
   notifications:
+    recommend_to_friend:
+      subject: '%{name} has recommended a project to you!'
+      header: 'Recommended Project'
     new_user_registration:
       subject: 'Welcome to Catarse!'
       header: 'Welcome to Catarse!'

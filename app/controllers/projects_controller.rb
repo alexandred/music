@@ -1,6 +1,6 @@
 # coding: utf-8
 class ProjectsController < ApplicationController
-  load_and_authorize_resource only: [ :new, :create, :update, :destroy ]
+  load_and_authorize_resource only: [ :new, :create, :update, :destroy, :recommend_to_friend ]
   inherit_resources
 
   has_scope :pg_search, :by_category_id, :recent, :expiring, :successful, :recommended, :not_expired, :near_of
@@ -91,6 +91,16 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def recommend_to_friend
+    if params[:email] =~ /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i && (params[:name] != "" || params[:name] != nil)
+      GenericMailer.recommend_to_friend(params[:name],params[:email],current_user,resource)
+      flash[:notice] = t('recommend_to_friend.flash.successful')
+    else
+      flash[:alert] = t('recommend_to_friend.flash.failed_email')
+    end
+    redirect_to project_path(resource)
   end
 
   protected
