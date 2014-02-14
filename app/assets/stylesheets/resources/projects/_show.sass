@@ -190,6 +190,8 @@
           padding-top: 10px
           #facebook_share, #facebook_share iframe
             float: left
+          .internal_sharing
+            float: right
           ul
             li
               float: left
@@ -204,14 +206,15 @@
                   width: 78px
               &.plusone
                 margin-top: 4px
-              &.embed
+              &.embed, &.mail
+                width: 31px
                 margin-right: 5px
-                margin-top: 7px
-                margin-left: 0px
+                margin-top: 1px
+                margin-left: 5px
                 a
                   float: right
                   background: rgba($ultra_gryn, 0.2)
-                  padding: 2px 10px
+                  padding: 6px
                   text-decoration: none
                   color: black
                   font-family: Lato
@@ -219,7 +222,7 @@
                   +border-radius(5px)
                   +transition(all, 0.3s)
                   img
-                    padding: 0 7px 0 0
+                    padding: 0px
                   &:hover
                     +box-shadow(rgba(black, 0.5) 0 0 4px inset)
                   &:active

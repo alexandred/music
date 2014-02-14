@@ -12,20 +12,29 @@
           #pinit= render_pinit_button href: project_by_slug_url(@project.permalink), description: @project.name
         li.plusone
           #plusone= render_plus_one href: project_by_slug_url(@project.permalink)
-        li.embed
-          = link_to '#embed', id: 'embed_link' do
-            = image_tag "catarse/embed_icon19x9.png", title: t('projects.show.share.embed_title')
-            = t('projects.show.share.embed')
+        .internal_sharing
+          - if current_user
+            li.mail
+              = link_to '#recommend', id: 'recommend_link' do
+                = image_tag "catarse/profile_icon19x14.png", title: "Recommend to a friend"
+                //= t('Email')
+          li.embed
+            = link_to '#embed', id: 'embed_link', style: 'padding: 8px 6px' do
+              = image_tag "catarse/embed_icon19x9.png", title: t('projects.show.share.embed_title')
+              //= t('projects.show.share.embed')
       .clearfix
 
 .clearfix
 #project_embed.hide data-path=embed_panel_project_path(@project)
   = image_tag "loading.gif", class: 'loader'
+#project_recommend.hide
+  = form_tag recommend_to_friend_project_path(@project.id), id: 'mailee-form', method: 'put', class: 'newsletter newsletter-footer' do
+    = "Name"
+    = text_field_tag 'name', nil, label: "name", placeholder: "Enter your friend's name"
+    br
+    = "Email"
+    = email_field_tag 'email', nil, placeholder: "Enter your friend's email", label: 'email', class: 'newsletter-input newsletter-input-footer'
+    = submit_tag t('sidebar.buttons.newsletter'), class: 'newsletter-submit'
 .text
   p
     = @project.about_html.html_safe
-
-  = form_tag recommend_to_friend_project_path(@project.id), id: 'mailee-form', method: 'put', class: 'newsletter newsletter-footer' do
-    = text_field_tag 'name', nil, label: "name"
-    = email_field_tag 'email', nil, placeholder: t('sidebar.placeholders.email'), label: 'email', class: 'newsletter-input newsletter-input-footer'
-    = submit_tag t('sidebar.buttons.newsletter'), class: 'newsletter-submit'

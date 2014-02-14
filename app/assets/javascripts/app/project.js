@@ -3,12 +3,14 @@ App.addChild('Project', _.extend({
 
   events: {
     'click #toggle_warning a' : 'toggleWarning',
-    'click a#embed_link' : 'toggleEmbed'
+    'click a#embed_link' : 'toggleEmbed',
+    'click a#recommend_link' : 'toggleRecommend'
   },
 
   activate: function(){
     this.$warning = this.$('#project_warning_text');
     this.$embed= this.$('#project_embed');
+    this.$recommend= this.$('#project_recommend');
     this.route('about');
     this.route('updates');
     this.route('backers');
@@ -24,9 +26,17 @@ App.addChild('Project', _.extend({
 
   toggleEmbed: function(){
     this.loadEmbed();
+    this.$recommend.hide();
     this.$embed.slideToggle('slow');
     return false;
   },
+
+  toggleRecommend: function(){
+    this.$embed.hide();
+    this.$recommend.slideToggle('slow');
+    return false;
+  },
+
 
   followRoute: function(name){
     var $tab = this.$('nav#project_menu a[href="' + window.location.hash + '"]');

@@ -1,5 +1,7 @@
 # coding: utf-8
 class ProjectsController < ApplicationController
+  include Singleton
+  include ActionView::Helpers::TextHelper
   load_and_authorize_resource only: [ :new, :create, :update, :destroy, :recommend_to_friend ]
   inherit_resources
 
@@ -95,7 +97,7 @@ class ProjectsController < ApplicationController
 
   def recommend_to_friend
     if params[:email] =~ /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i && (params[:name] != "" || params[:name] != nil)
-      GenericMailer.recommend_to_friend(params[:name],params[:email],current_user,resource)
+      GenericMailer.recommend_to_friend(sanitize(params[:name]),sanitize(params[:email]),current_user,resource).deliver
       flash[:notice] = t('recommend_to_friend.flash.successful')
     else
       flash[:alert] = t('recommend_to_friend.flash.failed_email')

@@ -495,10 +495,10 @@ waiting_confirmation.es.png: waiting_confirmation.es-9e274e199481fbad9a5649ca4f9
 waiting_confirmation/index.es.png: waiting_confirmation.es-9e274e199481fbad9a5649ca4f92f8c5.png
 waiting_confirmation.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
 waiting_confirmation/index.pt.png: waiting_confirmation.pt-a654771fdb4bcbc2478ce524627309f0.png
-application.js: application-789e5749ea5af7ad5f9927d5143005a0.js
-application/index.js: application-789e5749ea5af7ad5f9927d5143005a0.js
-application.css: application-c5539c10e8ec35e32e45d07885bcb2bf.css
-application/index.css: application-c5539c10e8ec35e32e45d07885bcb2bf.css
+application.js: application-b2b2ed4140554889abde74ec3ae4c3b4.js
+application/index.js: application-b2b2ed4140554889abde74ec3ae4c3b4.js
+application.css: application-1780c35a2f280981ea68ffe9d6ece727.css
+application/index.css: application-1780c35a2f280981ea68ffe9d6ece727.css
 catarse.css: catarse-70b37e58bbb375eaa6eefc9460ac1ca0.css
 catarse/index.css: catarse-70b37e58bbb375eaa6eefc9460ac1ca0.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
