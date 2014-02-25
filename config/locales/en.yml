@@ -24,8 +24,8 @@ en:
   site:
     title: "The biggest crowdfunding community in Brazil"
     meta_title:  "%{title} · %{company_name}"
-    description: "O Catarse é uma ferramenta diferente – e colaborativa – para tirar o seu projeto do papel!"
-    keywords: "catarse, crowdfunding, project, community, open source"
+    description: "O Jampoff é uma ferramenta diferente – e colaborativa – para tirar o seu projeto do papel!"
+    keywords: "jampoff, crowdfunding, project, community, open source"
 
   login:
     forgot_passord:
@@ -47,7 +47,7 @@ en:
     value: 'Back value'
     service_fee: 'Fee'
     user_name: 'Backer name'
-    user_email: 'Catarse e-mail'
+    user_email: 'Jampoff e-mail'
     payer_email: 'Payment e-mail'
     payment_method: 'Payment method'
     address_street: 'Street'
@@ -80,14 +80,14 @@ en:
       subtitle: "total of %{total}"
   project_by: "project by"
   tell_about_this_back: "Tell the world about your support!"
-  share_my_backs: "See the projects that I support on Catarse!"
+  share_my_backs: "See the projects that I support on Jampoff!"
   tell_about_this_project: "Tell the world about your project!"
-  share_my_projects: "See my projects on Catarse!"
+  share_my_projects: "See my projects on Jampoff!"
   count_backed_projects: "backed %{total} projects"
   footer:
     titles:
       about: "About us"
-      social: "Friends of Catarse"
+      social: "Friends of Jampoff"
       sitemap: "Navigate"
       newsletter: "Subscribe to our newsletter"
       contact: "Keep in touch"
@@ -136,7 +136,7 @@ en:
   sections:
     title:
       header: "Discover & Support Great Artists"
-      subheader: "Catarse is the best way to support and get connected with artists with love"
+      subheader: "Jampoff is the best way to support and get connected with artists with love"
     near:
       title: near me
     selection:
@@ -170,7 +170,7 @@ en:
         user_id: "User ID"
         video_url: "Video URL"
         permalink: 'Project URL'
-        how_know: "How did you hear about Catarse?"
+        how_know: "How did you hear about Jampoff?"
         more_links: 'Where can we find more about you and your project?'
       reward:
         description: Description
@@ -199,7 +199,7 @@ en:
         password: Password
         password_confirmation: "Password Confirmation"
         phone_number: "Telephone"
-        newsletter: 'I want to receive news from Catarse'
+        newsletter: 'I want to receive news from Jampoff'
     models:
       backer: Backer
       category: Category
@@ -303,9 +303,9 @@ en:
         name: "Make this short and sweet. Leave the description to the subtitle and about sections."
         uploaded_image: "Upload a 512x400 image(.jpg)."
         video_url: "Enter the URL to your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. Vimeo has a clean interface and no advertisements and this will reflect upon the quality of your project."
-        identification: "Please upload a copy of a government issued ID. Our team requires this in order to verify your identity and prevent fraud. All information on this identification should match the information you have provided us when signing up and during the submission of your project. This image will only be visible to the Catarse team and will not be publicly accessible."
-        stripe: "All payments on Catarse are currently handled by Stripe. Stripe will allow you to keep track of all payments made to you during your campaign."
-        review: "You are about to send your project to the Catarse team for review; you will be able to make changes on the project draft page. To ensure that the project is accepted as soon as possible by our curators, make sure you have checked the following:<br><ol><li>All fields in this form have been filled in</li><li>There are no spelling errors in the fields</li><li>Your video does not contain any copyrighted or inappropriate material</li><li>The ID you have provided is valid and matches the information you have provided in your user profile section</li><li>You have taken into consideration the flat fee of 10% that Catarse charges</li><li>Your Paypal email is correct</li><li>You have organised all delivery options for your rewards and you have committed to providing them once your campaign ends</li></ol> If all of these check out, go ahead and click the submit button. Thank you for choosing Catarse."
+        identification: "Please upload a copy of a government issued ID. Our team requires this in order to verify your identity and prevent fraud. All information on this identification should match the information you have provided us when signing up and during the submission of your project. This image will only be visible to the Jampoff team and will not be publicly accessible."
+        stripe: "All payments on Jampoff are currently handled by Stripe. Stripe will allow you to keep track of all payments made to you during your campaign."
+        review: "You are about to send your project to the Jampoff team for review; you will be able to make changes on the project draft page. To ensure that the project is accepted as soon as possible by our curators, make sure you have checked the following:<br><ol><li>All fields in this form have been filled in</li><li>There are no spelling errors in the fields</li><li>Your video does not contain any copyrighted or inappropriate material</li><li>The ID you have provided is valid and matches the information you have provided in your user profile section</li><li>You have taken into consideration the flat fee of 10% that Jampoff charges</li><li>Your Paypal email is correct</li><li>You have organised all delivery options for your rewards and you have committed to providing them once your campaign ends</li></ol> If all of these check out, go ahead and click the submit button. Thank you for choosing Jampoff."
         stripe_activated: "Your Stripe account has been linked to your project."
         currency: "Supported countries at this time: United Kingdom, United States, Canada, Ireland."
       reward:
@@ -323,7 +323,7 @@ en:
         comment: "Leave a comment for the project owner to see"
       project:
         more_links: "Related links *"
-        how_know: "How do you know about Catarse?"
+        how_know: "How do you know about Jampoff?"
         headline: "Subtitle *"
         category: 'Category *'
         first_backers: "Your sponsors *"
@@ -344,8 +344,8 @@ en:
   found_plural: Found
   found_singular: Found
   here: here
-  i_backed: "I backed the project %{name} on @catarse"
-  i_just_backed: "I just backed the project %{name} on @catarse"
+  i_backed: "I backed the project %{name} on @jampoff"
+  i_just_backed: "I just backed the project %{name} on @jampoff"
   layouts:
     login:
       login_with_facebook: "sign in with your facebook account"
@@ -389,20 +389,20 @@ en:
       site_title: "Recover password"
   project:
     start:
-      email_subject: "Your project has been received by Catarse's team"
-      email_text: "Thank you for your submission!<br><br>Please allow up to 3 working days for your project to be reviewed.<br><br>In the meantime why not visit: (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) and explore some of the projects already on the site. You might even find one that interests you! .<br><br>Stay tuned for updates to Catarse on <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> and our <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.<br><br>If you have any doubts, don't hesitate to send an email to: %{email}"
-      notification_text: "Your project has been received by Catarse's team"
+      email_subject: "Your project has been received by Jampoff's team"
+      email_text: "Thank you for your submission!<br><br>Please allow up to 3 working days for your project to be reviewed.<br><br>In the meantime why not visit: (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) and explore some of the projects already on the site. You might even find one that interests you! .<br><br>Stay tuned for updates to Jampoff on <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> and our <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.<br><br>If you have any doubts, don't hesitate to send an email to: %{email}"
+      notification_text: "Your project has been received by Jampoff's team"
     finish:
       successful:
         email_subject: "The project %{project_name} was successful funded!"
-        email_text: "The project %{project_link}, that you have backed, was successfully funded! <br><br>Thanks to %{project_total_backers} other people like you, %{project_pleged} was raised, reaching %{project_process}% of the goal!<br><br>Please not that Catarse takes up to 3 working days to deliver all backer information to the project owner. Once they have reviewed this information, they will contact you to let you know about your reward.<br><br>In this meantime, why don't you share the great news with your friends?<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>If you need to get in touch with the owner %{project_owner_name}, send an email to %{project_owner_email}.<br><br>If you have any other questions, please check our FAQ: <a href='http://www.catarse.me/faq' style='color: #008800';>www.catarse.me/faq</a> or send an email to <a href='mail_to:contato@catarse.me' style='color: #008800;'>contato@catarse.me</a><br>"
-        facebook_text: "The project '%{name}', which I backed on Catarse, was succesfully funded!"
+        email_text: "The project %{project_link}, that you have backed, was successfully funded! <br><br>Thanks to %{project_total_backers} other people like you, %{project_pleged} was raised, reaching %{project_process}% of the goal!<br><br>Please not that Jampoff takes up to 3 working days to deliver all backer information to the project owner. Once they have reviewed this information, they will contact you to let you know about your reward.<br><br>In this meantime, why don't you share the great news with your friends?<br><br><div style='text-align:center;'>%{facebook_button}%{twitter_button}</div><br><br>If you need to get in touch with the owner %{project_owner_name}, send an email to %{project_owner_email}.<br><br>If you have any other questions, please check our FAQ: <a href='http://www.jampoff.me/faq' style='color: #008800';>www.jampoff.me/faq</a> or send an email to <a href='mail_to:contato@jampoff.me' style='color: #008800;'>contato@jampoff.me</a><br>"
+        facebook_text: "The project '%{name}', which I backed on Jampoff, was succesfully funded!"
         notification_text: "The project %{link} that you backed was successful! Spread the word!"
         reward_notification_text: "Soon, %{link} will contact you with information about the delivery your reward. Enjoy!"
-        twitter_text: "The project '%{name}', which I backed on @catarse, was successful funded! %{short_url}"
+        twitter_text: "The project '%{name}', which I backed on @jampoff, was successful funded! %{short_url}"
       unsuccessful:
         email_subject: "The project %{project_name} was not funded"
-        email_text: 'Unfortunately the project %{project_link}, that you have backed, did not reach its goal in time and was not funded.<br><br>You have received a refund of <strong>%{value}</strong> in credits to back other projects. You can see others %{project_category} projects at %{explore_category_link}.<br><br>You can also request a refund by clicking on %{credits_link}. Remember that you signed up on Catarse using %{user_provider}. If you are having problems with a refund, do not hesitate to contact us on financeiro@catarse.me with the subject "Refund issue".<br><br>If, for any reason, you need to contact %{project_owner_name}, send an email to %{project_owner_email}.<br><br>If you have any other questions, visit our FAQ or send an email to <a href="mail_to:contato@catarse.me" style="color: #008800;">contato@catarse.me</a>.<br>'
+        email_text: 'Unfortunately the project %{project_link}, that you have backed, did not reach its goal in time and was not funded.<br><br>You have received a refund of <strong>%{value}</strong> in credits to back other projects. You can see others %{project_category} projects at %{explore_category_link}.<br><br>You can also request a refund by clicking on %{credits_link}. Remember that you signed up on Jampoff using %{user_provider}. If you are having problems with a refund, do not hesitate to contact us on financeiro@jampoff.me with the subject "Refund issue".<br><br>If, for any reason, you need to contact %{project_owner_name}, send an email to %{project_owner_email}.<br><br>If you have any other questions, visit our FAQ or send an email to <a href="mail_to:contato@jampoff.me" style="color: #008800;">contato@jampoff.me</a>.<br>'
         notification_text: "You received %{value} in credits to back other projects. If you prefer, you can request a refund %{link}."
         unsuccessful_text: "Unfortunately, yhe project %{link} that you backed wasn't funded."
     video_regex_validation: "only Vimeo URLs are permitted"
@@ -481,11 +481,11 @@ en:
         you_are_about_html: "You are about to back %{link}."
         pay_with: "Pay With"
     create:
-      success: "Your project was successfully created! We will contact you soon. Thank you for choosing Catarse!"
+      success: "Your project was successfully created! We will contact you soon. Thank you for choosing Jampoff!"
     form:
       permalink_hint: 'Keep this short and sweet so backers will be able to remember and spread it.'
       add_reward: "Add reward"
-      important_html: "Please note that Catarse will charge 13% if your project is successful. Please take this into consideration when creating your budget."
+      important_html: "Please note that Jampoff will charge 13% if your project is successful. Please take this into consideration when creating your budget."
       project_warning:
         content_html: "Don't forget to read %{link} if you want us to recommend your project."
         help_link: "our guide"
@@ -500,7 +500,7 @@ en:
       suggest_for_you: "suggested for you"
       highlight_project: "featured project"
       guidelines: "How it Works"
-      guidelines_subtitle: "Getting to know Catarse"
+      guidelines_subtitle: "Getting to know Jampoff"
     pending:
       can_finish: "Can finish?"
       finished: Finished?
@@ -569,7 +569,7 @@ en:
       no_reward_title: "Back with no reward"
       no_reward_description: "I just want to support the project"
     send_mail:
-      success: "Your project was successfully submitted! We will contact you soon. Thank you for choosing Catarse."
+      success: "Your project was successfully submitted! We will contact you soon. Thank you for choosing Jampoff."
     show:
       rejected: "This project does not fit our <a href='https://docs.google.com/document/d/1Heh9LlvoSoD0lUfbmV5WlISJ3nqmGpEQiw15TBuCn-0/edit' target='_blank'>selection criteria.</a>"
       waiting: "This project is awaiting approval and you will be notified of it going live."
@@ -601,19 +601,19 @@ en:
         take_a_look: "Check out the project"
         title: "Be part of it and share this project"
     new:
-      legend_html: "After filling in the form below, you will be redirected to the project draft page. You will be able to add rewards to your project and share it with your team or your friends for feedback.<br><br>The information you will provide now is not final and can be changed at any time.<br><br><b>Note:</b> <i>The feasability of your project will be assessed by our team, please make sure it meets the <a href='https://docs.google.com/a/catarse.me/document/d/1wLDS2lphQ6monovg9rEaTIDcxBD3FRZV9dfGKmajyj8/edit' target='_blank' >selection criteria</a> or else you run the risk of your project being refused.</i>"
+      legend_html: "After filling in the form below, you will be redirected to the project draft page. You will be able to add rewards to your project and share it with your team or your friends for feedback.<br><br>The information you will provide now is not final and can be changed at any time.<br><br><b>Note:</b> <i>The feasability of your project will be assessed by our team, please make sure it meets the <a href='https://docs.google.com/a/jampoff.me/document/d/1wLDS2lphQ6monovg9rEaTIDcxBD3FRZV9dfGKmajyj8/edit' target='_blank' >selection criteria</a> or else you run the risk of your project being refused.</i>"
       permalink_important: 'Please use only letters and numbers'
       permalink_hint: 'This is the main link to your project, it should be easily remembered.'
       name_important: "Maximum 50 characters"
       online_days_important: "Maximum campaign length of 60 days"
       about_important: "Remember to add links related to your project that you want the public to see, they will atuomatically link to the object you want. Bold text and italic text can be done with ** and _ respectively before and after the text. "
-      important_html: 'Catarse charges 13% on succesful funding'
+      important_html: 'Jampoff charges 13% on succesful funding'
       send_project: "I want to submit my project."
       video_important: "Your project may be refused if your video contains inappropriate content"
-      more_links_important: "Information entered here is only visible to Catarse staff. Please seperate each link by a blank line."
-      first_backers_important: "Information entered here is only visible to Catarse staff. Please seperate each entry by a blank line."
+      more_links_important: "Information entered here is only visible to Jampoff staff. Please seperate each link by a blank line."
+      first_backers_important: "Information entered here is only visible to Jampoff staff. Please seperate each entry by a blank line."
       how_know_important: "Let us know how you found us! (optional)"
-      headline_important: "This will appear as the subtitle on your project on Catarse's main webpages, make it catchy to draw attention"
+      headline_important: "This will appear as the subtitle on your project on Jampoff's main webpages, make it catchy to draw attention"
       tags_important: "This section needs to be removed."
       subtitle: "Describe to us what you want to achieve..."
       title: "Submit your project"
@@ -629,7 +629,7 @@ en:
       twitter: "Have twitter account?"
       facebook: "Have facebook account?"
       blog: "Have a blog about the project?"
-      know_us_via: "How did you meet Catarse?"
+      know_us_via: "How did you meet Jampoff?"
       how_works: "How to mobilize backers to raise $ needed for enforcement?"
       project_warning:
         content_html: "Want to have your project selected? Don't forget to read %{link}."
@@ -659,7 +659,7 @@ en:
       fifthheader: 'Review header.'
       fifthsubheader: 'Review subheader'
     twitter:
-      take_a_look: "Check out %{name} on @catarse"
+      take_a_look: "Check out %{name} on @jampoff"
     video_embed:
       a_project_by_html: "A project by %{link} on"
   projects_mailer:
@@ -688,13 +688,13 @@ en:
     destroy:
       success: "Successfully logged out."
     failure:
-      error: "There was an error while logging in. Please try again, if the problem persists, contact Catarse support."
+      error: "There was an error while logging in. Please try again, if the problem persists, contact Jampoff support."
 
 
   static:
     guidelines_backers:
       title: "I want to back a project!"
-      subtitle: "Understand step by step how to back a project on Catarse."
+      subtitle: "Understand step by step how to back a project on Jampoff."
       introduction: "Crowdfunding is an excellent way to fund projects that you find interesting"
       legend_html: "We believe that being part of a project is the kind of thing that sometimes we do not really know why, but it does a darn good."
       title_one: "Explore the Project"
@@ -705,26 +705,26 @@ en:
       step_three: "Fill in your information and review it! Then, decide what form of payment best meets your needs."
       title_four: "Spread the word!"
       step_four: "Now you're in the same boat as the project creator. Spread the word on your networks and stay tuned on the updates."
-      title_requirements: "Remember: in Catarse it’s “all or nothing”"
+      title_requirements: "Remember: in Jampoff it’s “all or nothing”"
       sucessfull_title: "If the project meet or exceed its financial target ..."
       sucessfull: "The project is considered successful! The creator gets the money and contacts all supporters."
       not_sucess_title: "If the project does not meet the target ..."
       not_sucess: "You get the full amount of support in the form of loans (to support another project). If that does not please you, you can request your money back, according to the rules of the <a href='%{terms}' target='_blank'>terms of use</a>."
       title_not_funded: "If the project does not achieve the goal, how do I use my credits?"
-      not_funded: "You will receive credits  on Catarse. The moment you choose to back another project, on the screen to select the reward, there will have a field to use your credits."
+      not_funded: "You will receive credits  on Jampoff. The moment you choose to back another project, on the screen to select the reward, there will have a field to use your credits."
       more_questions: "I'm dying to support a project, is there anything else I need to know?"
       title_backer: "How do I know that my support was successful?"
       backer: "You will receive a confirmation email. And stay tuned on the BACKERS tab at the page of the project you backed."
       title_rewards: "If the project is funded, how do I get my rewards?"
       rewards: "It is the duty of the project creator to contact you and arrange how to deliver  the chosen reward. If not, you need to send an email to him/her to claim it! If you get no answer … contact us so we can give them an earful = D"
       title_credits: "If the project does not achieve the goal, how do I use my credits?"
-      credits: "You will receive credits  on Catarse. The moment you choose to back another project, on the screen to select the reward, there will have a field to use your credits."
+      credits: "You will receive credits  on Jampoff. The moment you choose to back another project, on the screen to select the reward, there will have a field to use your credits."
       title_money: "What if I don't want to use the credits?"
       money: "No problem! You just need to enter in your profile (My credits) and request a chargeback. If you paid with debit or billet, you’ll need to open an account at MOIP. If you used a credit card the value will be back on your next bill."
       other_backers: "I WANT MORE! CAN I HELP  IN OTHER WAYS?"
       intro: "Get to know diferent ways to help projects you believe in"
       other_one: "Bring two other friends to back with the same amount you did"
-      other_two: "Spread the word to every one. Tell them how great is the project you backed on Catarse."
+      other_two: "Spread the word to every one. Tell them how great is the project you backed on Jampoff."
       other_three: "Do you have a friend who’s a Journalist? Try to have him/her to post something about it on his/her blog."
       other_four: "Make a backing video to broadcast your believe in the project .Like these guys did:https://vimeo.com/46233018"
       other_five: "Send an e-mail to the project creator asking how can  you help even more."
@@ -734,16 +734,27 @@ en:
       explore_projects: "I want to back a project"
     guidelines:
       title: "How it works"
-      subtitle: "Get to know Catarse better."
-      introduction_html: "Catarse is a space of exchange among individuals who together <br >enable the realization of creative projects."
+      subtitle: "Get to know Jampoff better."
+      introduction_html: "Jampoff is a space of exchange among individuals who together <br >enable the realization of creative projects."
       legend_html: "We believe that connecting people that share value with respect to a cause; an idea; a project,  is one of the best ways to make them come true. <br><br> Be very welcome! This is your space as much as it is ours, after all, catharsis happens daily from the meeting of people in search of new ways to give life to more initiatives from society itself. We understand this to be an alternative to government resources, the sponsoring companies and bank loans = D"
       submit: "SUBMITTING A PROJECT"
       send_project: "Understand how to submit your project"
       explore_curious: "BACKING A PROJECT"
       explore_projects: "Understand how to back a project"
+    community:
+      title: "Jampoff Community Guidelines"
+      title_1: "Spread the word but don't spam"
+      subtitle_1: "What's spam? Some examples include:<br><br><ul><li>Emailing or direct messaging strangers, especially en masse</li><li>Using email lists from third parties or soliciting backers of other Jampoff projects</li><li>Sending unsolicited @-replies on Twitter</li><li>Link-bombing forums</li><li>Promoting a project on other projects' pages</li></ul><br><br>Sharing your project with friends, fans, and followers is one thing, but invading inboxes and social networks uninvited is another. Spamming makes you and every other Jampoff project look bad, and it puts your project in jeopardy of being suspended. Not sure if something is spam? If you have to ask, it probably is."
+      title_2: Be respectful and considerate
+      subtitle_2: "This means:<br><br><ul><li>Don’t harass or make personal attacks</li><li>Don't post obscene, hateful, or objectionable content</li><li>Don't post copyrighted content without permission. Only post content that you have the rights to</li><li>If you don't like a project, don't back it. No need to be a jerk</li></ul><br><br>Violating these rules or our Terms of Use may result in your account being deleted and/or your project being suspended. That's not fun for anyone, so please follow these simple rules very carefully. Cool? Cool."
     about:
-      title: "Who Are We?"
-      subtitle: "Meet the lovely gang that makes this whole thing happen <3"
+      title: "About Jampoff"
+      title_1: "What is Jampoff?"
+      subtitle_1: "Jampoff is the home for all music related crowd-funding projects. It is geared towards musical artists and organisations in order to help their projects in becoming a reality. "
+      title_2: The idea
+      subtitle_2: "The story all began when our founders were coming up with great ideas, and were working hard in making these ideas a reality. They encountered many obstacles on the path to success despite having the passion, determination, and vision. The main barrier to success, they discovered, was a lack of funding opportunities to take their passions to the next level.<br><br>Jampoff was born when our founder reached out to a good friend to aid him in realizing his dream. This artist was talented and passionate about his craft but became stuck when trying to bring his talents to reality. <br><br>Our founder noticed a parallel between him and his friend in attempting to realize their goals: the lack of funding. He sought to fix this by introducing a platform where his friend and all artists can realize their dreams and aspirations."
+      title_3: Our Mission
+      subtitle_3: "Our Mission is to Get Your Passion Funded.<br><br>Music is the soul life, it an art form with which you can reach out to peoples’ emotions and inspire. Our sole mission is to help you get your passion funded. <br><br>We understand the difficulties in giving a dream a jump start. Whether you're a new artist trying to breakthrough or an established artist reaching out to newer grounds, we are here to help. <br><br>Look no further; Jampoff is made for you by you."
       introduction: "Who are they? What do they feed of? How are they networked? You’ll see all of it now on “Who are we?”."
       name_one: "Luis Otávio Ribeiro"
       title_one: "Fisher of Killer Projects"
@@ -755,7 +766,7 @@ en:
       title_three: "Apprentice of Making it happen"
       text_three: "Color and contrast enthusiast, poet and artist by nature, curious about culture, curator by accident."
       name_four: "Renato Garcia"
-      title_four: "Catarse’s Silvio Santos (a brasilian host and entrepreneur)"
+      title_four: "Jampoff’s Silvio Santos (a brasilian host and entrepreneur)"
       text_four: "Collectivist. Believes in collaboration one by one, with no authority,  for a fairer world. Football and skateboarding fanatic. All this accompanied by a good samba or nacinal rap soundtrack."
       name_five: "Rodrigo Maia"
       title_five: "Information Remixer"
@@ -775,15 +786,15 @@ en:
     faq:
       title: "Frequently asked questions"
     guidelines_start:
-      accept: "I have read and understand how catarse works."
+      accept: "I have read and understand how jampoff works."
       explore_curious: "Just looking around!"
       explore_projects: "I want to explore the projects."
       submit: "Next step!"
       send_project: "I want to submit my project."
-      subtitle: "Understand, step-by-step, how to finance your project through Catarse."
-      title: "How Catarse works?"
-      introduction: "Catarse is a different - and collaborative - way to make your projects become reality."
-      legend_html: "Use this guide to decide if Catarse is the right tool for the job."
+      subtitle: "Understand, step-by-step, how to finance your project through Jampoff."
+      title: "How Jampoff works?"
+      introduction: "Jampoff is a different - and collaborative - way to make your projects become reality."
+      legend_html: "Use this guide to decide if Jampoff is the right tool for the job."
       title_one: "Submit your project"
       step_one: "Projects are actions! And we receive them with open arms whether they are small, big, funny, serious, traditional, innovative... We love projects that require little money and have a big impact in their communities."
       title_two: "Review"
@@ -792,22 +803,22 @@ en:
       step_three: "When your project is ready, it's time to go live and plan your campaign. During this period, you will need to engage as many people as possible to reach your goal."
       title_four: "It's all-or-nothing"
       step_four: "If your project doesn't reach its goal before time runs out, all backers will receive their pledged amount in credits and later, if they want, can ask for a refund."
-      title_requirements: "Requirements to submit your project to Catarse"
+      title_requirements: "Requirements to submit your project to Jampoff"
       creative: "Creative and Finite"
       colective: "Collective Benefits"
       nonprofit: "Non-financial rewards"
       donation: "No philanthropic or “fund my life” projects"
       video: "Make a video"
-      more_questions: "Ok, but tell me more about this Catarse..."
+      more_questions: "Ok, but tell me more about this Jampoff..."
       title_magic: "Our magic formula"
-      magic: "We believe that providing a meeting place for people that share common values is the best way to turn projects into reality. Use Catarse as a channel to direct your network towards a COMMON objective."
+      magic: "We believe that providing a meeting place for people that share common values is the best way to turn projects into reality. Use Jampoff as a channel to direct your network towards a COMMON objective."
       title_money: "Where does the money to finance projects come from?"
-      money: "At least 50% will come from your own network of contacts. In this manner, Catarse is a way for you to get closer to the people that enjoy your work and expand this network through sharing in social networks, newspapers, blogs and, of course, your favorite bar."
+      money: "At least 50% will come from your own network of contacts. In this manner, Jampoff is a way for you to get closer to the people that enjoy your work and expand this network through sharing in social networks, newspapers, blogs and, of course, your favorite bar."
       title_work: "Does it take a lot of work?"
-      work: "A loooot! There is no 'easy money on the INTERNET'. You will have to work a lot during your project, but the experience will be worth it - we assure you :D And you will have a much stronger network behind your project after Catarse."
-      title_costs: "How much does it cost to use Catarse?"
-      costs: "Submitting your project is free. Now, when your project is approved and has reached its goal, Catarse will apply a 13% fee, this value includes both the Catarse fee and the payment gateway fee."
-      why: "Why Catarse?"
+      work: "A loooot! There is no 'easy money on the INTERNET'. You will have to work a lot during your project, but the experience will be worth it - we assure you :D And you will have a much stronger network behind your project after Jampoff."
+      title_costs: "How much does it cost to use Jampoff?"
+      costs: "Submitting your project is free. Now, when your project is approved and has reached its goal, Jampoff will apply a 13% fee, this value includes both the Jampoff fee and the payment gateway fee."
+      why: "Why Jampoff?"
       intro: "First of all, it's good that you know why we believe that this new way to finance projects is phenomenal:"
       why_one: "By creating a very strong bond with your network, this kind of campaign open doors to new projects, partnerships and other unexpected connections."
       why_two: "If the projects are well connected, they can spread, quickly, to a lot of people, expanding your network and strengthening the base of people around your project."
@@ -820,7 +831,7 @@ en:
       title_one: "What inspired you to make this project?"
       tip_one: "People only engage when they realize the importance of a cause for society or for the person who leads a campaign. So be very clear about what is your inspiration and let it overflow into your project."
       title_two: "What is the focus?"
-      tip_two: "Catarse is an excellent way to take the first steps. Therefore, define very well the purpose of your project, as well as who will benefit from it. Clearly defining your objectives is one of the best ways to engage people."
+      tip_two: "Jampoff is an excellent way to take the first steps. Therefore, define very well the purpose of your project, as well as who will benefit from it. Clearly defining your objectives is one of the best ways to engage people."
       title_three: "What is your goal?"
       tip_three: "Calculate all costs for the project execution and rewards delivery. Also take into account your ability to engage people in order to define your financial goal."
       title_four: "What is your deadline for the fundraising?"
@@ -837,7 +848,7 @@ en:
       explore_projects: "I want to explore the projects."
       submit: "Next step!"
       send_project: "I want to submit my project."
-      guide: "Download here a complete guide with all the tips to elaborate your project in Catarse."
+      guide: "Download here a complete guide with all the tips to elaborate your project in Jampoff."
     privacy:
       title: "Privacy Policy"
     terms:
@@ -899,21 +910,21 @@ en:
       other_link: "another internet page"
       change_password: "Change my password"
       current_password_hint: "<i>We need your current password to confirm your changes.</i>"
-      email_hint: "Your email will only be used for communications from Catarse and from the projects you back. It won't be visible in your profile. When you back a project, we will give your email to the project owner so he can provide your rewards."
+      email_hint: "Your email will only be used for communications from Jampoff and from the projects you back. It won't be visible in your profile. When you back a project, we will give your email to the project owner so he can provide your rewards."
       email_tooltip: "Click here to fill your email..."
       gravatar_hint_html: "Want to change your picture? Use %{link} with your email. It's as simple as uploading an image and works for other sites as well ;)"
       local_avatar: "My avatar"
       submit_text: "Avatar"
       submit: "Submit"
       my_data: "My profile"
-      newsletter: "I want to receive news from Catarse via email"
+      newsletter: "I want to receive news from Jampoff via email"
       password_hint: "<i>Leave blank if you don't want to change it.</i>"
     header:
       bio_tooltip: "Click here to write about you..."
       name_tooltip: "Click here to fill your name..."
     projects:
-      no_projects: "%{name} haven't started any project on Catarse yet. We wonder if inspiration will hit one of these days!"
-      no_projects_current_user_html: "You haven't submitted any project to Catarse yet. Let the inspiration flow and %{link} to start!"
+      no_projects: "%{name} haven't started any project on Jampoff yet. We wonder if inspiration will hit one of these days!"
+      no_projects_current_user_html: "You haven't submitted any project to Jampoff yet. Let the inspiration flow and %{link} to start!"
       title: "%{name}'s projects"
       title_current_user: "My projects"
   users_mailer:
@@ -921,10 +932,10 @@ en:
       alt: "You must enable images in order to correctly view this message."
       forward: "Foward to your friends"
       hello: Hi
-      intro: "You are receiving this message because you signed up on Catarse"
+      intro: "You are receiving this message because you signed up on Jampoff"
       mailee: "Message delivered by Mailee.me"
       salutation: "Big hugs,"
-      signature: "Catarse's Team"
+      signature: "Jampoff's Team"
       unsubscribe: Unsubscribe
       unsubscribe_long: "If you don't want to receive these emails"
       weblink: "View on the web"

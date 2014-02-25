@@ -19,6 +19,9 @@ class StaticController < ApplicationController
   def countdown
   end
 
+  def community
+  end
+
   def sitemap
     # TODO: update this sitemap to use new homepage logic
     @home_page    ||= Project.includes(:user, :category).visible.limit(6).all

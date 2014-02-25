@@ -30,7 +30,7 @@ puts 'Seeding the database...'
 end
 
 {
-  company_name: 'Catarse',
+  company_name: 'Jampoff',
   host: 'tribaltears.com',
   base_url: "http://tribaltears.com",
   email_contact: 'contato@catarse.me',
@@ -38,10 +38,10 @@ end
   email_projects: 'projetos@catarse.me',
   email_system: 'system@catarse.me',
   email_no_reply: 'no-reply@catarse.me',
-  facebook_url: "http://facebook.com/catarse.me",
+  facebook_url: "http://facebook.com/jampoff",
   facebook_app_id: '173747042661491',
   twitter_url: 'http://twitter.com/catarse',
-  twitter_username: "catarse",
+  twitter_username: "jampoff",
   mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
   catarse_fee: '0.13',
   support_forum: 'http://suporte.catarse.me/',

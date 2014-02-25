@@ -63,6 +63,7 @@ Catarse::Application.routes.draw do
   get "/guidelines_backers",    to: "static#guidelines_backers",  as: :guidelines_backers
   get "/guidelines_start",      to: "static#guidelines_start",    as: :guidelines_start
   get "/about",                 to: "static#about",               as: :about
+  get "/community_guidelines",  to: "static#community",           as: :community
 
 
   match "/explore" => "explore#index", as: :explore
