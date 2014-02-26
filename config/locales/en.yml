@@ -112,6 +112,12 @@ en:
       submit: "Submit"
       discover: "Explore"
       terms_link: "http://termsandconditions.com"
+      soundcloud: SoundCloud
+      youtube: Youtube
+      google: "Google +"
+      pinterest: Pinterest
+      tumblr: Tumblr
+      myspace: Myspace
     texts:
       copyleft: "Made with love."
   main:
