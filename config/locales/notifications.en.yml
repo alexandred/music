@@ -4,8 +4,8 @@ en:
       subject: '%{name} has recommended a project to you!'
       header: 'Recommended Project'
     new_user_registration:
-      subject: 'Welcome to Catarse!'
-      header: 'Welcome to Catarse!'
+      subject: 'Welcome to Jampoff!'
+      header: 'Welcome to Jampoff!'
     backer_canceled_after_confirmed:
       subject: "Backer canceled after confirmed"
       header: "Backer canceled after confirmed"
@@ -17,7 +17,7 @@ en:
       header: "Back confirmed"
     payment_slip:
       subject: "Status do apoio para %{project_name}: boleto impresso"
-      header: "Informações sobre pagamentos por boleto no Catarse"
+      header: "Informações sobre pagamentos por boleto no Jampoff"
     processing_payment:
       subject: "Seu apoio para %{project_name} foi recebido e está aguardando confirmação do %{payment_method}"
       header: "Apoio Em Análise - o que é isso?"
@@ -35,16 +35,16 @@ en:
       header: "Your project was partially funded"
     backer_project_successful:
       subject: "%{project_name} was succesfully funded!"
-      header: "The project you backed has succeeded at Catarse"
+      header: "The project you backed has succeeded at Jampoff"
     backer_project_unsuccessful:
       subject: "%{project_name} was partially funded"
-      header: "The project you backed was partially funded at Catarse"
+      header: "The project you backed was partially funded at Jampoff"
     pending_backer_project_unsuccessful:
       subject: "You started to back the project %{project_name}, which was not funded - some useful information"
       header: "Information about confirmation of support, credits and refunds ;)"
     project_received:
       subject: "Your project has been received"
-      header: "Your project has been received by the Catarse team"
+      header: "Your project has been received by the Jampoff team"
     project_received_channel:
       subject: "Your project was received by the Wings Channel"
       header: "Your project was welcomed by the staff of the Wings Channel"
@@ -67,13 +67,13 @@ en:
       subject: "The project %{project_name} has reached its deadline"
       header: "The project reached its deadline"
     credits_warning:
-      subject: "You have R$ %{amount} in credits on Catarse"
+      subject: "You have R$ %{amount} in credits on Jampoff"
       header: "Why not back another project?"
     backer_confirmed_after_project_was_closed:
       subject: "New backer confirmed on finished project '%{project_name}' "
       header: "New backer confirmed."
     temporary_password:
-      subject: "Temporary password for Catarse"
+      subject: "Temporary password for Jampoff"
       header: "Log on to change your password"
     project_about_to_expire:
       subject: "%{project_name} is about to expire"
