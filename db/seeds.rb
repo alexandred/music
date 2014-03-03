@@ -31,8 +31,8 @@ end
 
 {
   company_name: 'Jampoff',
-  host: 'tribaltears.com',
-  base_url: "http://tribaltears.com",
+  host: 'jampoff.com',
+  base_url: "http://jampoff.com",
   email_contact: 'contato@catarse.me',
   email_payments: 'financeiro@catarse.me',
   email_projects: 'projetos@catarse.me',
@@ -45,7 +45,7 @@ end
   mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
   catarse_fee: '0.13',
   support_forum: 'http://suporte.catarse.me/',
-  base_domain: 'tribaltears.com',
+  base_domain: 'jampoff.com',
   uservoice_secret_gadget: 'change_this',
   uservoice_key: 'uservoice_key',
   faq_url: 'http://suporte.catarse.me/',
@@ -68,8 +68,6 @@ end
   stripe_test: 'TRUE',
   stripe_client_id: 'ca_2uW3Flc20I4UqjNiwOGyDyZUv3Xi8kua',
   #secure_review_host: true,
-  aws_access_key: 'AKIAIDJAMCVP5M44OGGA',
-  aws_secret_key: 'XXX',
   aws_bucket: 's3.tribaltears.com',
   banner1: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/1",
   banner2: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/2",

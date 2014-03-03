@@ -28,12 +28,12 @@ class ProjectsController < ApplicationController
           @expiring = ProjectsForHome.expiring
           @recent   = ProjectsForHome.recents
           @recently_viewed = get_viewed_projects
-          @banner = [
-            Project.find(::Configuration[:banner1_id].to_i),
-            Project.find(::Configuration[:banner2_id].to_i),
-            Project.find(::Configuration[:banner3_id].to_i),
-            Project.find(::Configuration[:banner4_id].to_i)
-          ]
+          #@banner = [
+          #  Project.find(::Configuration[:banner1_id].to_i),
+          #  Project.find(::Configuration[:banner2_id].to_i),
+          #  Project.find(::Configuration[:banner3_id].to_i),
+          #  Project.find(::Configuration[:banner4_id].to_i)
+          #]
         end
       end
     end
