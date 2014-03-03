@@ -68,7 +68,6 @@ end
   stripe_test: 'TRUE',
   stripe_client_id: 'ca_2uW3Flc20I4UqjNiwOGyDyZUv3Xi8kua',
   #secure_review_host: true,
-  aws_bucket: 's3.tribaltears.com',
   banner1: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/1",
   banner2: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/2",
   banner3: "https://s3-us-west-2.amazonaws.com/catarsemusic1/uploads/banner/3",
