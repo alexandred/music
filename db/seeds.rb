@@ -52,7 +52,7 @@ end
   how_url: 'http://jampoff.com/jampoff4.pdf',
   feedback_url: 'http://jampoff.com/jampoff2.pdf',
   support_url: 'http://suporte.catarse.me/',
-  terms_url: 'http://http://jampoff.com/jampoff3.pdf',
+  terms_url: 'http://jampoff.com/jampoff3.pdf',
   privacy_url: 'http://www.jampoff.com/jampoff1.pdf',
   instagram_url: 'http://instagram.com/jampoff',
   soundcloud_url: 'http://www.soundcloud/jampoff',
