@@ -19,7 +19,10 @@ sass:
 	  left: 50%
 	  margin-top: -50px
 	  margin-left: -100px
-.image = image_tag("assets/images/jampoff_white.png")
+	.landing_image
+		width: 547px
+		margin: 0 auto
+.landing_image = image_tag("jampoff_white.png")
 .border
 	h2.text-center
-		= link_to "Beta", new_user_session_path
+		= link_to "Login", new_user_session_path
