@@ -24,39 +24,43 @@ sass:
 	.landing_image
 	  width: 547px
 	  margin: 0 auto
-	.newsletter
-	  width: 215px
+	.wrapper
+	  width: 400px
 	  margin: 0 auto
-	  padding: 1px
-	  border: 1px solid #ddd
-	  display: inline-block
-	  border-radius: 3px
-	  .newsletter-input
-	    border: none
-	    font-size: 13px
-	    width: 160px
-	    height: 32px
-	    line-height: 32px
-	    font-family: Helvetica Neue, Helvetica, Arial, sans-serif
-	    text-indent: 5px
-	    color: #79808E
-	  .newsletter-submit
-	    float: right
-	    border: none
-	    background: #3C9DFF url(/assets/catarse_bootstrap/catarse-assets.png) no-repeat -152px -72px
-	    height: 34px
-	    width: 34px
-	    text-align: center
-	    font-size: 18px
+	  display: block
+	  .newsletter
+	    width: 215px
+	    margin: 0 auto
+	    padding: 1px
+	    border: 1px solid #ddd
 	    border-radius: 3px
-	    text-indent: -9999px
-	    &:hover
-	      background: rgba(#3C9DFF, 0.8) url(/assets/catarse_bootstrap/catarse-assets.png) no-repeat -152px -72px
+	    .newsletter-input
+	      border: none
+	      font-size: 13px
+	      width: 160px
+	      height: 32px
+	      line-height: 32px
+	      font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+	      text-indent: 5px
+	      color: #79808E
+	    .newsletter-submit
+	      float: right
+	      border: none
+	      background: #3C9DFF url(/assets/catarse_bootstrap/catarse-assets.png) no-repeat -152px -72px
+	      height: 34px
+	      width: 34px
+	      text-align: center
+	      font-size: 18px
+	      border-radius: 3px
+	      text-indent: -9999px
+	      &:hover
+	        background: rgba(#3C9DFF, 0.8) url(/assets/catarse_bootstrap/catarse-assets.png) no-repeat -152px -72px
 .landing_page
 	.landing_image = image_tag("jampoff_white.png")
-	.newsletter
+	.wrapper
 		h2= "Subscribe to our newsletter"
-		= render 'layouts/newsletter'
+		.newsletter
+			= render 'layouts/newsletter'
 	.border
 		h2.text-center
 			= link_to "Login", new_user_session_path
