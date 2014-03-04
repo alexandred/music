@@ -1,4 +1,5 @@
 sass:
+	background: white
 	.border
 	  font-size: .9em
 	  width: 175px
@@ -22,7 +23,14 @@ sass:
 	.landing_image
 	  width: 547px
 	  margin: 0 auto
-.landing_image = image_tag("jampoff_white.png")
-.border
-	h2.text-center
-		= link_to "Login", new_user_session_path
+	.newlsetter
+		width: 215px
+		margin: 0 auto
+.landing_page
+	.landing_image = image_tag("jampoff_white.png")
+	.newsletter
+		h2= "Subscribe to our newsletter"
+    	= render 'layouts/newsletter'
+	.border
+		h2.text-center
+			= link_to "Login", new_user_session_path
