@@ -19,6 +19,7 @@ footer.footer
           ul.footer-list
             li= link_to t('footer.links.about'), about_path
             li= link_to t('footer.links.faq'), community_path
+            li= link_to t('footer.links.how'), "#{::Configuration[:how_url]}", target: '_blank'
             li= link_to t('footer.links.feedback'), "#{::Configuration[:feedback_url]}", target: '_blank'
             li= link_to t('footer.links.terms'), "#{::Configuration[:terms_url]}", target: '_blank'
             li= link_to t('footer.links.privacy'), "#{::Configuration[:privacy_url]}", target: '_blank'
