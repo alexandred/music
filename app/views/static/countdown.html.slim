@@ -19,21 +19,7 @@ sass:
 	  left: 50%
 	  margin-top: -50px
 	  margin-left: -100px
-javascript:
-	$(function() {
-	    $('.countdown').countdown({
-	        date: "January 1, 2014 15:03:25"
-	    });
-	  });
-= render 'devise/shared/header'
-.row
-  .large-7.large-centered.columns
-    .login-box.animated.fadeIn
-      h2.text-center Something big is coming your way...
-      hr
-      .large-14.columns.large-centered
-        p.text-center Check this space on 1st January 2014 to discover amazing new talent.
-.countdown style="width:500px; margin:auto"
+.image = image_tag("assets/images/jampoff_white.png")
 .border
 	h2.text-center
 		= link_to "Beta", new_user_session_path
