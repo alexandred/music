@@ -321,6 +321,7 @@ sass:
 			        	  	.guideline_form= form_tag do
 			        	  		= check_box_tag(:accept)
 			        	  		= label_tag(:accept, "I accept terms")
+			        	  	.dummy style="height: 80px"
 					.inputs.first style='display: none'
 						  .block
 						      = f.label :permalink, t('formtastic.labels.project.permalink')
@@ -486,7 +487,7 @@ javascript:
 			$('li.fifth').addClass('input_error');
 		}
 		$("li.zero").click(function(){
-		$("body, html").animate( {scrollTop: 130}, 'fast');
+		$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 0) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.zeroheader')}");
@@ -496,7 +497,7 @@ javascript:
 			}
 		});
 		$("li.first").click(function(){
-		$("body, html").animate( {scrollTop: 130}, 'fast');
+		$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 1 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.firstheader')}");
@@ -506,7 +507,7 @@ javascript:
 			}
 		});
 		$("li.second").click(function(){
-			$("body, html").animate( {scrollTop: 130}, 'fast');
+			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 2 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.secondheader')}");
@@ -516,7 +517,7 @@ javascript:
 			}
 		});
 		$("li.third").click(function(){
-			$("body, html").animate( {scrollTop: 130}, 'fast');
+			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=3 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.thirdheader')}");
@@ -526,7 +527,7 @@ javascript:
 			}
 		});
 		$("li.fourth").click(function(){
-			$("body, html").animate( {scrollTop: 130}, 'fast');
+			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=4 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fourthheader')}");
@@ -536,7 +537,7 @@ javascript:
 			}
 		});
 		$("li.fifth").click(function(){
-			$("body, html").animate( {scrollTop: 130}, 'fast');
+			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=5 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
 				$('#h2').text("#{t('.fifthheader')}");

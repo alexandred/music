@@ -306,7 +306,7 @@ en:
         online_days: "Carefully consider the length of your campaign. If its too long, people might lose interest over time. If its too short, you might not have enough time to reach your goal."
         goal: "Value in reais (R$)"
         first_backers: "If you already have people/companies who have promised to back your project, list them here. Having well-known sponsors will greatly increase the chance of your project being succesfully funded."
-        headline: "Summarise your project in 140 characters. This is the first thing a potential backer will read about your project so make sure to draw them in."
+        headline: "Summarise your project in 160 characters. This is the first thing a potential backer will read about your project so make sure to draw them in."
         name: "Make this short and sweet. Leave the description to the subtitle and about sections."
         uploaded_image: "Upload a 512x400 image(.jpg)."
         video_url: "Enter the URL to your <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. Vimeo has a clean interface and no advertisements and this will reflect upon the quality of your project."
@@ -649,12 +649,12 @@ en:
       zeroheader: "Guidelines header"
       zerosubheader: "Guidelines subheader"
       guidelines:
-        firstheader: Everything on Kickstarter must be a project.
+        firstheader: Everything on Jampoff must be a project.
         firstcontent: A project is something with a clear end, like making an album, a film, or a new game. A project will eventually be completed, and something will be produced as a result.
-        secondheader: Every project on Kickstarter must fit into one of our categories.
-        secondcontent: Our categories are Art, Comics, Dance, Design, Fashion, Film, Food, Games, Music, Photography, Publishing, Technology, and Theater.
+        secondheader: Every project on Jampoff must fit into one of our categories.
+        secondcontent: Our categories are Country, Electronic, Hip-Hop, Jazz, Metal, Pop, R&B, Rock.
         thirdheader: Are those the only guidelines?
-        thirdcontent: Those are the main two, but read on for specific uses of Kickstarter that are not allowed, and note that Hardware and Product Design projects have additional guidelines below. We don't curate projects based on taste. Instead, we do a quick check to make sure they meet these guidelines.
+        thirdcontent: Those are the main two, but read on for specific uses of Jampoff that are not allowed, and note that Hardware and Product Design projects have additional guidelines below. We don't curate projects based on taste. Instead, we do a quick check to make sure they meet these guidelines.
       firstheader: 'Meet your new project'
       firstsubheader: 'Start by giving it a name, a pic, and other important details.'
       secondheader: 'Every project needs great rewards.'
@@ -802,33 +802,33 @@ en:
       title: "How Jampoff works?"
       introduction: "Jampoff is a different - and collaborative - way to make your projects become reality."
       legend_html: "Use this guide to decide if Jampoff is the right tool for the job."
-      title_one: "Submit your project"
-      step_one: "Projects are actions! And we receive them with open arms whether they are small, big, funny, serious, traditional, innovative... We love projects that require little money and have a big impact in their communities."
+      title_one: "Submit"
+      step_one: "Help us and the public to understand your project by explaining what you want to achieve with your project. Remember to be honest and concise when explaining why you need funding and what you aim to do. Ensure your project is appealing and your fundraising target is achievable."
       title_two: "Review"
-      step_two: "After we receive your project, it will be screened by our team of reviewers. The objective here is to give you tips in order to maximize the chances of your project becoming successful, as well as filtering NON-SENSE projects. Remember, we want your project to be successful as much as you do ;)"
-      title_three: "Let's go live!?"
-      step_three: "When your project is ready, it's time to go live and plan your campaign. During this period, you will need to engage as many people as possible to reach your goal."
-      title_four: "It's all-or-nothing"
-      step_four: "If your project doesn't reach its goal before time runs out, all backers will receive their pledged amount in credits and later, if they want, can ask for a refund."
+      step_two: "After we receive your project, it will be reviewed by our team. The objective of this is to remove any projects that may go against guidelines. We will also scan projects to ensure they are error-free and presentable. Remember, we want your project to be as successful as much as you do."
+      title_three: "Marketing"
+      step_three: "Once your project has been approved, you’ll need to put a project marketing strategy in place in order to engage as many people as possible. Social media will be an excellent way to raise awareness about your project, so make sure details of your campaign are well communicated online."
+      title_four: "Launch"
+      step_four: "After you have gone live, keep supporters engaged through regular project updates. Ensuring people remain interested in your project will give your project a greater chance of reaching its fundraising target."
       title_requirements: "Requirements to submit your project to Jampoff"
       creative: "Creative and Finite"
       colective: "Collective Benefits"
       nonprofit: "Non-financial rewards"
       donation: "No philanthropic or “fund my life” projects"
       video: "Make a video"
-      more_questions: "Ok, but tell me more about this Jampoff..."
-      title_magic: "Our magic formula"
-      magic: "We believe that providing a meeting place for people that share common values is the best way to turn projects into reality. Use Jampoff as a channel to direct your network towards a COMMON objective."
-      title_money: "Where does the money to finance projects come from?"
-      money: "At least 50% will come from your own network of contacts. In this manner, Jampoff is a way for you to get closer to the people that enjoy your work and expand this network through sharing in social networks, newspapers, blogs and, of course, your favorite bar."
+      more_questions: "Tell me more about Jampoff..."
+      title_magic: "The Jampoff.com Difference"
+      magic: "We give the Music community a platform to raise funds for their projects. It is a quick and easy way of raising money without having to borrow from banks and other sources. With jampoff.com, it couldn’t be easier to raise money for a project. Lots of people, each donating a small amount, can contribute to something big. Best of all, with your music platform Jampoff, we give you all funds raised even if your project does not meet its goals. Jampoff is the only music platform to do this."
+      title_money: "Hard Work & Perseverance"
+      money: "The more effort you put into your campaign, the better you can expect your results to be. In order to maximise your project’s potential, you will to need to increase awareness among your own network of contacts and by reaching out to others. Remember, we want your campaign to be as successful as you do but this ultimately comes down to you and how effectively you advertise it."
       title_work: "Does it take a lot of work?"
       work: "A loooot! There is no 'easy money on the INTERNET'. You will have to work a lot during your project, but the experience will be worth it - we assure you :D And you will have a much stronger network behind your project after Jampoff."
       title_costs: "How much does it cost to use Jampoff?"
       costs: "Submitting your project is free. Now, when your project is approved and has reached its goal, Jampoff will apply a 13% fee, this value includes both the Jampoff fee and the payment gateway fee."
-      why: "Why Jampoff?"
-      intro: "First of all, it's good that you know why we believe that this new way to finance projects is phenomenal:"
-      why_one: "By creating a very strong bond with your network, this kind of campaign open doors to new projects, partnerships and other unexpected connections."
-      why_two: "If the projects are well connected, they can spread, quickly, to a lot of people, expanding your network and strengthening the base of people around your project."
+      why: "Pricing"
+      intro: "At Jampoff.com, the following fees apply when initiating a campaign:"
+      why_one: "Jampoff collects a 10% fee from a project’s funding total, if a project is successfully funded or weather the projects does not reach its goals."
+      why_two: "Stripe charges"
       why_three: "Minimum red tape and low financial risk. No interest rate, no entry fees... and lots of fun and emotion."
     guidelines_tips:
       title: "Almost there!"

@@ -41,7 +41,7 @@ header.header
         ul
           li.header-nav-li
             = link_to t('layouts.header.home'), root_path
-            = link_to t('layouts.header.submit'), new_project_path, :class => 'submit-project'
+            = link_to t('layouts.header.submit'), guidelines_start_path, :class => 'submit-project'
             = link_to t('layouts.header.explore'), explore_path(anchor: 'recommended'), :class => 'explore'
             = link_to t('layours.header.favourites'), user_favourites_path(current_user) if current_user
           li.header-nav-li.search
