@@ -7,7 +7,7 @@ module CatarseAutoHtml
   end
 
   AutoHtml.add_filter(:line_space) do |text|
-    text.gsub(/\*\*\*space\*\*\*/) do |match|
+    text.gsub(/\r\n/) do |match|
       %|<br>|
     end
   end
