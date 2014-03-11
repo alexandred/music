@@ -6,6 +6,11 @@ module CatarseAutoHtml
     end
   end
 
+  AutoHtml.add_filter(:line_space) do |text|
+    text.gsub(/\*\*\*space\*\*\*/) do |match|
+      %|<br>|
+    end
+  end
   def catarse_auto_html_for options={}
     self.auto_html_for options[:field] do
       html_escape map: {
@@ -14,6 +19,7 @@ module CatarseAutoHtml
         '<' => '&lt;',
         '"' => '"' }
       image
+      line_space
       soundcloud target: :_blank
       youtube width: options[:video_width], height: options[:video_height], wmode: "opaque"
       vimeo width: options[:video_width], height: options[:video_height]

@@ -18,7 +18,7 @@
             h1.profile
                 = @user.display_name
             h2.info
-                = t('.backed_text', amount: @user.projects.count) + " • " + t('.joined_text', date: @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y"))
+                = t('.backed_text', amount: @user.backs.count) + " • " + t('.joined_text', date: @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y"))
             h4.bio
                 = @user.bio
         .user_social
