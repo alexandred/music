@@ -7,7 +7,7 @@ class FavouritesController < ApplicationController
 	def index
 		redirect_to root_path if parent != current_user unless current_user.admin?
 		@title = t('favourites.title')
-		user_favourites = Project.joins(:favourites).where(user_id: parent.id)
+		user_favourites = Project.joins(:favourites).where(favourites: {user_id: parent.id})
 		@favourites_active = user_favourites.where(state: 'online')
 		@favourites_expired = user_favourites.where('projects.state != ?','online')
 		@user = parent
