@@ -19,12 +19,12 @@ module CatarseAutoHtml
         '<' => '&lt;',
         '"' => '"' }
       image
-      line_space
       soundcloud target: :_blank
       youtube width: options[:video_width], height: options[:video_height], wmode: "opaque"
       vimeo width: options[:video_width], height: options[:video_height]
       #redcloth target: :_blank
       link target: :_blank
+      line_space
     end
   end
 end
