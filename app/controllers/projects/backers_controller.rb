@@ -30,7 +30,7 @@ class Projects::BackersController < ApplicationController
     end
 
     @create_url = ::Configuration[:secure_review_host] ?
-      project_backers_url(@project, {host: ::Configuration[:secure_review_host], protocol: 'https'}) :
+      project_backers_url(@project, {host: ::Configuration[:host], protocol: 'https'}) :
       project_backers_path(@project)
 
     @title = t('projects.backers.new.title', name: @project.name)
