@@ -78,7 +78,8 @@ end
   banner3_id: '5',
   banner4_id: '5',
   mandrill_username: 'alex.daoud@mac.com',
-  mandrill_password: 'XXX'
+  mandrill_password: 'XXX',
+  google_analytics_id: 'UA-48902502-1'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
