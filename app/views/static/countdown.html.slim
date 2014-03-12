@@ -68,7 +68,7 @@ sass:
   		  height: 100px
   		.twitter-follow-button
   		  display: inline
-  		  width: 180px !important
+  		  width: 185px !important
   		  float: right
   		  margin-top: 25px
 
@@ -80,7 +80,7 @@ sass:
 		.newsletter-landing
 			= render 'layouts/newsletter'
 		.wrapper2
-			.fb-like-box data-href="#{Configuration['facebook_url']}" data-width="200" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"
+			.fb-like-box data-href="#{Configuration['facebook_url']}" data-width="200" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"
 			= link_to t('sidebar.titles.twitter'), "https://twitter.com/#{Configuration['twitter_username']}", class: 'twitter-follow-button', data:{widget_id:"375343843308089345", chrome:"nofooter"}
 	.border
 		h2.text-center
