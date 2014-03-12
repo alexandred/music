@@ -25,11 +25,13 @@ sass:
 	  width: 547px
 	  margin: 0 auto
 	.wrapper
-	  width: 270px
+	  width: 400px
 	  margin: 0 auto
+	  text-align: center
 	  display: block
 	  margin-top: 60px
 	  .newsletter-landing
+	  	text-align: left
 	    width: auto
 	    margin: 0 auto
 	    padding: 1px
@@ -56,12 +58,31 @@ sass:
 	      text-indent: -9999px
 	      &:hover
 	        background: rgba(#3C9DFF, 0.8) url(/assets/catarse_bootstrap/catarse-assets.png) no-repeat -152px -72px
+	  .wrapper2
+	  	display: inline-block
+	  	margin-top: 20px
+  		.fb-like-box
+  	      display: inline
+  		  float: left
+  		  width: 180px
+  		  height: 100px
+  		.twitter-follow-button
+  		  display: inline
+  		  width: 180px !important
+  		  float: right
+  		  margin-top: 25px
+
+
 .landing_page
 	.landing_image = image_tag("jampoff_white.png")
 	.wrapper
 		h2= "Subscribe to our newsletter"
 		.newsletter-landing
 			= render 'layouts/newsletter'
+		.wrapper2
+			.fb-like-box data-href="#{Configuration['facebook_url']}" data-width="200" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"
+			= link_to t('sidebar.titles.twitter'), "https://twitter.com/#{Configuration['twitter_username']}", class: 'twitter-follow-button', data:{widget_id:"375343843308089345", chrome:"nofooter"}
 	.border
 		h2.text-center
 			= link_to "Login", new_user_session_path
+= render_facebook_sdk
