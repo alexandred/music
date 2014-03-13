@@ -17,6 +17,7 @@ class StaticController < ApplicationController
   end
 
   def countdown
+    @title = "Jampoff"
   end
 
   def community

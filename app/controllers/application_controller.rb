@@ -184,11 +184,11 @@ class ApplicationController < ActionController::Base
   end
 
   def checkcountdown
-    #if Rails.env.production?
+    if Rails.env.production?
       unless (params['controller'] == "catarse_stripe/payment/stripe" and params['action'] == "ipn") || (params['controller'] == "devise/sessions" and params['action'] == "new") || (params['controller'] == "passwords" and params['action'] == "new")
         render template: 'static/countdown', layout: 'layouts/catarse_bootstrap' if !current_user
       end
-    #end
+    end
   end
 
 end
