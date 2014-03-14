@@ -143,7 +143,7 @@ en:
   sections:
     title:
       header: "Discover & Support Great Artists"
-      subheader: "Jampoff is the best way to support and get connected with artists with love"
+      subheader: "Jampoff is the best way to support and get connected with artists you love"
     near:
       title: near me
     selection:
@@ -304,7 +304,7 @@ en:
         category: "Consider visiting other projects in your chosen category to get an idea of how you should format your proposal."
         expires_at: "Carefully consider the length of your campaign. If its too long, people might lose interest over time. If its too short, you might not have enough time to reach your goal."
         online_days: "Carefully consider the length of your campaign. If its too long, people might lose interest over time. If its too short, you might not have enough time to reach your goal."
-        goal: "Value in reais (R$)"
+        goal: ""
         first_backers: "If you already have people/companies who have promised to back your project, list them here. Having well-known sponsors will greatly increase the chance of your project being succesfully funded."
         headline: "Summarise your project in 160 characters. This is the first thing a potential backer will read about your project so make sure to draw them in."
         name: "Make this short and sweet. Leave the description to the subtitle and about sections."
@@ -412,7 +412,7 @@ en:
         email_text: 'Unfortunately the project %{project_link}, that you have backed, did not reach its goal in time and was not funded.<br><br>You have received a refund of <strong>%{value}</strong> in credits to back other projects. You can see others %{project_category} projects at %{explore_category_link}.<br><br>You can also request a refund by clicking on %{credits_link}. Remember that you signed up on Jampoff using %{user_provider}. If you are having problems with a refund, do not hesitate to contact us on financeiro@jampoff.me with the subject "Refund issue".<br><br>If, for any reason, you need to contact %{project_owner_name}, send an email to %{project_owner_email}.<br><br>If you have any other questions, visit our FAQ or send an email to <a href="mail_to:contato@jampoff.me" style="color: #008800;">contato@jampoff.me</a>.<br>'
         notification_text: "You received %{value} in credits to back other projects. If you prefer, you can request a refund %{link}."
         unsuccessful_text: "Unfortunately, yhe project %{link} that you backed wasn't funded."
-    video_regex_validation: "only Vimeo URLs are permitted"
+    video_regex_validation: "only Vimeo and Youtube URLs are permitted"
     display_status:
       expired: expired
       failed: "not funded"
@@ -614,7 +614,7 @@ en:
       name_important: "Maximum 50 characters"
       online_days_important: "Maximum campaign length of 60 days"
       about_important: "Remember to add links related to your project that you want the public to see, they will atuomatically link to the object you want. Bold text and italic text can be done with ** and _ respectively before and after the text. "
-      important_html: 'Jampoff charges 13% on succesful funding'
+      important_html: 'Jampoff charges 10% on all funding'
       send_project: "I want to submit my project."
       video_important: "Your project may be refused if your video contains inappropriate content"
       more_links_important: "Information entered here is only visible to Jampoff staff. Please seperate each link by a blank line."
