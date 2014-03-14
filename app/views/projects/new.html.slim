@@ -18,6 +18,25 @@ sass:
 					margin-top: 20px
 					box-shadow: 0 1px 4px darken(lightgray, 10%)
 					border-radius: 5px
+					.nav-block
+						display: block
+						margin: 10px auto
+						padding: 5px 5px 5px 5px
+						width: 150px
+						height: 50px
+						background: #dddddd
+						border: 0 none
+						border-radius: 5px
+						text-align: center
+						.wrapper
+							margin-top: 15px !important
+						#guidelines_next, .wrapper
+							margin-top: 11px
+							display: inline-block
+							#basics_back, #basics_next, #story_back, #story_next, #rewards_back, #rewards_next, #account_back, #account_next
+								display: inline
+								&:first-child
+									margin-right: 20px
 					.block
 						overflow: hidden
 						label
@@ -321,7 +340,9 @@ sass:
 			        	  	.guideline_form= form_tag do
 			        	  		= check_box_tag(:accept)
 			        	  		= label_tag(:accept, "I accept terms")
-			        	  	.dummy style="height: 80px"
+		        	  	  .nav-block
+		        	  		.bootstrap-twitter
+					  	      = link_to "Next", "#", id: 'guidelines_next', class: 'btn btn-success btn_send'
 					.inputs.first style='display: none'
 						  .block
 						      = f.label :permalink, t('formtastic.labels.project.permalink')
@@ -348,6 +369,11 @@ sass:
 							  = f.label :online_days, t('formtastic.labels.project.expires_at')
 							  = f.text_field :online_days, id: 'days-input'
 							  .hint= "#{t('formtastic.hints.project.online_days')} #{t('.online_days_important')}"
+		        	  	  .nav-block
+		        	  		.bootstrap-twitter
+		        	  			.wrapper
+						  	      = link_to "Back", "#", id: 'basics_back', class: 'btn btn-success btn_send'
+						  	      = link_to "Next", "#", id: 'basics_next', class: 'btn btn-success btn_send'
 					.inputs.second style="display:none"
 						  .bootstrap-twitter
 							  = f.fields_for :rewards do |rewards|
@@ -373,6 +399,11 @@ sass:
 								  	 	.hint= "#{t('formtastic.hints.reward.maximum_backers')}"
 									.border
 							  = f.link_to_add "Add reward", :rewards, class: 'btn btn-success'
+		        	  	  .nav-block
+		        	  		.bootstrap-twitter
+		        	  			.wrapper
+						  	      = link_to "Back", "#", id: 'rewards_back', class: 'btn btn-success btn_send'
+						  	      = link_to "Next", "#", id: 'rewards_next', class: 'btn btn-success btn_send'
 					.inputs.third style="display:none;"
 						  .block
 						  	  = f.label :uploaded_image, t('formtastic.labels.project.uploaded_image')
@@ -387,6 +418,11 @@ sass:
 						      = f.label :about, t('formtastic.labels.project.about')
 						      = f.text_area :about
 							  .hint= "#{t('formtastic.hints.project.about')} #{t('.about_important')}"
+		        	  	  .nav-block
+		        	  		.bootstrap-twitter
+		        	  			.wrapper
+						  	      = link_to "Back", "#", id: 'story_back', class: 'btn btn-success btn_send'
+						  	      = link_to "Next", "#", id: 'story_next', class: 'btn btn-success btn_send'
 					.inputs.fourth style="display:none;"
 						  .block
 						      = f.label :govid, t('formtastic.labels.project.identification')
@@ -409,7 +445,11 @@ sass:
 							      .bootstrap-twitter
 							      	.refresh.btn.btn-success
 							      		= link_to '↻', stripe_info_path, remote: true
-						  .dummy style="height: 60px"
+		        	  	  .nav-block
+		        	  		.bootstrap-twitter
+		        	  			.wrapper
+						  	      = link_to "Back", "#", id: 'account_back', class: 'btn btn-success btn_send'
+						  	      = link_to "Next", "#", id: 'account_next', class: 'btn btn-success btn_send'
 					.inputs.fifth style="display:none;"
 						  .block
 						  	  .review
@@ -486,7 +526,7 @@ javascript:
 		if ($('.inputs.fifth').find($('.field_with_errors')).length > 0) {
 			$('li.fifth').addClass('input_error');
 		}
-		$("li.zero").click(function(){
+		$("li.zero, #basics_back").click(function(){
 		$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 0) {
 				$('.inputs, #h2, #h3').hide();
@@ -496,7 +536,7 @@ javascript:
 				index = 0;
 			}
 		});
-		$("li.first").click(function(){
+		$("li.first, #guidelines_next, #rewards_back").click(function(){
 		$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 1 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
@@ -506,7 +546,7 @@ javascript:
 				index = 1;
 			}
 		});
-		$("li.second").click(function(){
+		$("li.second, #basics_next, #story_back").click(function(){
 			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index != 2 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
@@ -516,7 +556,7 @@ javascript:
 				index = 2;
 			}
 		});
-		$("li.third").click(function(){
+		$("li.third, #rewards_next, #account_back").click(function(){
 			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=3 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
@@ -526,7 +566,7 @@ javascript:
 				index = 3;
 			}
 		});
-		$("li.fourth").click(function(){
+		$("li.fourth, #story_next").click(function(){
 			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=4 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
@@ -536,7 +576,7 @@ javascript:
 				index = 4;
 			}
 		});
-		$("li.fifth").click(function(){
+		$("li.fifth, #account_next").click(function(){
 			$("body, html").animate( {scrollTop: 143}, 'fast');
 			if(index !=5 && guidelines_accepted == true) {
 				$('.inputs, #h2, #h3').hide();
